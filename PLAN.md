@@ -50,3 +50,6 @@ Logbook: paper #F6F1E7, ink #1C1A16, signal red #C23B22. MUST avoid the #1 AI-de
 - 2026-10-15 05:25: build verified independently (copy verbatim, honest stamps, 0 em dashes, fixed seed-note dates to month precision) and merged to main. Auditor dispatched.
 - 2026-10-15 05:45: audit pass 1 merged (tap targets fixed, Q10 placeholder added, entry-09 back-to-index added, theme-color added, clipping fallback link ink for AA contrast). Audit 14/20, critique 28/32.
 - 2026-10-15 06:00: DEPLOYED. https://darekanderson-site.vercel.app (Vercel team zenjong, project darekanderson-site). CLI deploy as darek225; MCP create_git_project 403'd on team scope, CLI fallback used. Deployment protection (Vercel Authentication) disabled via API so the site is public. GitHub repo linked (production branch main) for auto-deploys on push. Live URL verified 200.
+
+- 2026-10-15 06:15: FIXED LinkedIn embed URN. The share-URL activity id (…7201319940) 404s on LinkedIn's embed endpoint; the true post URN from the analytics link (…8090512384) returns 200 with the real post content. Fixed in index.html, assets/linkedin-posts.json, and the parent's linkedin-embed-demo.html. Pushed; auto-deploy verified serving the corrected URN.
+- DONE. Site live at https://darekanderson-site.vercel.app, public, auto-deploying on push to main.

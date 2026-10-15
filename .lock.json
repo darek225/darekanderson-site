@@ -1,9 +1,9 @@
 {
-  "heartbeat": "2026-10-15T05:25:00Z",
+  "heartbeat": "2026-10-15T06:20:00Z",
   "last_commit_sha": "1bfa223",
-  "phase": "audit",
+  "phase": "done",
   "started_at": "2026-10-15T04:35:00Z",
-  "status": "building",
+  "status": "deployed",
   "workers": {
     "design-brief": {
       "branch": "design/plan",
@@ -17,8 +17,9 @@
     },
     "auditor": {
       "branch": "audit/pass1",
-      "status": "dispatched",
+      "status": "merged",
       "worktree": "~/workspace/darekanderson-site-wt/audit"
     }
-  }
+  },
+  "deploy_url": "https://darekanderson-site.vercel.app"
 }
