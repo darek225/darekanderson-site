@@ -523,6 +523,9 @@ span.cta { cursor: default; } /* placeholder CTAs are not links */
   overflow-wrap: anywhere;
 }
 
+/* Fallback link sits on paper-deep: ink keeps AA contrast (signal red is 4.18:1 here). */
+.clipping-fallback a { color: var(--color-ink); }
+
 .rss-line {
   font-family: var(--font-mono);
   font-size: var(--text-small);
