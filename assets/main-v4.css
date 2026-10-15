@@ -32,6 +32,8 @@
 /* ---------- tokens: component ---------- */
 :root {
   --stamp-border: var(--red);
+  /* red text on paper-deep surfaces: 5.55:1, AA (base --red is 4.36:1 there) */
+  --red-deep: #A6321F;
   --cta-bg: var(--ink);
   --cta-text: var(--paper);
   --cta-min-height: 52px;
@@ -71,6 +73,8 @@ a:hover { color: var(--accent); }
   outline-offset: 3px;
 }
 
+::selection { background: var(--red); color: var(--paper); }
+
 .skip-link {
   position: absolute;
   left: 16px;
@@ -85,11 +89,13 @@ a:hover { color: var(--accent); }
   transition: top 150ms ease-out;
 }
 .skip-link:focus { top: 12px; }
+/* the global link hover is red; on the ink chip it must stay paper */
+.skip-link:hover { color: var(--paper); }
 
 /* ---------- the page column + red margin rule ---------- */
 .page {
   position: relative;
-  max-width: 42rem;
+  max-width: 40rem;
   margin: 0 auto;
   padding: 0 16px 0 40px;
 }
@@ -322,7 +328,7 @@ a:hover { color: var(--accent); }
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--red-deep);
   margin: 0 0 8px;
 }
 .placeholder-text { margin: 0; font-size: 16px; }
@@ -441,6 +447,7 @@ a:hover { color: var(--accent); }
 .contact-list li { margin-bottom: 12px; min-height: 48px; display: flex; align-items: center; flex-wrap: wrap; gap: 4px 8px; }
 .link-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--text-muted); }
 .colophon { border: 1px solid var(--line); padding: 24px; background: var(--surface); }
+.colophon .stamp { color: var(--red-deep); border-color: var(--red-deep); }
 .colophon-stamp { text-align: center; margin: 0 0 16px; }
 .colophon p { margin: 0 0 16px; }
 .colophon p:last-child { margin-bottom: 0; }
@@ -557,12 +564,12 @@ html:not(.js) .toc-backdrop { display: none; }
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: var(--accent);
+  color: var(--red-deep);
   align-self: center;
 }
 .toc-name { font-family: var(--font-display); font-size: 1.15rem; }
 .toc-gloss { font-size: 14px; color: var(--text-muted); grid-column: 2; }
-.toc-entry.active .toc-name { color: var(--accent); }
+.toc-entry.active .toc-name { color: var(--red-deep); }
 .toc-entry.active .toc-no::after {
   content: "";
   display: inline-block;
@@ -589,8 +596,8 @@ body.toc-locked { overflow: hidden; }
   background: var(--surface);
   opacity: 0;
   pointer-events: none;
-  transition: transform 180ms ease-out, height 180ms ease-out,
-              opacity 180ms ease-out;
+  /* transform + opacity only: height snaps so the wash never animates layout */
+  transition: transform 180ms ease-out, opacity 180ms ease-out;
 }
 .ink-wash.on { opacity: 1; }
 .ledger-row, .toc-entry { position: relative; z-index: 1; }
@@ -699,6 +706,7 @@ body.toc-locked { overflow: hidden; }
 }
 
 /* ---------- resume (feeds resume.html; print CSS keeps it PDF-true) ---------- */
+.hero-name { font-family: var(--font-display); font-weight: 400; font-size: 2rem; margin: 0 0 16px; }
 .resume-contact { margin: 0 0 24px; }
 .resume-section { margin: var(--space-4) 0; }
 .job, .edu-item { margin: var(--space-3) 0; break-inside: avoid; }

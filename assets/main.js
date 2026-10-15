@@ -330,7 +330,8 @@
       if (link.id === "tocButton") return;
       link.addEventListener("click", function (event) {
         var hash = link.getAttribute("href");
-        if (hash.length < 2) return;
+        /* "#!" is the no-JS drawer-close target, not a real element id */
+        if (hash.length < 2 || hash === "#!") return;
         var target = document.querySelector(hash);
         if (!target) return;
         event.preventDefault();
