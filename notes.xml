@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Darek Anderson: Field Notes</title>
+    <link>https://darekanderson.com/#notes</link>
+    <description>Short notes from the work: what AI is actually good for, found empirically.</description>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <item>
+      <title>If the daemon can die silently, it will.</title>
+      <link>https://darekanderson.com/#note-1</link>
+      <guid isPermaLink="true">https://darekanderson.com/#note-1</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>My bridge watcher died four times in one day. No error, no alert, just gone: the VM reaps background daemons whenever it feels like it. I found out by noticing the data was stale. The fix was a systemd service with Restart=always, kill -9 tested, back up in fifteen seconds. Lesson I'm keeping: a background process you can't see dying is a background process you don't have. Supervise everything or assume it's dead.</description>
+    </item>
+    <item>
+      <title>Vercel doesn't trust my AI's commits.</title>
+      <link>https://darekanderson.com/#note-2</link>
+      <guid isPermaLink="true">https://darekanderson.com/#note-2</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Vercel refused to deploy because the commit author was "Muse," an unrecognized identity. Same code, same repo, blocked on authorship. The fix: an empty commit authored under my own name, redeployed clean. It's a small thing, but it's a preview of a real problem: as agents write more of the world's code, every system built around human identity has to decide what counts as a legitimate author.</description>
+    </item>
+    <item>
+      <title>Bookvera exists because my own books were a mess.</title>
+      <link>https://darekanderson.com/#note-3</link>
+      <guid isPermaLink="true">https://darekanderson.com/#note-3</guid>
+      <pubDate>Thu, 01 Oct 2026 12:00:00 GMT</pubDate>
+      <description>The reason I'm building an AI bookkeeper is that I lived inside messy books. Duplicate income entries, phantom transactions, categories that meant nothing. I kept finding problems months after they cost me clarity. Software that watches the books in the background isn't a nice-to-have for a small business. It's the difference between knowing your numbers and guessing.</description>
+    </item>
+  </channel>
+</rss>
