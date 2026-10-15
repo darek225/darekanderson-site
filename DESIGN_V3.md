@@ -1,4 +1,4 @@
-# DESIGN_V3 — darekanderson-site, Chapters + TOC rebuild
+# DESIGN_V3 : darekanderson-site, Chapters + TOC rebuild
 
 Branch: `v3/chapters-toc`. Design planning only; no site code written yet. Built from:
 copy-draft-v1.md, BUILD_NOTES.md, PLAN.md (v3 section), frontend-design SKILL.md
@@ -115,26 +115,26 @@ The site ships hand-written HTML/CSS/JS (BUILD_NOTES §5). ibelick
 primitives are React + motion/react; "adapt" = port their variant configs
 and spring values, not the components.
 
-1. **`InView` (in-view.tsx)** — chapter opener reveal on scroll-entry.
+1. **`InView` (in-view.tsx)** : chapter opener reveal on scroll-entry.
    Config: `{ hidden: { opacity: 0, y: 12 }, visible: { opacity: 1, y: 0 } }`,
    400ms ease-out, `once: true`, via IntersectionObserver. Used ONLY on
    chapter openers and chapter-end dividers. Ledger rows use #2 below.
    Deep-link arrival skips the reveal (element already visible).
-2. **`AnimatedGroup`, `slide` preset (animated-group.tsx)** — staggered
+2. **`AnimatedGroup`, `slide` preset (animated-group.tsx)** : staggered
    experiment ledger rows in chapters 02/03. Config: item
    `{ opacity 0→1, y 8px }`, `staggerChildren: 60ms` (tighter than the
    100ms default; a 6-row list must not drag), container triggers once via
    IntersectionObserver. Rows after the 6th join with no stagger.
-3. **`Dialog` (dialog.tsx)** — TOC drawer physics. Ported variants:
+3. **`Dialog` (dialog.tsx)** : TOC drawer physics. Ported variants:
    drawer initial `{ opacity 0, y 24px }` → open, 280ms
    `cubic-bezier(0.22, 1, 0.36, 1)`; backdrop fades 200ms; exit reverses.
    Focus trap + scroll lock mirror the original's behavior.
-4. **`Magnetic` (magnetic.tsx)** — tactile hover on TOC entries and
+4. **`Magnetic` (magnetic.tsx)** : tactile hover on TOC entries and
    experiment rows, desktop fine-pointer only (`@media (hover: hover)`).
    Ported: intensity 0.3 (half the default, subtler for text rows), range
    60px, spring `{ stiffness: 26.7, damping: 4.1, mass: 0.2 }` via rAF.
    Mobile: skipped entirely (touch targets stay put).
-5. **`AnimatedBackground` (animated-background.tsx)** — tactile press on
+5. **`AnimatedBackground` (animated-background.tsx)** : tactile press on
    experiment rows and TOC entries: a single absolutely-positioned
    "ink-wash" fill slides between hovered/pressed rows (the shared-layout
    `layoutId` idea, ported to one moving div), 180ms. This is the
