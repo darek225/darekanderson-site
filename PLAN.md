@@ -122,3 +122,8 @@ No em dashes. Copy doc verbatim except styled [ASK DAREK]/[PHOTO] placeholders. 
 5. [ ] REPORT: live URL, repo assets used (named), audit results, remaining open items
 
 ## Log
+- 2026-10-15: v3 DESIGN verified (DESIGN_V3.md: 8-chapter IA, TOC drawer/rail, 5 named motion primitives, logbook tokens, anti-default review). WebGL texture repos honestly skipped (JS-off + 60fps budget); grain via static SVG.
+- 2026-10-15: v3 BUILD verified independently (0 em dashes, 0 estate-sale, 7/7 projects + stamps, TOC anchors resolve, correct LinkedIn URN, responsive rules sane). Builder deviations noted: EXP-01..07 mapping (copy doc had no labels), Backseat stamp "LIVE, OPEN SOURCE", WildClash dual stamps, hero CTA trio.
+- 2026-10-15: v3 AUDIT 17/20, critique 26/32. Fixes: red-deep AA token, ink-wash transform-only, rail aria-labels, drawer-close JS guard, skip-link hover, 40rem column, ::selection theming, resume.html cleanup.
+- 2026-10-15: MERGED v3/chapters-toc to main (28b73ba), pushed to origin. DEPLOYED via Vercel CLI (zenjong): https://darekanderson-site.vercel.app verified 200, 8 chapters live, correct LinkedIn URN, CONTENTS button + rail present.
+- DONE. v3 live.
