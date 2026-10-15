@@ -1,0 +1,19 @@
+{
+  "heartbeat": "2026-10-15T05:10:00Z",
+  "last_commit_sha": "1bfa223",
+  "phase": "build",
+  "started_at": "2026-10-15T04:35:00Z",
+  "status": "building",
+  "workers": {
+    "design-brief": {
+      "branch": "design/plan",
+      "status": "merged",
+      "worktree": "~/workspace/darekanderson-site-wt/design"
+    },
+    "builder": {
+      "branch": "build/site",
+      "status": "dispatched",
+      "worktree": "~/workspace/darekanderson-site-wt/build"
+    }
+  }
+}

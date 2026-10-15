@@ -38,10 +38,12 @@ Logbook: paper #F6F1E7, ink #1C1A16, signal red #C23B22. MUST avoid the #1 AI-de
 ## Workers
 | Worker | Branch | Status |
 |---|---|---|
-| design-brief | design/plan | dispatched |
-| builder | build/site | pending (after design merge) |
+| design-brief | design/plan | merged to main |
+| builder | build/site | dispatched |
 | auditor | audit/pass1 | pending (after build merge) |
 
 ## Log
 - 2026-10-15 00:35: coordinator started. Preconditions: gh=darek225 ok, repo created, Vercel MCP connected, npm vercel CLI installing in bg (may not be needed; create_git_project is the path).
 - REA browser capture confirmed broken on this VM (no proxy option in launch schema); LinkedIn UI comes from official embed iframes, not REA rebuild.
+- 2026-10-15 04:45: design-brief worker dispatched (worktree darekanderson-site-wt/design, branch design/plan).
+- 2026-10-15 05:05: design plan verified (0 em dashes, no lorem, 9 documented revisions) and merged to main. Builder worker dispatched next.
