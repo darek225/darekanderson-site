@@ -85,3 +85,40 @@ No em dashes. Copy doc verbatim except styled [ASK DAREK]/[PHOTO] placeholders. 
 
 ## Log
 - 2026-10-15: v2 coordinator started. Worktree ~/workspace/darekanderson-site-v2 on branch v2/hub-rooms off origin/main.
+
+---
+
+# V3 — Chapters + Table of Contents rebuild (2026-10-15)
+
+**Why:** Darek rejected v2's hub-and-rooms as "dumb... six fucking vague boxes to click" and told us to study real builder/founder sites. V3 = single-page logbook with CHAPTERS and a real TABLE OF CONTENTS, modeled on thesephist.com (thinking statement up top, index into output), levels.io (everything-shipped index, honest statuses), simonwillison.net (dated tagged notes), nathanbarry.com (identity-stacking hero, one CTA per visitor type).
+
+**Branch:** v3/chapters-toc (worktree ~/workspace/darekanderson-site-v3). Lock: ~/workspace/darekanderson-site-v3.lock.json.
+
+## V3 architecture (approved by Darek)
+1. Hero — compact: identity stack (builder, landscaper, engineering student) + thinking statement + photo placeholder frame + three CTAs (What I'm raising for / Work with me / Follow the notes).
+2. Table of Contents — real contents listing, openable from anywhere: fixed "Contents" button opens full chapter index drawer (mobile) / slim chapter rail (desktop); smooth anchor travel.
+3. The Hypothesis — his AI thesis.
+4. Builds — everything-shipped index: all 7 projects, honest status stamps (only Andola = OPERATING BUSINESS), physical + software together, one-line plain summaries (joshwcomeau style).
+5. Philosophy — thinking pieces: Universal Schematic ("in progress"), 1-2 short essays from thesis material.
+6. Field Notes — dated, tagged notes (3 seeds) + LinkedIn auto-feed subsection (official embed iframes).
+7. The Researcher — about + resume (keep resume.html with print CSS as its own page).
+8. Contact — three doors, one CTA each: funders ("What I'm raising for" frame + visible open-question markers), employers/partners, audience.
+Each chapter gets a real chapter opener (ENTRY Nº, title, ruled divider) so sections feel distinct. The TOC is the primary navigation.
+
+## Absolute rules (unchanged)
+No em dashes. Copy doc verbatim except styled [ASK DAREK]/[PHOTO] placeholders. Honest statuses. No estate sale mentions. Mobile-first. prefers-reduced-motion degrades to instant. No scroll-jacking, preloaders, parallax on body text, pinned sections, autoplay video. No emojis as UI icons. No invented numbers/claims/dates.
+
+## Motion mandate (disciplined) — repo assets MUST be used and named in the report
+- ibelick-motion-primitives: chapter reveal transitions, TOC drawer physics, tactile interactions, staggered experiment-row entrances (adapt, don't npm-install).
+- DavidHDev-canvas-ui: canvas paper texture / divider treatments.
+- paper-design-shaders: subtle paper grain/light.
+- Motion answers user action (opening TOC, entering chapters, hover). One orchestrated moment per interaction. 60fps budget on mid Android.
+
+## Phases
+1. [ ] DESIGN: inventory repos, write DESIGN_V3.md (IA, chapter system, TOC behavior, motion language, adapted primitives list, tokens) → coordinator verifies → build
+2. [ ] BUILD: index.html + resume.html + assets on v3/chapters-toc → coordinator verifies independently
+3. [ ] AUDIT: impeccable audit + critique lenses, one fix batch
+4. [ ] DEPLOY: merge to main after verification, push (authored darek225), npx vercel --prod --scope zenjong, verify 200
+5. [ ] REPORT: live URL, repo assets used (named), audit results, remaining open items
+
+## Log
