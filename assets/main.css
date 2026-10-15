@@ -191,7 +191,10 @@ img { max-width: 100%; height: auto; display: block; }
 
 .back-to-index {
   display: inline-block;
-  margin-top: var(--space-4);
+  /* 48px tap target: padding grows the hit area, margin-top absorbs it back
+     so the visual gap above the link does not change. */
+  margin-top: calc(var(--space-4) - 14px);
+  padding: 14px 0;
   font-family: var(--font-mono);
   font-size: var(--text-label);
   text-transform: uppercase;
@@ -314,7 +317,15 @@ span.cta { cursor: default; } /* placeholder CTAs are not links */
 
 .index-list .index-num { color: var(--text-muted); flex: none; }
 .index-list .index-dots { flex: 1; border-bottom: 1px dotted var(--rule); }
-.index-list a { text-decoration: none; flex: none; }
+.index-list a {
+  text-decoration: none;
+  flex: none;
+  /* 48px tap target on the text links without moving the dotted rows:
+     padding grows the hit area, negative margin absorbs it back. */
+  display: inline-block;
+  padding: 12px 2px;
+  margin: -12px 0;
+}
 .index-list a:hover { text-decoration: underline; }
 
 /* ---------- photo frames ---------- */
@@ -631,13 +642,13 @@ span.cta { cursor: default; } /* placeholder CTAs are not links */
 @media print {
   @page { margin: 20mm 18mm; }
 
-  body { background: #fff; color: #1C1A16; font-size: 11pt; line-height: 1.5; }
+  body { background: #fff; color: var(--color-ink); font-size: 11pt; line-height: 1.5; } /* print-only white is deliberate, not a token */
   .page { max-width: none; padding: 0; background: #fff; }
   .page::before { display: none; }
-  .stamp { transform: none; color: #1C1A16; border-color: #1C1A16; background: #fff; }
-  .photo-frame, .clipping { transform: none; background: #fff; border: 1px solid #1C1A16; }
+  .stamp { transform: none; color: var(--color-ink); border-color: var(--color-ink); background: #fff; }
+  .photo-frame, .clipping { transform: none; background: #fff; border: 1px solid var(--color-ink); }
   .print-btn, .skip-link, .back-to-index, .cta-row { display: none; }
-  a { color: #1C1A16; text-decoration: none; }
+  a { color: var(--color-ink); text-decoration: none; }
   .contact-block a[href]::after,
   .receipts a[href]::after,
   .exp-links a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; }
