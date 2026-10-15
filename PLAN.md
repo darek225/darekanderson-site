@@ -53,3 +53,35 @@ Logbook: paper #F6F1E7, ink #1C1A16, signal red #C23B22. MUST avoid the #1 AI-de
 
 - 2026-10-15 06:15: FIXED LinkedIn embed URN. The share-URL activity id (…7201319940) 404s on LinkedIn's embed endpoint; the true post URN from the analytics link (…8090512384) returns 200 with the real post content. Fixed in index.html, assets/linkedin-posts.json, and the parent's linkedin-embed-demo.html. Pushed; auto-deploy verified serving the corrected URN.
 - DONE. Site live at https://darekanderson-site.vercel.app, public, auto-deploying on push to main.
+
+---
+
+# V2 — Hub and Rooms rebuild (2026-10-15)
+
+**Why:** Darek rejected v1 as "horrible... all you can do is scroll down" and for ignoring his repo resources ("no elements or animated cool shit"). V2 = base of operations, hub-and-rooms, motion from his repos.
+
+**Branch:** v2/hub-rooms (worktree ~/workspace/darekanderson-site-v2). Lock: ~/workspace/darekanderson-site-v2.lock.json.
+
+## V2 architecture
+- `/` hub: identity strip + live status + 6 zone doors (Workshop / Lab / Study / Transmissions / Researcher / Make Contact).
+- Rooms: /workshop, /lab, /study, /transmissions, /researcher, /contact. Persistent zone switcher nav, signature room transition.
+- resume.html kept (print CSS). linkedin-posts.json + embed iframes kept. sync-linkedin.py + oauth doc kept. RSS/sitemap/robots/JSON-LD kept.
+
+## Absolute rules (unchanged from v1)
+No em dashes. Copy doc verbatim except styled [ASK DAREK]/[PHOTO] placeholders. Honest statuses (only Andola = operating business). No estate sale mentions. Mobile-first. prefers-reduced-motion degrades everything to instant. No scroll-jacking, preloaders, parallax on body text, pinned sections, autoplay video. No emojis as UI icons. No invented numbers/claims.
+
+## Motion mandate (disciplined)
+- Use ibelick-motion-primitives (adapt, don't npm-install), DavidHDev-canvas-ui (textures/dividers), paper-design-shaders (paper grain/light). Name every adapted primitive in the report.
+- One signature room transition, consistent everywhere. Tactile zone doors. Gently pulsing status indicator. Near-still living paper background.
+- frontend-design motion guidance applies: motion answers user action; no scattered fade-and-slide-up spam.
+- 60fps budget on mid Android, no layout thrash.
+
+## Phases
+1. [ ] DESIGN: inventory repos, write DESIGN_V2.md (IA, motion language, adapted primitives list, token/layout plan) → coordinator verifies → build
+2. [ ] BUILD: all pages + assets on v2/hub-rooms → coordinator verifies independently
+3. [ ] AUDIT: impeccable audit + critique lenses, one fix batch
+4. [ ] DEPLOY: merge to main (after verification), push (authored darek225 <darek225@users.noreply.github.com>), npx vercel --prod --scope zenjong, verify 200 + /lab + /transmissions
+5. [ ] REPORT: live URL, repo elements actually used (named), audit results, remaining open items
+
+## Log
+- 2026-10-15: v2 coordinator started. Worktree ~/workspace/darekanderson-site-v2 on branch v2/hub-rooms off origin/main.
