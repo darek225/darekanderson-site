@@ -1,7 +1,7 @@
 {
-  "heartbeat": "2026-10-15T05:10:00Z",
+  "heartbeat": "2026-10-15T05:25:00Z",
   "last_commit_sha": "1bfa223",
-  "phase": "build",
+  "phase": "audit",
   "started_at": "2026-10-15T04:35:00Z",
   "status": "building",
   "workers": {
@@ -12,8 +12,13 @@
     },
     "builder": {
       "branch": "build/site",
-      "status": "dispatched",
+      "status": "merged",
       "worktree": "~/workspace/darekanderson-site-wt/build"
+    },
+    "auditor": {
+      "branch": "audit/pass1",
+      "status": "dispatched",
+      "worktree": "~/workspace/darekanderson-site-wt/audit"
     }
   }
 }
