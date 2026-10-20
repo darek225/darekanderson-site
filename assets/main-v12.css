@@ -84,6 +84,7 @@ body {
 }
 
 img, iframe { max-width: 100%; }
+img { height: auto; }
 
 a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
@@ -248,7 +249,7 @@ a:hover { color: var(--accent); }
   background: var(--surface);
   padding: 12px;
 }
-.plate img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
+.plate img { display: block; width: 100%; height: auto; max-height: 600px; object-fit: cover; border: 1px solid var(--line); }
 .plate-caption {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -428,7 +429,14 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
   border: 1px solid var(--line);
+}
+.specimen-card--wide .specimen-art img {
+  aspect-ratio: auto;
+  max-height: 540px;
+  object-fit: cover;
 }
 .specimen-name {
   font-family: var(--font-display);
@@ -538,6 +546,7 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
   margin: 0 0 8px;
 }
 .shelf-photo { max-width: 100%; }
+.shelf-photo img { display: block; width: 100%; height: auto; max-height: 480px; object-fit: cover; }
 .shelf-link {
   font-family: var(--font-mono);
   font-size: 12px;
