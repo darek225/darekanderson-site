@@ -203,3 +203,8 @@ Only paper-texture fit the Logbook at mandated low intensity; at that intensity 
 - 2026-10-20: build complete (11 pages + assets).
 - 2026-10-20: audit complete (reconciliation, JS merge, Study restore, audits, gates).
 - Coordinator independent gates: em dashes 0, estate-sale 0, OPERATING BUSINESS 3x all-Andola, URNs 2x each in notes.xml targets, main-v8.css on 11/11, sitemap = 11 routes, notes.xml parses, 13 Andola photos, 6 screenshot slots, 0 broken internal links.
+
+## V5 impeccable detector flags (2026-10-20, engine v0.1.14, `skill/scripts/impeccable detect --json` on all 11 pages)
+- REAL, FIXED: `low-contrast :hover 1.3:1` — text #a6321f on #c23b22. Root cause: `.door a:hover` (0,2,1) outranked `.cta-btn:hover` (0,2,0), so the 5 door CTA buttons rendered red-deep text on the signal-red button face. Fix: scope the rule to `a:not(.cta-btn)` (main-v9.css). Verified 0 findings post-fix.
+- Logbook brief wins (recorded, not fixed): `wide-tracking` on mono uppercase labels (nav brand, nav links, entry-no, stamps, captions, tags — the detector's own short-uppercase-label exception); `hero-eyebrow-chip` on ENTRY Nº markers (pinned vernacular; FIELD NOTES / THE RESEARCHER markers intentionally category-name the chapter); `all-caps-body` (`.job-dates` date labels); `tiny-text` (11px mono labels only, never body); `repeating-stripes-gradient` advisory (ruled paper lines, pinned by the brief).
+- Next runs: slices 3 (web-design-guidelines 17/20, flags need same detector pass against that lens), 4 (mobile polish), 5 (performance: 6 screenshot JPEGs ~489KB total, audit weights), 6 (accessibility), 7 (status strip upkeep), 9 (microcopy), 10 (ASK DAREK placeholders — numbers only from Darek).

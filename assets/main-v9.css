@@ -87,9 +87,12 @@ img, iframe { max-width: 100%; }
 
 a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: var(--accent); }
-/* links on paper-deep surfaces: hover red must be red-deep (4.36 fail) */
-.door a:hover, .colophon a:hover, .clipping a:hover,
-.placeholder-frame a:hover { color: var(--red-deep); }
+/* links on paper-deep surfaces: hover red must be red-deep (4.36 fail).
+   Buttons keep their own hover: .door a:hover outranks .cta-btn:hover,
+   so scope this to non-button links, or door CTAs render dark-red text
+   on the signal-red button face (1.3:1). */
+.door a:not(.cta-btn):hover, .colophon a:not(.cta-btn):hover,
+.clipping a:not(.cta-btn):hover, .placeholder-frame a:not(.cta-btn):hover { color: var(--red-deep); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
