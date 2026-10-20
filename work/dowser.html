@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F1E7">
+<title>Dowser: Darek Anderson</title>
+<meta name="description" content="Dowser: an AI outbound engine that finds prospects and turns cold outreach into booked meetings. The case file: built, what broke, how it is judged, results.">
+<link rel="stylesheet" href="../assets/main-v8.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson.com/work/dowser.html">
+<meta property="og:title" content="Dowser: the case file">
+<meta property="og:description" content="An AI outbound engine that finds prospects and turns cold outreach into booked meetings. Built to get beta testers for Bookvera.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dowser: the case file">
+<meta name="twitter:description" content="An AI outbound engine that finds prospects and turns cold outreach into booked meetings.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dowser: the case file",
+  "url": "https://darekanderson.com/work/dowser.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson.com/"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="../index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="../index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="../notes.html">Notes</a>
+      <a class="nav-link" href="../story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <article class="project">
+    <header class="project-head">
+      <div class="opener">
+        <p class="entry-no">EXP-04</p>
+        <h1 class="chapter-title">Dowser</h1>
+        <p class="chapter-gloss">An AI outbound engine that finds prospects and turns cold outreach into booked meetings. I built it to get beta testers for Bookvera.</p>
+        <div class="double-rule" aria-hidden="true"></div>
+      </div>
+      <p class="project-stamp"><span class="stamp stamp-large">IN DEVELOPMENT</span></p>
+      <p class="project-link"><a href="https://dowser-peach.vercel.app">dowser-peach.vercel.app</a></p>
+    </header>
+
+    <!-- real screenshot slot: assets/screenshots/dowser.jpg, swap plate for <img> when available -->
+    <div class="name-plate name-plate--large">
+      <p class="plate-name">Dowser</p>
+      <p class="plate-line">Cold outreach, booked meetings</p>
+      <p class="plate-stamp"><span class="stamp">IN DEVELOPMENT</span></p>
+    </div>
+    <p class="photo-caption">PLATE 01, NAME PLATE, SCREENSHOT PENDING</p>
+
+    <div class="case-tabs" data-tabs>
+      <section class="tab-panel" id="panel-built">
+        <h2 class="case-label">BUILT</h2>
+        <p>A reusable prospecting engine: it finds prospects, scores them, and runs outreach. The decision layer is a batched model call that returns a verdict, a fit score, and reply intent for each prospect.</p>
+      </section>
+      <section class="tab-panel" id="panel-broke">
+        <h2 class="case-label">WHAT BROKE</h2>
+        <p>I did not trust the model with the send button. The decision layer runs in shadow mode: its scores are calibration-only, and a deterministic 0-to-10 scoring gate stays authoritative. Any model failure falls through to the existing path unchanged, so a bad model day cannot break outreach.</p>
+      </section>
+      <section class="tab-panel" id="panel-judge">
+        <h2 class="case-label">HOW I JUDGE IT</h2>
+        <p>The test suite is the judge: 158 of 158 tests green, typecheck clean. Routing is by confidence: high confidence acts, mid confidence falls through to the existing path, low confidence goes to a human.</p>
+      </section>
+      <section class="tab-panel" id="panel-results">
+        <h2 class="case-label">RESULTS</h2>
+        <p>Engine built and green; built to recruit Bookvera beta testers first, reusable for any business after that.</p>
+        <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+          <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+          <p class="placeholder-text">First campaign results: outreach volume, reply rate, meetings booked.</p>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="../notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <span class="placeholder-inline">handle TBD by Darek</span></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in system type on warm paper (#F6F1E7), ink (#1C1A16), and signal red (#C23B22). No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+<script src="../assets/enhance.js" defer></script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#F6F1E7">
 <title>Darek Anderson: the logbook. AI leverage, tested by building.</title>
 <meta name="description" content="Darek Anderson, 20, runs a real landscaping business and ships real software with AI as the builder. This site is the logbook: every experiment, labeled honestly.">
-<link rel="stylesheet" href="assets/main-v7.css">
+<link rel="stylesheet" href="assets/main-v8.css">
 <link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darek Anderson">
@@ -40,393 +40,199 @@
 
 <div class="page">
 
+  <header class="site-nav">
+    <a class="nav-brand" href="index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="notes.html">Notes</a>
+      <a class="nav-link" href="story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
   <!-- PROLOGUE -->
   <header class="prologue" id="prologue">
     <p class="identity-name">Darek Anderson</p>
     <h1 class="thesis">I turn ideas into things that exist.</h1>
     <p class="prologue-sub">I&rsquo;m a 20-year-old builder running a real landscaping business and shipping real software, with AI as the leverage. This site is the logbook: every experiment, labeled honestly.</p>
     <figure class="photo-frame photo-frame-hero">
-      <img src="assets/photos/hero-darek.jpg" alt="Darek Anderson standing in front of red rock desert formations" loading="eager">
+      <img src="assets/photos/hero-darek.jpg" alt="Darek Anderson standing in front of red rock desert formations" width="1536" height="2048" loading="eager" fetchpriority="high">
+      <figcaption class="photo-caption">FIG. 01, DAREK ANDERSON</figcaption>
     </figure>
     <nav class="cta-row" aria-label="Start here">
-      <a class="cta-btn" href="#ch-07-doors">Combine resources</a>
+      <a class="cta-btn" href="#doors">Combine resources</a>
       <a class="cta-btn" href="mailto:darek.m.anderson@gmail.com">Work with me</a>
-      <a class="cta-btn" href="#ch-05-notes">Follow the notes</a>
+      <a class="cta-btn" href="notes.html">Follow the notes</a>
     </nav>
   </header>
 
-  <!-- 01 THE HYPOTHESIS -->
-  <section class="chapter ch-hypothesis" id="ch-01-hypothesis" aria-labelledby="ch-01-title">
+  <main>
+
+  <!-- 01 START HERE -->
+  <section class="chapter ch-start" id="start-here" aria-labelledby="start-title">
     <div class="opener">
       <p class="entry-no">N&ordm; 01</p>
-      <h2 class="chapter-title" id="ch-01-title">The Hypothesis</h2>
-      <p class="chapter-gloss">The true utility of AI, found by building.</p>
+      <h2 class="chapter-title" id="start-title">Start here</h2>
+      <p class="chapter-gloss">Three proofs you can check, not three promises.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
-    <aside class="margin-pull" aria-label="The ratchet line">
-      <p>Advancement will not stop once an idea is brought into the world. Ideas don&rsquo;t un-happen. They wait for their moment.</p>
-    </aside>
-    <div class="chapter-body">
-      <p>Everyone is asking what AI will do to the world. I&rsquo;m asking a narrower question: what is it actually good for? Not the hype, not the demos. The true utility of it, found the only way that counts: by building real things with it and watching what happens.</p>
-      <p>Here&rsquo;s what the work keeps telling me. AI lets a human be the dreamer instead of getting stuck being the builder. When building stops being the bottleneck, the real question becomes how much one person can do. I think the answer is: far more than we assume.</p>
-      <p>That changes who wins. When anyone can build, the scarce skill isn&rsquo;t building anymore. It&rsquo;s seeing the whole web at large scale, knowing where to point the builder, and moving fast on the ideas worth building. Because advancement never truly regresses once an idea is brought into the world. Ideas don&rsquo;t un-happen. They wait for their moment.</p>
-      <p>So I move fast, I build in the open, and I write down what I learn. That&rsquo;s what this site is.</p>
+    <div class="start-shelf" data-stagger>
+      <article class="shelf-entry shelf-entry--lead">
+        <p class="exp-index">EXP-01</p>
+        <h3 class="shelf-name"><a href="work/andola.html">Andola Landscape Services</a> <span class="stamp">OPERATING BUSINESS</span></h3>
+        <p class="shelf-proof">$43.6K revenue and $20.6K net in the first eight months on the books, a 47% net margin. If a number is not in QuickBooks, I do not put it on this page.</p>
+        <figure class="photo-frame shelf-photo">
+          <img src="assets/photos/jobs/novant-wesley-chapel-9.jpg" alt="Long turf strip with planted beds along the building" width="929" height="2048" loading="lazy">
+          <figcaption class="photo-caption">TURF AND BEDS, NOVANT HEALTH, WESLEY CHAPEL, SEP 2026</figcaption>
+        </figure>
+        <p class="shelf-link"><a href="work/andola.html">Read the Andola case file</a></p>
+      </article>
+      <article class="shelf-entry shelf-entry--offset-1">
+        <p class="exp-index">EXP-02</p>
+        <h3 class="shelf-name"><a href="work/backseat.html">Backseat</a> <span class="stamp">LIVE, OPEN SOURCE</span></h3>
+        <p class="shelf-proof">A timeout used to be treated as a verdict and work was genuinely lost. Since v0.9.14 a timeout is a state, not a verdict: the worktree auto-checkpoints and late results revise the record.</p>
+        <p class="shelf-meta">V0.9.14 SHIPPED</p>
+        <p class="shelf-link"><a href="work/backseat.html">Read the Backseat case file</a></p>
+      </article>
+      <article class="shelf-entry shelf-entry--offset-2">
+        <p class="exp-index">EXP-07</p>
+        <h3 class="shelf-name"><a href="work/wildclash.html">WildClash Arena</a> <span class="stamp">LIVE PIPELINE</span></h3>
+        <p class="shelf-proof">An automated YouTube Shorts factory that publishes two videos a day, produced end to end without me touching it.</p>
+        <p class="shelf-meta">PUBLISHES 09:00 AND 17:00 ET, DAILY</p>
+        <p class="shelf-link"><a href="work/wildclash.html">Read the WildClash case file</a></p>
+      </article>
     </div>
   </section>
 
-  <!-- 02 THE WORKSHOP -->
-  <section class="chapter ch-workshop" id="ch-02-workshop" aria-labelledby="ch-02-title">
+  <!-- 02 ON THE MACHINES -->
+  <section class="chapter ch-machines" id="machines" aria-labelledby="machines-title">
     <div class="opener">
       <p class="entry-no">N&ordm; 02</p>
-      <h2 class="chapter-title" id="ch-02-title">The Workshop</h2>
-      <p class="chapter-gloss">Businesses I run. Realm names provisional.</p>
+      <h2 class="chapter-title" id="machines-title">On the machines</h2>
+      <p class="chapter-gloss">What the systems are doing, stated plainly.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
-    <div class="chapter-body">
-      <p class="center-stamp"><span class="stamp stamp-large">OPERATING BUSINESS</span></p>
-      <div class="ledger">
-        <a class="ledger-row magnetic" href="https://andolalandscaping.com">
-          <span class="exp-index">EXP-01</span>
-          <span class="row-main">
-            <span class="row-name">Andola Landscape Services</span>
-            <span class="stamp">OPERATING BUSINESS</span>
-          </span>
-          <span class="row-proof">A commercial and residential landscaping company in the Charlotte area. I do the hard physical work myself, and I built the entire back office behind it. There is a year&rsquo;s worth of projects and jobs behind it; two examples are below.</span>
-          <span class="row-url">andolalandscaping.com</span>
-        </a>
-      </div>
-      <div class="case-file">
-        <p class="case-label">BUILT</p>
-        <p>Two halves. In the field: a year&rsquo;s worth of projects and jobs, including patios, drainage systems, grading, full installs, and commercial grounds maintenance, all done by me. Behind it, a back office I built myself: the company website (custom botanical brand, hand-drawn illustration throughout, and a quote builder that composes a complete quote-request email with an intake checklist, no backend), QuickBooks for the books, the Google Business profile, Google Voice for the business line, a custom domain with real company email, and my own invoice and quote forms. AI tools help automate and run the business better. Making invoice templates was one of my first real uses of AI for Andola.</p>
-        <p class="case-label">WHAT BROKE</p>
-        <p>My own books, at first: duplicate income entries, phantom transactions, categories that meant nothing. I kept finding problems months after they cost me clarity. That mess is the reason Bookvera exists. In the field, the hard jobs teach the same lesson: a steep-grade patio meant relocating a sprinkler and a termite box and rebuilding the grade before a single paver went down. The full job is written up in the photos below.</p>
-        <p class="case-label">HOW I JUDGE IT</p>
-        <p>On the books. QuickBooks is the scoreboard: revenue, net, margin, best month, and whether the commercial accounts keep recurring. If a number is not in QuickBooks, I do not put it on this page.</p>
-        <p class="case-label">THE NUMBERS</p>
-        <p>First eight months on the books, Feb to Oct 2026: $43.6K revenue, $20.6K of it net, a 47% net margin, best month $10.4K (May 2026). Commercial work runs about $6K a month in the first year. I have maintained the Novant Health property in Wesley Chapel since the summer of 2025, subcontracted under North American Lawn and Landscape. The business started in Nov 2025; the business bank account opened Jan 2026.</p>
-      </div>
-      <div class="job-card">
-        <p class="job-head"><span class="row-name">Recent work: patio extension</span> <span class="stamp">OCT 2026</span></p>
-        <p class="job-proof">Steep grade, so I relocated a sprinkler and a termite box, built a flat foundation (lowered part of it, raised part seven inches), ringed the footprint with a retaining wall, filled it with crusher run and sand, set the pavers, and moved eleven cubic feet of dirt into the yard to grade and seed it. Proper drainage throughout.</p>
-        <div class="job-photos">
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/patio-extension-before-1.jpg" alt="Patio extension before: bare dirt patch beside the patio wall" loading="lazy">
-            <figcaption class="photo-caption">Before</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/patio-extension-before-2.jpg" alt="Patio extension before: dirt slope by the patio steps" loading="lazy">
-            <figcaption class="photo-caption">Before</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/patio-extension-after-1.jpg" alt="Patio extension after: new paver surface" loading="lazy">
-            <figcaption class="photo-caption">After</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/patio-extension-after-2.jpg" alt="Patio extension after: finished paver patio tied into the existing wall and steps" loading="lazy">
-            <figcaption class="photo-caption">After</figcaption>
-          </figure>
-        </div>
-      </div>
-      <div class="job-card">
-        <p class="job-head"><span class="row-name">Recent work: commercial grounds, Wesley Chapel</span> <span class="stamp">SINCE SUMMER 2025</span></p>
-        <p class="job-proof">Commercial grounds maintenance at a Novant Health property in Wesley Chapel, subcontracted under North American Lawn and Landscape. I have cared for this property since the summer of 2025: turf, planting beds, ornamentals, parking islands. Photos from September 2026.</p>
-        <div class="job-photos">
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-9.jpg" alt="Long turf strip with planted beds along the building" loading="lazy">
-            <figcaption class="photo-caption">Turf and beds</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-2.jpg" alt="Striped lawn beside reserved parking" loading="lazy">
-            <figcaption class="photo-caption">Lawn stripe</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-3.jpg" alt="Manicured lawn and planting beds along the brick building" loading="lazy">
-            <figcaption class="photo-caption">Building frontage</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-1.jpg" alt="Parking island with young tree at the property entrance" loading="lazy">
-            <figcaption class="photo-caption">Property entrance</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-8.jpg" alt="Foundation planting with hydrangeas and arborvitae" loading="lazy">
-            <figcaption class="photo-caption">Foundation planting</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-5.jpg" alt="Parking lot island with turf and young tree" loading="lazy">
-            <figcaption class="photo-caption">Parking island</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-4.jpg" alt="Ornamental grasses and shrubs in the building beds" loading="lazy">
-            <figcaption class="photo-caption">Ornamental beds</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-7.jpg" alt="Arborvitae and shrubs along the walkway" loading="lazy">
-            <figcaption class="photo-caption">Walkway beds</figcaption>
-          </figure>
-          <figure class="photo-frame">
-            <img src="assets/photos/jobs/novant-wesley-chapel-6.jpg" alt="Planting beds against the herringbone brick wall" loading="lazy">
-            <figcaption class="photo-caption">Brick wall beds</figcaption>
-          </figure>
-        </div>
-      </div>
+    <!-- STATUS STRIP: static strings, maintained by hand. Update a row when its fact changes. The WildClash row states the publish schedule. The Deal Snipers value in brackets is where the latest verified deal goes. The Andola row names the latest finished job. The Field Notes row takes the newest note date from notes.html. -->
+    <div class="status-strip">
+      <p class="status-row">
+        <span class="status-name">WILDCLASH ARENA</span>
+        <span class="status-value">Publishes two Shorts daily, at 09:00 and 17:00 ET</span>
+      </p>
+      <p class="status-row">
+        <span class="status-name">DEAL SNIPERS</span>
+        <span class="status-value">Latest verified deal: [latest deal posted on Telegram]</span>
+      </p>
+      <p class="status-row">
+        <span class="status-name">ANDOLA</span>
+        <span class="status-value">Latest job: patio extension, Oct 2026</span>
+      </p>
+      <p class="status-row">
+        <span class="status-name">FIELD NOTES</span>
+        <span class="status-value">Newest note: Oct 2026</span>
+      </p>
     </div>
   </section>
 
-  <!-- 03 THE LAB -->
-  <section class="chapter ch-lab" id="ch-03-lab" aria-labelledby="ch-03-title">
+  <!-- 03 THE WORK -->
+  <section class="chapter ch-work" id="work" aria-labelledby="work-title">
     <div class="opener">
       <p class="entry-no">N&ordm; 03</p>
-      <h2 class="chapter-title" id="ch-03-title">The Lab</h2>
-      <p class="chapter-gloss">Systems I build. Realm names provisional.</p>
+      <h2 class="chapter-title" id="work-title">The Work</h2>
+      <p class="chapter-gloss">Seven entries. One operating business, six systems, every status honest.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
-    <div class="chapter-body">
-      <p class="ledger-intro">Everything below is real work. Statuses are honest: one operating business, the rest in various stages of built and building.</p>
-      <div class="ledger" data-stagger>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-02</span>
-          <span class="row-main">
-            <span class="row-name">Backseat</span>
-            <span class="stamp">LIVE, OPEN SOURCE</span>
-          </span>
-          <span class="row-proof">A bridge that lets an AI architect on my phone drive Cline in VS Code on my PC, through GitHub.</span>
-          <a class="row-url" href="https://github.com/darek225/backseat">github.com/darek225/backseat</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>An open protocol (git plus JSON task files) and a VS Code extension. I queue tasks from my phone; the extension polls a private GitHub repo, runs the task in Cline, and pushes the results back. It is agent-agnostic: any agentic AI that can use shell and git can sit in the architect seat, not just Muse. Shipped through v0.9.14.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>Three real failures shaped it. An overnight task produced zero output because VS Code stopped polling while I slept. Before v0.9.14, a timeout was treated as a verdict and work was genuinely lost. And the watcher daemon that reports bridge status died silently four times in one day because the VM reaps background processes.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>A completion is only real when the bridge records prove it: the done record, the status record, and a bounded transcript tail on every completion. If the extension knows it, the bridge records it. Timeouts are now a state, not a verdict: late results revise the record for up to two hours, and the worktree auto-checkpoints on timeout and every 15 minutes.</p>
-            <p class="case-label">RESULTS</p>
-            <p>v0.9.14 shipped with the timeout fix and checkpointing. The watcher now runs as a supervised systemd service that restarts itself. Distribution is honest so far: pull requests open on three awesome-lists, the repo had zero stars when they went in, and the VS Code Marketplace listing is shelved at my direction.</p>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-03</span>
-          <span class="row-main">
-            <span class="row-name">Bookvera</span>
-            <span class="stamp">IN DEVELOPMENT</span>
-          </span>
-          <span class="row-proof">An AI bookkeeping plugin for QuickBooks Online that keeps small-business books clean in the background.</span>
-          <a class="row-url" href="https://acuity-lovat.vercel.app">acuity-lovat.vercel.app</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>A plugin for QuickBooks Online (not Desktop) that categorizes transactions, catches duplicates and anomalies, and flags problems before they cost real money. Built with Cline and DeepSeek. The marketing site is live, and the product runs a continuous improvement loop: it is always being worked on until I say stop.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>The launch blockers are named, not hidden. The Intuit app review is not passed yet. Stripe is still in test mode. Receipt-image attachments to QuickBooks are blocked by a fault on Intuit&rsquo;s side. And the name itself: Bookvera is trademark-screened, not cleared.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>Tested against real messy books, starting with my own: duplicate income entries, phantom transactions, categories that meant nothing. The bar is whether it catches what a human bookkeeper would catch, before month-end, without being asked.</p>
-            <p class="case-label">RESULTS</p>
-            <p>Pre-launch by the checklist above, and I will not call it launched until the Intuit review passes. The marketing site is live and optimized to be cited by AI search, so the product is findable the day it clears review.</p>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-04</span>
-          <span class="row-main">
-            <span class="row-name">Dowser</span>
-            <span class="stamp">IN DEVELOPMENT</span>
-          </span>
-          <span class="row-proof">An AI outbound engine that finds prospects and turns cold outreach into booked meetings. I built it to get beta testers for Bookvera.</span>
-          <a class="row-url" href="https://dowser-peach.vercel.app">dowser-peach.vercel.app</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>A reusable prospecting engine: it finds prospects, scores them, and runs outreach. The decision layer is a batched model call that returns a verdict, a fit score, and reply intent for each prospect.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>I did not trust the model with the send button. The decision layer runs in shadow mode: its scores are calibration-only, and a deterministic 0-to-10 scoring gate stays authoritative. Any model failure falls through to the existing path unchanged, so a bad model day cannot break outreach.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>The test suite is the judge: 158 of 158 tests green, typecheck clean. Routing is by confidence: high confidence acts, mid confidence falls through to the existing path, low confidence goes to a human.</p>
-            <p class="case-label">RESULTS</p>
-            <p>Engine built and green; built to recruit Bookvera beta testers first, reusable for any business after that.</p>
-            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-              <p class="placeholder-text">First campaign results: outreach volume, reply rate, meetings booked.</p>
-            </div>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-05</span>
-          <span class="row-main">
-            <span class="row-name">Carolina Trade Sites</span>
-            <span class="stamp">IN DEVELOPMENT</span>
-          </span>
-          <span class="row-proof">Productized website design for Charlotte home-service companies, built by AI and audited by humans.</span>
-          <a class="row-url" href="https://carolina-trade-sites.vercel.app">carolina-trade-sites.vercel.app</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>A $2,000 website build with a $79-to-$99/mo care plan, or $299-to-$500 down plus $179-to-$199/mo for 12 months. The hub is live with a 10-block component library, working demo sites, and a real quote-request form. The stack costs about $1 a month to run. Before building, I researched and ranked 9 competing Charlotte web companies.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>Two infrastructure lessons. Vercel refuses to deploy commits authored by an AI identity, so every deploy needs commits authored under my name. And phones cache old CSS under the same URL, so a redesigned page can render broken on a customer&rsquo;s phone until the stylesheet file is renamed. Both are fixed and written down as rules.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>Every site is benchmarked against the best comparable work before building, never designed in a vacuum. A site passes when a customer can do the one thing the business needs (call, book, request a quote) from a phone with no friction, and when the price math on the page matches the price math in the contract.</p>
-            <p class="case-label">RESULTS</p>
-            <p>Hub live with live demos and a working request form.</p>
-            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-              <p class="placeholder-text">Client count: first paying client goes here.</p>
-            </div>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-06</span>
-          <span class="row-main">
-            <span class="row-name">Deal Snipers</span>
-            <span class="stamp">LIVE PIPELINE</span>
-          </span>
-          <span class="row-proof">A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically.</span>
-          <a class="row-url" href="https://dealsnipers.github.io/deal-snipers-links/">dealsnipers.github.io/deal-snipers-links</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>Agents scan retailers for deep discounts, verify each candidate against price history so only real deals pass, then post with hype copy, product images, and my affiliate tag to an X bot through the official API. The system also watches rival deal accounts as a signal source. Revenue is the Amazon 24-hour affiliate cookie on posted deals.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>The expensive lesson was scheduling. The pipeline first ran on agent crons, which burn model budget on every fire whether anything changed or not. Recurring deterministic work now runs on systemd timers at zero model cost, and that rule now applies to every pipeline I run.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>A deal posts only if the price-history check passes. A fake discount is worse than a missed deal, because the account&rsquo;s only asset is that followers trust the posts.</p>
-            <p class="case-label">RESULTS</p>
-            <p>Live and posting on schedule with no ongoing effort from me.</p>
-            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-              <p class="placeholder-text">Audience and revenue: follower count and affiliate revenue when there is something to report.</p>
-            </div>
-          </div>
-        </div>
-        <div class="ledger-row">
-          <span class="exp-index">EXP-07</span>
-          <span class="row-main">
-            <span class="row-name">WildClash Arena</span>
-            <span class="stamp">LIVE PIPELINE</span>
-            <span class="stamp">PROOF OF CONCEPT</span>
-          </span>
-          <span class="row-proof">An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</span>
-          <a class="row-url" href="https://www.youtube.com/@WildClashArenaHQ">youtube.com/@WildClashArenaHQ</a>
-          <div class="case-file">
-            <p class="case-label">BUILT</p>
-            <p>A pipeline that writes scripts, sources footage, cuts to the beat, adds captions and sound, and publishes two Shorts a day at 09:00 and 17:00. An episode bank and a factory service keep the queue ahead of the publish slots.</p>
-            <p class="case-label">WHAT BROKE</p>
-            <p>The VM underneath it kept getting replaced, which killed episodes mid-render and wiped the systemd timers. One night the episode bank hit 0 of 3 and a publish slot was lost. Recovery is now a canonical reinstall script for the timers, and the bank refills ahead of schedule instead of just in time.</p>
-            <p class="case-label">HOW I JUDGE IT</p>
-            <p>The factory heartbeat is the judge: every cycle writes a timestamped result, and a watchdog wakes me only when the heartbeat goes stale or the bank runs low. Comment checks run as a wake-only hook with a cheap model giving a logged second opinion; the deterministic gate stays in charge.</p>
-            <p class="case-label">RESULTS</p>
-            <p>Two videos a day, produced and published without me.</p>
-            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-              <p class="placeholder-text">Channel numbers: subscribers and views when there is something to report.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="chapter-end">
-      <div class="double-rule" aria-hidden="true"></div>
-      <p class="end-label"><span class="stamp">END OF ENTRY N&ordm; 03</span></p>
-      <p class="back-to-contents"><a href="#toc-sheet" data-open-toc>Back to contents</a></p>
+    <div class="specimen-grid">
+      <article class="specimen-card specimen-card--wide">
+        <a class="specimen-art" href="work/andola.html">
+          <img src="assets/photos/jobs/novant-wesley-chapel-9.jpg" alt="Long turf strip with planted beds along the building" width="929" height="2048" loading="lazy">
+        </a>
+        <p class="photo-caption">PLATE 01, TURF AND BEDS, NOVANT HEALTH, WESLEY CHAPEL</p>
+        <p class="exp-index">EXP-01</p>
+        <h3 class="specimen-name"><a href="work/andola.html">Andola Landscape Services</a></h3>
+        <p class="specimen-stamp"><span class="stamp">OPERATING BUSINESS</span></p>
+        <p class="specimen-line">A commercial and residential landscaping company in the Charlotte area.</p>
+        <p class="specimen-link"><a href="work/andola.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card">
+        <!-- real screenshot slot: assets/screenshots/backseat.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/backseat.html">
+          <span class="plate-name">Backseat</span>
+          <span class="plate-line">Phone to PC, through GitHub</span>
+        </a>
+        <p class="exp-index">EXP-02</p>
+        <h3 class="specimen-name"><a href="work/backseat.html">Backseat</a></h3>
+        <p class="specimen-stamp"><span class="stamp">LIVE, OPEN SOURCE</span></p>
+        <p class="specimen-line">A bridge that lets an AI architect on my phone drive Cline in VS Code on my PC, through GitHub.</p>
+        <p class="specimen-link"><a href="work/backseat.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card">
+        <!-- real screenshot slot: assets/screenshots/bookvera.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/bookvera.html">
+          <span class="plate-name">Bookvera</span>
+          <span class="plate-line">Books that stay clean</span>
+        </a>
+        <p class="exp-index">EXP-03</p>
+        <h3 class="specimen-name"><a href="work/bookvera.html">Bookvera</a></h3>
+        <p class="specimen-stamp"><span class="stamp">IN DEVELOPMENT</span></p>
+        <p class="specimen-line">An AI bookkeeping plugin for QuickBooks Online that keeps small-business books clean in the background.</p>
+        <p class="specimen-link"><a href="work/bookvera.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card">
+        <!-- real screenshot slot: assets/screenshots/dowser.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/dowser.html">
+          <span class="plate-name">Dowser</span>
+          <span class="plate-line">Cold outreach, booked meetings</span>
+        </a>
+        <p class="exp-index">EXP-04</p>
+        <h3 class="specimen-name"><a href="work/dowser.html">Dowser</a></h3>
+        <p class="specimen-stamp"><span class="stamp">IN DEVELOPMENT</span></p>
+        <p class="specimen-line">An AI outbound engine that finds prospects and turns cold outreach into booked meetings.</p>
+        <p class="specimen-link"><a href="work/dowser.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card">
+        <!-- real screenshot slot: assets/screenshots/carolina-trade-sites.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/carolina-trade-sites.html">
+          <span class="plate-name">Carolina Trade Sites</span>
+          <span class="plate-line">Websites for home-service companies</span>
+        </a>
+        <p class="exp-index">EXP-05</p>
+        <h3 class="specimen-name"><a href="work/carolina-trade-sites.html">Carolina Trade Sites</a></h3>
+        <p class="specimen-stamp"><span class="stamp">IN DEVELOPMENT</span></p>
+        <p class="specimen-line">Productized website design for Charlotte home-service companies, built by AI and audited by humans.</p>
+        <p class="specimen-link"><a href="work/carolina-trade-sites.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card">
+        <!-- real screenshot slot: assets/screenshots/deal-snipers.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/deal-snipers.html">
+          <span class="plate-name">Deal Snipers</span>
+          <span class="plate-line">Only real deals post</span>
+        </a>
+        <p class="exp-index">EXP-06</p>
+        <h3 class="specimen-name"><a href="work/deal-snipers.html">Deal Snipers</a></h3>
+        <p class="specimen-stamp"><span class="stamp">LIVE PIPELINE</span></p>
+        <p class="specimen-line">A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically.</p>
+        <p class="specimen-link"><a href="work/deal-snipers.html">Read the case file</a></p>
+      </article>
+      <article class="specimen-card specimen-card--wide">
+        <!-- real screenshot slot: assets/screenshots/wildclash.jpg, swap plate for <img> when available -->
+        <a class="specimen-art name-plate" href="work/wildclash.html">
+          <span class="plate-name">WildClash Arena</span>
+          <span class="plate-line">Two Shorts a day, untouched</span>
+        </a>
+        <p class="exp-index">EXP-07</p>
+        <h3 class="specimen-name"><a href="work/wildclash.html">WildClash Arena</a></h3>
+        <p class="specimen-stamp"><span class="stamp">LIVE PIPELINE</span> <span class="stamp">PROOF OF CONCEPT</span></p>
+        <p class="specimen-line">An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>
+        <p class="specimen-link"><a href="work/wildclash.html">Read the case file</a></p>
+      </article>
     </div>
   </section>
 
-  <!-- 04 THE STUDY -->
-  <section class="chapter ch-study" id="ch-04-study" aria-labelledby="ch-04-title">
+  <!-- 04 THREE DOORS -->
+  <section class="chapter ch-doors" id="doors" aria-labelledby="doors-title">
     <div class="opener">
       <p class="entry-no">N&ordm; 04</p>
-      <h2 class="chapter-title" id="ch-04-title">The Study</h2>
-      <p class="chapter-gloss">What I&rsquo;m thinking. Realm names provisional.</p>
-      <div class="double-rule" aria-hidden="true"></div>
-    </div>
-    <div class="chapter-body">
-      <div class="study-entry">
-        <p class="study-head"><span class="row-name">Universal Schematic</span> <span class="stamp">BOOK IN PROGRESS</span> <span class="stamp">IN PROGRESS</span></p>
-        <p>A book about my AI thesis and systems thinking. A draft exists; the language is being revised.</p>
-        <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-          <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-          <p class="placeholder-text">One or two sentences describing the book in his words, plus whether to link a sample, an excerpt, or nothing yet.</p>
-        </div>
-      </div>
-      <div class="study-entry">
-        <p class="study-head"><span class="row-name">Essays and discourse</span> <span class="stamp">ONGOING</span></p>
-        <p>Longer writing on the ideas in The Hypothesis: what AI is actually good for, found empirically. Published here as field notes grow into essays.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 FIELD NOTES -->
-  <section class="chapter ch-notes" id="ch-05-notes" aria-labelledby="ch-05-title">
-    <div class="opener">
-      <p class="entry-no">N&ordm; 05</p>
-      <h2 class="chapter-title" id="ch-05-title">Field Notes</h2>
-      <p class="chapter-gloss">Short notes from the work. Newest first.</p>
-      <div class="double-rule" aria-hidden="true"></div>
-    </div>
-    <div class="chapter-body">
-      <p class="seed-line">SEED NOTES: these three are real events from October 2026, written as starters. Darek replaces or keeps at will.</p>
-      <div class="notes-list">
-        <article class="note" id="note-daemon-die">
-          <span id="note-1" class="rss-anchor" aria-hidden="true"></span>
-          <p class="note-date">OCT 2026</p>
-          <h3 class="note-title">If the daemon can die silently, it will.</h3>
-          <p>My bridge watcher died four times in one day. No error, no alert, just gone: the VM reaps background daemons whenever it feels like it. I found out by noticing the data was stale. The fix was a systemd service with Restart=always, kill -9 tested, back up in fifteen seconds. Lesson I&rsquo;m keeping: a background process you can&rsquo;t see dying is a background process you don&rsquo;t have. Supervise everything or assume it&rsquo;s dead.</p>
-          <p class="note-tags"><span class="tag">#automation</span> <span class="tag">#systems</span></p>
-        </article>
-        <article class="note" id="note-vercel-commits">
-          <span id="note-2" class="rss-anchor" aria-hidden="true"></span>
-          <p class="note-date">OCT 2026</p>
-          <h3 class="note-title">Vercel doesn&rsquo;t trust my AI&rsquo;s commits.</h3>
-          <p>Vercel refused to deploy because the commit author was &ldquo;Muse,&rdquo; an unrecognized identity. Same code, same repo, blocked on authorship. The fix: an empty commit authored under my own name, redeployed clean. It&rsquo;s a small thing, but it&rsquo;s a preview of a real problem: as agents write more of the world&rsquo;s code, every system built around human identity has to decide what counts as a legitimate author.</p>
-          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#authorship</span></p>
-        </article>
-        <article class="note" id="note-messy-books">
-          <span id="note-3" class="rss-anchor" aria-hidden="true"></span>
-          <p class="note-date">OCT 2026</p>
-          <h3 class="note-title">Bookvera exists because my own books were a mess.</h3>
-          <p>The reason I&rsquo;m building an AI bookkeeper is that I lived inside messy books. Duplicate income entries, phantom transactions, categories that meant nothing. I kept finding problems months after they cost me clarity. Software that watches the books in the background isn&rsquo;t a nice-to-have for a small business. It&rsquo;s the difference between knowing your numbers and guessing.</p>
-          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#bookkeeping</span></p>
-        </article>
-      </div>
-      <p class="rss-line">The notes feed: <a href="notes.xml">RSS</a>.</p>
-      <div class="linkedin-clippings">
-        <h3 class="subhead">From LinkedIn, clipped</h3>
-        <figure class="clipping">
-          <figcaption class="clipping-caption">LINKEDIN &middot; OCT 15, 2026</figcaption>
-          <iframe class="linkedin-embed" title="Darek Anderson on LinkedIn" loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7516703431378583552"></iframe>
-          <p class="clipping-fallback">Embed not loading? <a href="https://www.linkedin.com/feed/update/urn:li:activity:7516703431378583552">Open on LinkedIn</a>.</p>
-        </figure>
-        <figure class="clipping">
-          <figcaption class="clipping-caption">LINKEDIN &middot; JUN 4, 2026</figcaption>
-          <iframe class="linkedin-embed" title="Darek Anderson on LinkedIn" loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7468377138090512384"></iframe>
-          <p class="clipping-fallback">Embed not loading? <a href="https://www.linkedin.com/feed/update/urn:li:activity:7468377138090512384">Open on LinkedIn</a>.</p>
-        </figure>
-      </div>
-    </div>
-    <div class="chapter-end">
-      <div class="double-rule" aria-hidden="true"></div>
-      <p class="end-label"><span class="stamp">END OF ENTRY N&ordm; 05</span></p>
-      <p class="back-to-contents"><a href="#toc-sheet" data-open-toc>Back to contents</a></p>
-    </div>
-  </section>
-
-  <!-- 06 THE RESEARCHER -->
-  <section class="chapter ch-researcher" id="ch-06-researcher" aria-labelledby="ch-06-title">
-    <div class="opener">
-      <p class="entry-no">N&ordm; 06</p>
-      <h2 class="chapter-title" id="ch-06-title">The Researcher</h2>
-      <p class="chapter-gloss">The maker behind the logbook.</p>
-      <div class="double-rule" aria-hidden="true"></div>
-    </div>
-    <div class="chapter-body">
-      <figure class="photo-frame photo-frame-researcher">
-        <img src="assets/photos/researcher-darek.jpg" alt="Darek with friends on a red pickup truck at a mountain overlook" loading="lazy">
-      </figure>
-      <p>I&rsquo;m a 20-year-old builder and entrepreneur in Matthews, NC. I started coding with AI in August 2026. But I have leveraged AI a ton since it came out, and used it a lot for Andola. One of my first real uses was making invoice templates. About two months into coding with it, this logbook is the result: one operating business and six software systems, most of them running without me. AI is the builder. I am the one who decides what gets built and whether it is any good.</p>
-      <p>School: I started in Mechanical Engineering, switched to Mechanical Engineering Technology at UNC Charlotte because I wanted a hands-on, tangible education, and learn by building the thing, not modeling it. I am still in the MET program. I am at Central Piedmont Community College now, a junior, and I am aiming at the AI industry.</p>
-      <p>The thread through all of it: AI lets me be the dreamer instead of getting stuck being the builder. Having the capability to design and build any system or solution with simply a thought is the largest advancement in human productivity. That&rsquo;s the real utility I&rsquo;m testing: how much one person can do when building stops being the bottleneck. I believe advancement never truly regresses once an idea is brought into the world, so I move fast on the ones worth building.</p>
-      <p>CPCC: junior, Mechanical Engineering Technology. Aiming at the AI industry.</p>
-      <p class="resume-line"><a class="cta-btn cta-btn-inline" href="resume.html">Read the resume</a></p>
-    </div>
-  </section>
-
-  <!-- 07 THREE DOORS -->
-  <section class="chapter ch-doors" id="ch-07-doors" aria-labelledby="ch-07-title">
-    <div class="opener">
-      <p class="entry-no">N&ordm; 07</p>
-      <h2 class="chapter-title" id="ch-07-title">Three Doors</h2>
+      <h2 class="chapter-title" id="doors-title">Three Doors</h2>
       <p class="chapter-gloss">One door for each visitor.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
@@ -455,17 +261,19 @@
         <p>I publish field notes from the work: what&rsquo;s actually working with AI, found empirically, no hype. Follow along on X and check the notes feed here.</p>
         <p class="door-ctas">
           <a class="cta-btn" href="https://x.com/Darek_225">Follow on X</a>
-          <a class="cta-btn" href="#ch-05-notes">Read the field notes</a>
+          <a class="cta-btn" href="notes.html">Read the field notes</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- 08 CONTACT + COLOPHON -->
-  <section class="chapter ch-contact" id="ch-08-contact" aria-labelledby="ch-08-title">
+  </main>
+
+  <!-- 05 CONTACT + COLOPHON -->
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
     <div class="opener">
-      <p class="entry-no">N&ordm; 08</p>
-      <h2 class="chapter-title" id="ch-08-title">Contact + Colophon</h2>
+      <p class="entry-no">N&ordm; 05</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
       <p class="chapter-gloss">Get in touch. How this was made.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
@@ -485,77 +293,11 @@
     </div>
     <div class="chapter-end">
       <div class="double-rule" aria-hidden="true"></div>
-      <p class="end-label"><span class="stamp">END OF ENTRY N&ordm; 08</span></p>
+      <p class="end-label"><span class="stamp">END OF ENTRY N&ordm; 05</span></p>
     </div>
-  </section>
+  </footer>
 
 </div><!-- /.page -->
-
-<!-- TOC: fixed button -->
-<a class="toc-btn" id="tocButton" href="#toc-sheet">CONTENTS</a>
-
-<!-- TOC: desktop rail -->
-<nav class="toc-rail" aria-label="Chapters">
-  <a class="rail-link" href="#ch-01-hypothesis" data-ch="ch-01-hypothesis" aria-label="Chapter 1: The Hypothesis"><span class="rail-no">01</span></a>
-  <a class="rail-link" href="#ch-02-workshop" data-ch="ch-02-workshop" aria-label="Chapter 2: The Workshop"><span class="rail-no">02</span></a>
-  <a class="rail-link" href="#ch-03-lab" data-ch="ch-03-lab" aria-label="Chapter 3: The Lab"><span class="rail-no">03</span></a>
-  <a class="rail-link" href="#ch-04-study" data-ch="ch-04-study" aria-label="Chapter 4: The Study"><span class="rail-no">04</span></a>
-  <a class="rail-link" href="#ch-05-notes" data-ch="ch-05-notes" aria-label="Chapter 5: Field Notes"><span class="rail-no">05</span></a>
-  <a class="rail-link" href="#ch-06-researcher" data-ch="ch-06-researcher" aria-label="Chapter 6: The Researcher"><span class="rail-no">06</span></a>
-  <a class="rail-link" href="#ch-07-doors" data-ch="ch-07-doors" aria-label="Chapter 7: Three Doors"><span class="rail-no">07</span></a>
-  <a class="rail-link" href="#ch-08-contact" data-ch="ch-08-contact" aria-label="Chapter 8: Contact and Colophon"><span class="rail-no">08</span></a>
-</nav>
-
-<!-- TOC: drawer -->
-<div class="toc-backdrop" id="tocBackdrop" hidden></div>
-<div class="toc-sheet" id="toc-sheet" role="dialog" aria-modal="true" aria-labelledby="tocTitle" hidden>
-  <div class="toc-sheet-head">
-    <p class="entry-no" id="tocTitle">CONTENTS</p>
-    <a class="toc-close" id="tocClose" href="#!" aria-label="Close contents">CLOSE</a>
-  </div>
-  <nav class="toc-list" aria-label="Table of contents">
-    <a class="toc-entry magnetic" href="#ch-01-hypothesis" data-ch="ch-01-hypothesis">
-      <span class="toc-no">N&ordm; 01</span>
-      <span class="toc-name">The Hypothesis</span>
-      <span class="toc-gloss">What AI is actually good for</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-02-workshop" data-ch="ch-02-workshop">
-      <span class="toc-no">N&ordm; 02</span>
-      <span class="toc-name">The Workshop</span>
-      <span class="toc-gloss">The one business I run</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-03-lab" data-ch="ch-03-lab">
-      <span class="toc-no">N&ordm; 03</span>
-      <span class="toc-name">The Lab</span>
-      <span class="toc-gloss">Software systems, labeled honestly</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-04-study" data-ch="ch-04-study">
-      <span class="toc-no">N&ordm; 04</span>
-      <span class="toc-name">The Study</span>
-      <span class="toc-gloss">The book and open questions</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-05-notes" data-ch="ch-05-notes">
-      <span class="toc-no">N&ordm; 05</span>
-      <span class="toc-name">Field Notes</span>
-      <span class="toc-gloss">Dated notes from the work</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-06-researcher" data-ch="ch-06-researcher">
-      <span class="toc-no">N&ordm; 06</span>
-      <span class="toc-name">The Researcher</span>
-      <span class="toc-gloss">The maker behind the logbook</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-07-doors" data-ch="ch-07-doors">
-      <span class="toc-no">N&ordm; 07</span>
-      <span class="toc-name">Three Doors</span>
-      <span class="toc-gloss">Funders, employers, the audience</span>
-    </a>
-    <a class="toc-entry magnetic" href="#ch-08-contact" data-ch="ch-08-contact">
-      <span class="toc-no">N&ordm; 08</span>
-      <span class="toc-name">Contact + Colophon</span>
-      <span class="toc-gloss">Email, links, how this was made</span>
-    </a>
-  </nav>
-</div>
-<script src="assets/main.js" defer></script>
+<script src="assets/enhance.js" defer></script>
 </body>
 </html>
