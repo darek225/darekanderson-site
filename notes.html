@@ -56,6 +56,7 @@
       <p class="chapter-gloss">Short notes from the work. Newest first.</p>
       <div class="double-rule" aria-hidden="true"></div>
     </div>
+    <p class="trust-line">Field Notes are working records from builds in progress. Project status is labeled on each project page; claims in these notes are dated so later results can supersede them. Status and other on-page labels describe the state when the note was written.</p>
     <div class="chapter-body">
 
       <h2 class="subhead">HIGHLIGHTS</h2>
@@ -75,6 +76,15 @@
           <h3 class="note-title"><a href="#note-background-result-claim">A background result is a claim, not a fact</a></h3>
           <p>On October 20, two background completion reports arrived in my workspace carrying clean final numbers.</p>
         </article>
+      </div>
+
+      <div class="start-here">
+        <p class="viz-label">Start here</p>
+        <ol>
+          <li><a href="#note-october-2026-roundup">October 2026: everything at once</a></li>
+          <li><a href="#note-bookvera-repair-first">Bookvera, the repair-first bookkeeper</a></li>
+          <li><a href="#note-background-result-claim">A background result is a claim, not a fact</a></li>
+        </ol>
       </div>
 
       <div class="note-filter" role="group" aria-label="Filter notes by tag">
@@ -140,7 +150,7 @@
           <p>WildClash Arena posts two YouTube Shorts a day, AI animal arena battles, at 09:00 and 17:00. Scripts, footage, edit, captions, and publishing all run as a pipeline on a virtual machine. I do not touch the daily episodes.</p>
           <p>On October 19 the machine underneath it was replaced five times in one evening. A render died mid-flight, the 17:00 publish slot was lost, and the episode bank hit zero of three. The replacement machines also wiped the system timers that fire the publishes. The timers got reinstalled from a canonical script kept in the project, and the episode bank refilled ahead of the next slots.</p>
           <p>Lesson: anything automated still sits on hardware somebody else controls. If the box can vanish, the recovery path has to be a script, not a memory.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/wildclash.jpg" alt="WildClash Arena channel" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, WILDCLASH ARENA, YOUTUBE</figcaption></figure>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/wildclash.jpg" alt="WildClash Arena channel" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">CHANNEL SCREENSHOT: WildClash Arena on YouTube</figcaption></figure>
           <div class="viz timeline" aria-label="October 19 evening timeline">
             <p class="viz-label">Oct 19, the evening</p>
             <div class="t-row"><span class="t-date">17:00</span> <span class="t-text">Publish slot lost mid-render. Machine replaced under the job.</span></div>
@@ -157,9 +167,11 @@
           <p>Bookvera is a plugin for QuickBooks Online. It sits alongside QuickBooks and alongside the customer&#x27;s CPA. It replaces neither. It categorizes transactions, catches duplicates and anomalies, and puts anything uncertain in front of a human in a review queue, with an audit trail behind every decision. QuickBooks stays the system of record. The CPA stays the CPA. Bookvera does the repair work in between.</p>
           <p>The number I hold myself to is 93.3%. That is the categorization accuracy measured against seeded ground truth on my own benchmark, run on the clean set and a messy set built to look like real books. It is not a marketing figure. Botkeeper raised about $90M, marketed 98% accuracy, and shut down in February 2026. I will not market a number above the one I measured. The honest pitch is the review loop: what the model gets wrong, a person sees before it posts.</p>
           <p>Pricing is $39 a month if you bring your own API key, $149 a month managed, with 500 AI actions included in the month. Status, stated plainly: pre-launch. The Intuit app review is still pending, and I will not call it launched until that passes.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/bookvera.jpg" alt="Bookvera homepage hero" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, BOOKVERA HOMEPAGE, OCT 2026</figcaption></figure>
+          <p>Outcome: Bookvera is the anchor product in the portfolio, still pre-launch until Intuit review clears.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/bookvera.jpg" alt="Bookvera homepage hero" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: Bookvera homepage, Oct 2026</figcaption></figure>
           <div class="viz ledger" aria-label="Bookvera key numbers">
             <p class="viz-label">The numbers on record</p>
+            <p class="method-line">Method: 90-item benchmark; accuracy is categorization agreement with seeded ground truth.</p>
             <div class="row"><span class="k">Measured categorization accuracy</span><span class="v" data-count="93.3" data-decimals="1" data-suffix="%">93.3%</span></div>
             <div class="row"><span class="k">Bring your own key</span><span class="v">$39/mo</span></div>
             <div class="row"><span class="k">Managed</span><span class="v">$149/mo</span></div>
@@ -194,9 +206,10 @@
           <p>My dad built his own prospecting program for his work with financial plans and 401(k)s: a large call list of businesses, with the provider that currently runs each business&#x27;s plan attached. When I looked at where that data comes from, the answer was the Department of Labor. Every sizable retirement plan files a Form 5500. The filings are public, free, and posted online in bulk datasets. They are also not human-readable in any useful form, which is why vendors like Judy Diamond Associates, Larkspur Data, and BrightScope can charge heavily for software layered on top of free data.</p>
           <p>So I pointed Dowser at the whole national file. It parsed 763,544 plan sponsors from the form year 2024 filings. The contact field everyone would reach for first, the plan administrator name, turned out to be nearly useless: usually blank, or just the sponsor&#x27;s own name repeated. The human is in the signature block. The person who signed the filing is a named individual tied to that plan. Pulling contacts from the signature fields put a named person on 99% of the sponsors, and most rows carry a sponsor phone and an assets figure as well. The filings have no emails. Finding those is a separate problem, and it is the problem Dowser&#x27;s enrichment was built for.</p>
           <p>Dowser itself is the outbound engine I built to get Bookvera its first customers: deterministic fit scoring with a hard gate, an enrichment waterfall that hunts down contact emails, two layers of email verification before anything counts as sendable, and a warmup planner so new sending domains build reputation instead of getting burned on day one. I audited it end to end in October: the engine works, tests green. Honest status: it is not sending yet. Live outreach is gated on buying the sending domains, setting up the mailboxes, and finishing a 3 to 4 week warmup. That clock has not started.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/dowser.jpg" alt="Dowser dashboard" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, DOWSER DASHBOARD, OCT 2026</figcaption></figure>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/dowser.jpg" alt="Dowser dashboard" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: Dowser dashboard, Oct 2026</figcaption></figure>
           <div class="viz bars" aria-label="Form 5500 national file, what the parse found">
             <p class="viz-label">Form 5500 national file (2024 filings)</p>
+            <p class="method-line">Method: EBSA bulk Form 5500 files for form year 2024 were streamed and parsed; signature fields were used for the named-contact count.</p>
             <div class="bar-row"><span class="bar-k">Plan sponsors</span><span class="bar-track"><span class="bar-fill ink" style="--w:100%"></span></span><span class="bar-v" data-count="763544">763,544</span></div>
             <div class="bar-row"><span class="bar-k">With a phone</span><span class="bar-track"><span class="bar-fill" style="--w:99.7%"></span></span><span class="bar-v" data-count="761380">761,380</span></div>
             <div class="bar-row"><span class="bar-k">Named contact</span><span class="bar-track"><span class="bar-fill" style="--w:99%"></span></span><span class="bar-v" data-count="759776">759,776</span></div>
@@ -215,7 +228,8 @@
           <p>The second lesson was timeouts. A long task would hit its time limit, get marked failed, and the work was gone, even when Cline was still running or nearly finished. One overnight task came back with zero output because VS Code had stopped polling while I slept. In v0.9.14 that changed: a timeout is a state, not a verdict. Late results can revise the record for up to two hours, and the worktree auto-checkpoints on timeout and every 15 minutes, so partial work survives a bad night.</p>
           <p>Every completion record also carries a bounded tail of the Cline transcript and a summary of what changed. A timed out task now arrives with what the agent was actually doing, not just the word timeout.</p>
           <p>Backseat is shipped and open source at github.com/darek225/backseat. It is the tool my whole build workflow runs on.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/backseat.jpg" alt="Backseat repository" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, BACKSEAT, GITHUB</figcaption></figure>
+          <p>Outcome: Backseat became the operating system for the rest of the work in this archive.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/backseat.jpg" alt="Backseat repository" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: Backseat repository, GitHub</figcaption></figure>
           <div class="viz steps" aria-label="How Backseat moves a task">
             <p class="viz-label" style="flex-basis:100%">How a task moves</p>
             <div class="step"><b>Phone</b><span>I give the direction</span></div><span class="arrow">&gt;</span>
@@ -235,7 +249,7 @@
           <p>Revenue is affiliate commission. My Amazon tag goes on the posts, and Amazon&#x27;s cookie lasts 24 hours. If someone clicks through and buys a different item inside that window, I still get paid. The audience never has to buy the exact product in the post.</p>
           <p>There is no AI in the runtime path. Scouts, scorer, and publisher are deterministic Python scripts over a SQLite database, and that was a deliberate call. Recurring work first ran on agent schedules, and an agent firing every 15 minutes is 96 fires a day, each one spending model budget whether anything changed or not. Deterministic jobs belong on systemd timers at zero model cost. A cheap watchdog watches the timers and wakes an agent only when something fails or goes stale.</p>
           <p>The pipeline runs on schedule without me. What it still owes is an audience. Follower counts and affiliate revenue get reported when there is something real to report.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/deal-snipers.jpg" alt="Deal Snipers feed" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, DEAL SNIPERS FEED, OCT 2026</figcaption></figure>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/deal-snipers.jpg" alt="Deal Snipers feed" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: Deal Snipers feed, Oct 2026</figcaption></figure>
           <div class="viz steps" aria-label="Deal Snipers pipeline">
             <p class="viz-label" style="flex-basis:100%">The pipeline</p>
             <div class="step"><b>Scouts</b><span>14 feeds and rival accounts</span></div><span class="arrow">&gt;</span>
@@ -277,12 +291,12 @@
           <p>Top of the week of October 12: Carolina Trade Sites went live.</p>
           <p>The hub launched October 15, in its eighth rebuild. The offer is simple: a $2,000 website for home service companies (plumbers, landscapers, roofers, the trades I know from running Andola), built on a stack that costs about $1 a month to run. That cost structure is the whole business model. A normal agency charges monthly fees forever because their costs demand it. Mine do not.</p>
           <p>Status, honestly: the site is live, the offer is real, and there are no clients yet. Client one is the next milestone.</p>
-                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/carolina-trade-sites.jpg" alt="Carolina Trade Sites hub" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, CAROLINA TRADE SITES HUB, OCT 2026</figcaption></figure>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/carolina-trade-sites.jpg" alt="Carolina Trade Sites hub" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: Carolina Trade Sites hub, Oct 2026</figcaption></figure>
           <div class="viz ledger" aria-label="Carolina Trade Sites offer">
             <p class="viz-label">The offer</p>
             <div class="row"><span class="k">Website build</span><span class="v">$2,000</span></div>
-            <div class="row"><span class="k">Stack running cost</span><span class="v">about $1/mo</span></div>
-            <div class="row"><span class="k">Rebuilds to get the hub right</span><span class="v">8</span></div>
+            <div class="row"><span class="k">Stack running cost (current architecture)</span><span class="v">about $1/mo</span></div>
+            <div class="row"><span class="k">Major hub revisions</span><span class="v">8</span></div>
             <div class="row"><span class="k">Clients so far</span><span class="v">0, client one is next</span></div>
           </div>
           <p class="note-tags"><span class="tag">#business</span> <span class="tag">#building</span></p>

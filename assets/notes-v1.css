@@ -60,3 +60,10 @@
 .stats .stat { flex: 1 1 8em; border-top: 3px solid #C23B22; padding-top: 0.4em; }
 .stats .stat .n { font-size: 1.55em; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.05; }
 .stats .stat .l { font-size: 0.83em; color: rgba(28,26,22,0.78); }
+
+/* Trust statement, start-here, method lines (review fixes 2026-10-20) */
+.trust-line { max-width: 44em; color: rgba(28,26,22,0.85); border-left: 3px solid #C23B22; padding-left: 0.8em; margin: 0.6em 0 1.2em; }
+.start-here { border: 1.5px solid #1C1A16; background: rgba(255,255,255,0.35); padding: 0.7em 0.9em; margin: 0 0 1.1em; }
+.start-here ol { margin: 0.2em 0 0.2em 1.3em; padding: 0; }
+.start-here li { padding: 0.18em 0; }
+.method-line { font-size: 0.88em; color: rgba(28,26,22,0.75); margin: 0 0 0.5em; }
