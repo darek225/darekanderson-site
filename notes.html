@@ -7,6 +7,7 @@
 <title>Field Notes: Darek Anderson</title>
 <meta name="description" content="Field Notes: short notes from Darek Anderson's work. What AI is actually good for, found empirically, written down as it happens.">
 <link rel="stylesheet" href="assets/main-v12.css">
+<link rel="stylesheet" href="assets/notes-v1.css">
 <link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darek Anderson">
@@ -61,18 +62,18 @@
       <div class="notes-highlights">
         <article class="highlight-entry">
           <p class="note-date">OCT 2026</p>
-          <h3 class="note-title"><a href="#note-daemon-die">If the daemon can die silently, it will.</a></h3>
-          <p>My bridge watcher died four times in one day.</p>
+          <h3 class="note-title"><a href="#note-october-2026-roundup">October 2026: everything at once</a></h3>
+          <p>October is not over.</p>
         </article>
         <article class="highlight-entry">
           <p class="note-date">OCT 2026</p>
-          <h3 class="note-title"><a href="#note-vercel-commits">Vercel doesn&rsquo;t trust my AI&rsquo;s commits.</a></h3>
-          <p>Vercel refused to deploy because the commit author was &ldquo;Muse,&rdquo; an unrecognized identity.</p>
+          <h3 class="note-title"><a href="#note-bookvera-repair-first">Bookvera, the repair-first bookkeeper</a></h3>
+          <p>I built Bookvera because my own books were a mess.</p>
         </article>
         <article class="highlight-entry">
-          <p class="note-date">OCT 2026</p>
-          <h3 class="note-title"><a href="#note-messy-books">Bookvera exists because my own books were a mess.</a></h3>
-          <p>The reason I&rsquo;m building an AI bookkeeper is that I lived inside messy books.</p>
+          <p class="note-date">OCT 20, 2026</p>
+          <h3 class="note-title"><a href="#note-background-result-claim">A background result is a claim, not a fact</a></h3>
+          <p>On October 20, two background completion reports arrived in my workspace carrying clean final numbers.</p>
         </article>
       </div>
 
@@ -84,11 +85,417 @@
         <button type="button" class="filter-btn" data-filter="authorship" aria-pressed="false">#authorship</button>
         <button type="button" class="filter-btn" data-filter="business" aria-pressed="false">#business</button>
         <button type="button" class="filter-btn" data-filter="bookkeeping" aria-pressed="false">#bookkeeping</button>
-      </div>
+      <button type="button" class="filter-btn" data-filter="building" aria-pressed="false">#building</button>
+        <button type="button" class="filter-btn" data-filter="research" aria-pressed="false">#research</button>
+        </div>
 
-      <p class="seed-line">SEED NOTES: these three are real events from October 2026, written as starters. Darek replaces or keeps at will.</p>
+      <p class="seed-line">THE ARCHIVE: monthly roundups, weekly tops, and deep dives from August to October 2026, newest first. The three seed notes from the site launch sit at the bottom.</p>
       <p class="visually-hidden" role="status" id="notes-filter-status"></p>
       <div class="notes-list">
+                <article class="note" id="note-october-2026-roundup" data-tags="business bookkeeping ai building">
+          <span id="note-4" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">October 2026: everything at once</h3>
+          <p>October is not over. Today is October 20 and this month already has more in it than September did, so I am writing the roundup now instead of waiting.</p>
+          <p>The bookkeeping product got its real name and its real position. A trademark conflict killed Claribooks, and on October 11 the product became Bookvera. The position narrowed too: it repairs messy QuickBooks books, working alongside the business owner and their CPA instead of replacing either. I also set the target in writing: $100k collected in the first year after launch, with cleanup work as a big part of how it gets there. Launch is still blocked on Intuit&#x27;s app review and a short list of unglamorous items. It is pre-launch, not a business yet.</p>
+          <p>Carolina Trade Sites launched. The hub went live October 15: $2,000 websites for home service companies, running on a stack that costs about $1 a month. No clients yet. It is a live offer, not revenue.</p>
+          <p>Andola moved too. On October 15 I bought my partner John&#x27;s 51% share. One owner now.</p>
+          <p>The rest of the month: I ran a full audit of Dowser this week (most of the engine works; sending is gated on domains, inboxes, and a warmup that has not started). I specced LongRun Bench, an open benchmark for long multi-step agent runs. I rebuilt and launched this portfolio site. And I decided to switch programs at CPCC, from Mechanical Engineering Technology toward the AI Technology degree, because the AI work is what I actually do all day.</p>
+          <p>One operating business, several builds, one degree change. That is October so far.</p>
+                    <div class="viz timeline" aria-label="October timeline">
+            <p class="viz-label">October, dated</p>
+            <div class="t-row"><span class="t-date">Oct 11</span> <span class="t-text">Bookvera gets its name and its repair-first position.</span></div>
+            <div class="t-row"><span class="t-date">Oct 15</span> <span class="t-text">Carolina Trade Sites hub goes live. I buy my partner&#x27;s 51% of Andola.</span></div>
+            <div class="t-row"><span class="t-date">Oct 19</span> <span class="t-text">LongRun Bench specced and open sourced. WildClash loses an evening to five machine replacements.</span></div>
+            <div class="t-row"><span class="t-date">Oct 20</span> <span class="t-text">Full Dowser audit. Bookvera $100k Year 1 plan written. CPCC program switch decided.</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#bookkeeping</span> <span class="tag">#ai</span> <span class="tag">#building</span></p>
+        </article>
+        <article class="note" id="note-background-result-claim" data-tags="systems ai">
+          <span id="note-5" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 20, 2026</p>
+          <h3 class="note-title">A background result is a claim, not a fact</h3>
+          <p>On October 20, two background completion reports arrived in my workspace carrying clean final numbers. One said a 300 business run had finished: 58 verified, credits spent, tally complete. The other said a timed chunk processed 100 rows in 10.6 minutes. Both were replays of results from before a machine replacement. The output files did not exist. The progress caches did not exist. Those runs never happened in this filesystem.</p>
+          <p>The real version of the second run took 27 minutes and produced 127 rows with no usable domains found. Uglier, and true.</p>
+          <p>The rule now: before any number from a background run gets reported, the artifacts get checked on disk. The output file exists. The progress cache folds to the claimed tally. Sample rows carry real data. A completion message is a claim. The filesystem is the record.</p>
+                    <div class="viz" aria-label="Claimed versus actual">
+            <p class="viz-label">Reported vs on disk</p>
+            <table class="versus">
+              <tr><th>Run</th><th>What the report said</th><th>What the disk said</th></tr>
+              <tr><td>NC 300-business run</td><td class="bad">Complete: 58 verified, credits spent</td><td class="good">No output file. No progress cache. It never ran here.</td></tr>
+              <tr><td>Timed national chunk</td><td class="bad">100 rows in 10.6 minutes, 4 verified</td><td class="good">127 rows in 27 minutes, zero usable domains</td></tr>
+            </table>
+          </div>
+                    <div class="viz ledger" aria-label="Same day, the second catch">
+          <p class="viz-label">Same day, the second catch</p>
+          <div class="row"><span class="k">Rows marked no-domain during an outage</span><span class="v">226, scrubbed and rerun</span></div>
+          <div class="row"><span class="k">Circuit breaker added</span><span class="v">15 straight no-domain results, zero fetches: abort</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#ai</span></p>
+        </article>
+        <article class="note" id="note-wildclash-floor-vanished" data-tags="automation ai">
+          <span id="note-6" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">WildClash: the night the floor vanished</h3>
+          <p>WildClash Arena posts two YouTube Shorts a day, AI animal arena battles, at 09:00 and 17:00. Scripts, footage, edit, captions, and publishing all run as a pipeline on a virtual machine. I do not touch the daily episodes.</p>
+          <p>On October 19 the machine underneath it was replaced five times in one evening. A render died mid-flight, the 17:00 publish slot was lost, and the episode bank hit zero of three. The replacement machines also wiped the system timers that fire the publishes. The timers got reinstalled from a canonical script kept in the project, and the episode bank refilled ahead of the next slots.</p>
+          <p>Lesson: anything automated still sits on hardware somebody else controls. If the box can vanish, the recovery path has to be a script, not a memory.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/wildclash.jpg" alt="WildClash Arena channel" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, WILDCLASH ARENA, YOUTUBE</figcaption></figure>
+          <div class="viz timeline" aria-label="October 19 evening timeline">
+            <p class="viz-label">Oct 19, the evening</p>
+            <div class="t-row"><span class="t-date">17:00</span> <span class="t-text">Publish slot lost mid-render. Machine replaced under the job.</span></div>
+            <div class="t-row"><span class="t-date">Evening</span> <span class="t-text">Four more replacements. Episode bank hits 0 of 3. System timers wiped with the machines.</span></div>
+            <div class="t-row"><span class="t-date">Recovery</span> <span class="t-text">Timers reinstalled from the canonical script. Bank refilled ahead of the 09:00 and 17:00 slots.</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#automation</span> <span class="tag">#ai</span></p>
+        </article>
+        <article class="note" id="note-bookvera-repair-first" data-tags="business bookkeeping building ai">
+          <span id="note-7" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Bookvera, the repair-first bookkeeper</h3>
+          <p>I built Bookvera because my own books were a mess. Andola, my landscaping company, had months of bad accounting behind it: duplicate income entries, transactions that never happened, categories that meant nothing. Cleaning that up by hand is what taught me the problem. Most small businesses do not need a new accounting platform. They need the books they already have repaired, and kept repaired.</p>
+          <p>Bookvera is a plugin for QuickBooks Online. It sits alongside QuickBooks and alongside the customer&#x27;s CPA. It replaces neither. It categorizes transactions, catches duplicates and anomalies, and puts anything uncertain in front of a human in a review queue, with an audit trail behind every decision. QuickBooks stays the system of record. The CPA stays the CPA. Bookvera does the repair work in between.</p>
+          <p>The number I hold myself to is 93.3%. That is the categorization accuracy measured against seeded ground truth on my own benchmark, run on the clean set and a messy set built to look like real books. It is not a marketing figure. Botkeeper raised about $90M, marketed 98% accuracy, and shut down in February 2026. I will not market a number above the one I measured. The honest pitch is the review loop: what the model gets wrong, a person sees before it posts.</p>
+          <p>Pricing is $39 a month if you bring your own API key, $149 a month managed, with 500 AI actions included in the month. Status, stated plainly: pre-launch. The Intuit app review is still pending, and I will not call it launched until that passes.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/bookvera.jpg" alt="Bookvera homepage hero" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, BOOKVERA HOMEPAGE, OCT 2026</figcaption></figure>
+          <div class="viz ledger" aria-label="Bookvera key numbers">
+            <p class="viz-label">The numbers on record</p>
+            <div class="row"><span class="k">Measured categorization accuracy</span><span class="v" data-count="93.3" data-decimals="1" data-suffix="%">93.3%</span></div>
+            <div class="row"><span class="k">Bring your own key</span><span class="v">$39/mo</span></div>
+            <div class="row"><span class="k">Managed</span><span class="v">$149/mo</span></div>
+            <div class="row"><span class="k">AI actions included</span><span class="v">500/mo</span></div>
+            <div class="row"><span class="k">Status</span><span class="v">Pre-launch, Intuit review pending</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#bookkeeping</span> <span class="tag">#building</span> <span class="tag">#ai</span></p>
+        </article>
+        <article class="note" id="note-ai-cost-math" data-tags="ai bookkeeping business research">
+          <span id="note-8" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">The AI cost math under Bookvera</h3>
+          <p>Bookvera charges for actions, so I needed to know exactly what one action costs me. The definition is narrower than people assume. One billable action is one successful LLM categorization, and nothing else. Deterministic vendor rules resolve repeat transactions at no cost and are never metered. A cheaper decision layer runs before the main model and is unmetered too. Only the full model call counts.</p>
+          <p>I measured the actual prompts instead of guessing: about 3,200 input tokens and 120 output tokens per call on the current model. That works out to roughly $0.00055 per action. The worst case, a failed first pass followed by a high-token call, is about $0.00064.</p>
+          <p>Run that against the plan. A managed customer who uses the entire 500-action monthly allowance costs me between $0.28 and $0.40 in AI spend for the whole month. The overage price is $0.20 per action, about 300 times the worst-case cost of the action itself.</p>
+          <p>One caveat I had to write down: because the cheaper layers are unmetered, the action count understates the work performed. At the measured mix, 500 actions stand behind roughly 11,000 to 16,700 transactions a month, far more than a typical small business runs. The allowance is headroom, not a limit anyone will hit. Customer-facing copy has to call the meter what it is, AI categorizations, not transactions, so the number stays explainable later.</p>
+          <p>The cheapest capable-class model would save about $0.17 per customer per month and is unproven on my benchmark. That settles the question I actually cared about. Model choice is an accuracy decision, not a cost decision. The pricing stays: $149 managed, 500 actions included, $0.20 overage. The headroom is not close.</p>
+                    <div class="viz ledger" aria-label="AI cost ledger">
+            <p class="viz-label">Measured unit economics</p>
+            <div class="row"><span class="k">Cost per AI categorization</span><span class="v">$0.00055</span></div>
+            <div class="row"><span class="k">Worst case per action</span><span class="v">$0.00064</span></div>
+            <div class="row"><span class="k">Full 500-action month, AI spend</span><span class="v">$0.28 to $0.40</span></div>
+            <div class="row"><span class="k">Overage price per action</span><span class="v">$0.20</span></div>
+            <div class="row"><span class="k">Overage vs worst-case cost</span><span class="v" data-count="300" data-suffix="x">300x</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#bookkeeping</span> <span class="tag">#business</span> <span class="tag">#research</span></p>
+        </article>
+        <article class="note" id="note-dowser-form-5500" data-tags="research systems business ai">
+          <span id="note-9" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Dowser and the Form 5500 goldmine</h3>
+          <p>My dad built his own prospecting program for his work with financial plans and 401(k)s: a large call list of businesses, with the provider that currently runs each business&#x27;s plan attached. When I looked at where that data comes from, the answer was the Department of Labor. Every sizable retirement plan files a Form 5500. The filings are public, free, and posted online in bulk datasets. They are also not human-readable in any useful form, which is why vendors like Judy Diamond Associates, Larkspur Data, and BrightScope can charge heavily for software layered on top of free data.</p>
+          <p>So I pointed Dowser at the whole national file. It parsed 763,544 plan sponsors from the form year 2024 filings. The contact field everyone would reach for first, the plan administrator name, turned out to be nearly useless: usually blank, or just the sponsor&#x27;s own name repeated. The human is in the signature block. The person who signed the filing is a named individual tied to that plan. Pulling contacts from the signature fields put a named person on 99% of the sponsors, and most rows carry a sponsor phone and an assets figure as well. The filings have no emails. Finding those is a separate problem, and it is the problem Dowser&#x27;s enrichment was built for.</p>
+          <p>Dowser itself is the outbound engine I built to get Bookvera its first customers: deterministic fit scoring with a hard gate, an enrichment waterfall that hunts down contact emails, two layers of email verification before anything counts as sendable, and a warmup planner so new sending domains build reputation instead of getting burned on day one. I audited it end to end in October: the engine works, tests green. Honest status: it is not sending yet. Live outreach is gated on buying the sending domains, setting up the mailboxes, and finishing a 3 to 4 week warmup. That clock has not started.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/dowser.jpg" alt="Dowser dashboard" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, DOWSER DASHBOARD, OCT 2026</figcaption></figure>
+          <div class="viz bars" aria-label="Form 5500 national file, what the parse found">
+            <p class="viz-label">Form 5500 national file (2024 filings)</p>
+            <div class="bar-row"><span class="bar-k">Plan sponsors</span><span class="bar-track"><span class="bar-fill ink" style="--w:100%"></span></span><span class="bar-v" data-count="763544">763,544</span></div>
+            <div class="bar-row"><span class="bar-k">With a phone</span><span class="bar-track"><span class="bar-fill" style="--w:99.7%"></span></span><span class="bar-v" data-count="761380">761,380</span></div>
+            <div class="bar-row"><span class="bar-k">Named contact</span><span class="bar-track"><span class="bar-fill" style="--w:99%"></span></span><span class="bar-v" data-count="759776">759,776</span></div>
+            <div class="bar-row"><span class="bar-k">With assets</span><span class="bar-track"><span class="bar-fill" style="--w:95%"></span></span><span class="bar-v" data-count="725103">725,103</span></div>
+            <div class="bar-row"><span class="bar-k">Recordkeeper known</span><span class="bar-track"><span class="bar-fill" style="--w:6%"></span></span><span class="bar-v" data-count="46141">46,141</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#research</span> <span class="tag">#systems</span> <span class="tag">#business</span> <span class="tag">#ai</span></p>
+        </article>
+        <article class="note" id="note-backseat-phone-drives" data-tags="systems building automation">
+          <span id="note-10" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Backseat: my phone drives the coding agent on my PC</h3>
+          <p>Backseat is a bridge between me and the coding agent on my PC. I give directions from my phone. The tasks get queued in a private GitHub repo as JSON files. A VS Code extension on my PC polls that repo, runs each task in Cline, and pushes the result back. Git is the whole transport. There is no server to run and no open port on my PC.</p>
+          <p>The protocol is open and agent-agnostic. Tasks are plain JSON with a simple lifecycle: pending, active, done. Any agent that can use a shell and git can sit in the architect seat and queue work. It does not have to be the assistant I use.</p>
+          <p>The first hard lesson was silent death. A watcher process reports bridge status, fresh every 30 seconds. The machine kept killing it in the background, and it died four times in one day, silently each time. A dead watcher looks exactly like a quiet system, so I lost hours trusting status that was not being updated. The fix was to stop trusting loose background processes. The watcher now runs as a supervised systemd service that restarts itself when it dies.</p>
+          <p>The second lesson was timeouts. A long task would hit its time limit, get marked failed, and the work was gone, even when Cline was still running or nearly finished. One overnight task came back with zero output because VS Code had stopped polling while I slept. In v0.9.14 that changed: a timeout is a state, not a verdict. Late results can revise the record for up to two hours, and the worktree auto-checkpoints on timeout and every 15 minutes, so partial work survives a bad night.</p>
+          <p>Every completion record also carries a bounded tail of the Cline transcript and a summary of what changed. A timed out task now arrives with what the agent was actually doing, not just the word timeout.</p>
+          <p>Backseat is shipped and open source at github.com/darek225/backseat. It is the tool my whole build workflow runs on.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/backseat.jpg" alt="Backseat repository" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, BACKSEAT, GITHUB</figcaption></figure>
+          <div class="viz steps" aria-label="How Backseat moves a task">
+            <p class="viz-label" style="flex-basis:100%">How a task moves</p>
+            <div class="step"><b>Phone</b><span>I give the direction</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>GitHub repo</b><span>Tasks as JSON files</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>VS Code extension</b><span>Polls, picks up the task</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>Cline</b><span>Does the work on my PC</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>Result pushed back</b><span>Same road home</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#building</span> <span class="tag">#automation</span></p>
+        </article>
+        <article class="note" id="note-deal-snipers-deterministic" data-tags="systems automation business">
+          <span id="note-11" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Deal Snipers: deterministic scripts do the work</h3>
+          <p>Deal Snipers hunts deep discounts and mispriced products, checks them, and posts the real ones to Telegram and Bluesky. Scout agents pull deal feeds (DealNews, Slickdeals, deal subreddits) and watch rival deal accounts as a signal source. A scorer ranks each candidate by discount depth and community response, kills duplicates and junk, and checks the price against recorded price history before anything posts.</p>
+          <p>The price check is the whole product. Fake discounts are the normal case online: any store can print an invented original price next to a sale price. The system keeps price-history rows for what items actually sold for, and a candidate that fails that check does not post. Claimed discounts above 75 percent get capped in scoring for the same reason. When the scoring threshold was tested, 55 rejected 11 out of 38 deals a human had approved, so the threshold sits at 38.</p>
+          <p>Revenue is affiliate commission. My Amazon tag goes on the posts, and Amazon&#x27;s cookie lasts 24 hours. If someone clicks through and buys a different item inside that window, I still get paid. The audience never has to buy the exact product in the post.</p>
+          <p>There is no AI in the runtime path. Scouts, scorer, and publisher are deterministic Python scripts over a SQLite database, and that was a deliberate call. Recurring work first ran on agent schedules, and an agent firing every 15 minutes is 96 fires a day, each one spending model budget whether anything changed or not. Deterministic jobs belong on systemd timers at zero model cost. A cheap watchdog watches the timers and wakes an agent only when something fails or goes stale.</p>
+          <p>The pipeline runs on schedule without me. What it still owes is an audience. Follower counts and affiliate revenue get reported when there is something real to report.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/deal-snipers.jpg" alt="Deal Snipers feed" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, DEAL SNIPERS FEED, OCT 2026</figcaption></figure>
+          <div class="viz steps" aria-label="Deal Snipers pipeline">
+            <p class="viz-label" style="flex-basis:100%">The pipeline</p>
+            <div class="step"><b>Scouts</b><span>14 feeds and rival accounts</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>Scorer</b><span>Discount depth, response, junk filter</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>Price history</b><span>28,873 recorded prices checked</span></div><span class="arrow">&gt;</span>
+            <div class="step"><b>Post</b><span>Telegram and Bluesky, on timers</span></div>
+          </div>
+          <div class="viz ledger" aria-label="Deal Snipers 24 hour soak">
+            <p class="viz-label">24h soak, Sep 30</p>
+            <div class="row"><span class="k">Deals fetched</span><span class="v" data-count="2620">2,620</span></div>
+            <div class="row"><span class="k">Qualify bar</span><span class="v">score 38</span></div>
+            <div class="row"><span class="k">Live posting bar</span><span class="v">score 70</span></div>
+            <div class="row"><span class="k">Posted</span><span class="v">35 Telegram + 35 Bluesky</span></div>
+            <div class="row"><span class="k">Failed rows</span><span class="v">0</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#automation</span> <span class="tag">#business</span></p>
+        </article>
+        <article class="note" id="note-longrun-bench" data-tags="ai research">
+          <span id="note-12" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 19, 2026</p>
+          <h3 class="note-title">LongRun Bench: a benchmark for long agent runs</h3>
+          <p>Most benchmarks test an AI on one short task. People use agents on long jobs: dozens of steps, tool calls, errors, recovery. On October 19 I specced a benchmark for that and open sourced it under MIT.</p>
+          <p>Runs are scored on a rubric, like a school project: correctness 40, completeness 25, efficiency 15, error recovery 10, instruction adherence 10. There are three levels (Sprint under 20 steps, Marathon 20 to 100, Ultra past 100) and three agent profiles (bare, standard, native), never compared across each other. Tasks are parameterized and versioned, with canary tasks to catch overfitting, and scores get verified by reproducing the run instead of trusting a submission.</p>
+          <p>Status, honestly: the spec and a full build plan are in the repo, with 39 design decisions written down. The harness is not built yet. Running the org side should cost about $1 to $6 a month.</p>
+                    <div class="viz bars" aria-label="LongRun Bench rubric">
+            <p class="viz-label">The rubric, 100 points</p>
+            <div class="bar-row"><span class="bar-k">Correctness</span><span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span><span class="bar-v">40</span></div>
+            <div class="bar-row"><span class="bar-k">Completeness</span><span class="bar-track"><span class="bar-fill" style="--w:62.5%"></span></span><span class="bar-v">25</span></div>
+            <div class="bar-row"><span class="bar-k">Efficiency</span><span class="bar-track"><span class="bar-fill" style="--w:37.5%"></span></span><span class="bar-v">15</span></div>
+            <div class="bar-row"><span class="bar-k">Error recovery</span><span class="bar-track"><span class="bar-fill" style="--w:25%"></span></span><span class="bar-v">10</span></div>
+            <div class="bar-row"><span class="bar-k">Instruction adherence</span><span class="bar-track"><span class="bar-fill" style="--w:25%"></span></span><span class="bar-v">10</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#research</span></p>
+        </article>
+        <article class="note" id="note-cts-goes-live" data-tags="business building">
+          <span id="note-13" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Week of Oct 12, 2026: Carolina Trade Sites goes live</h3>
+          <p>Top of the week of October 12: Carolina Trade Sites went live.</p>
+          <p>The hub launched October 15, in its eighth rebuild. The offer is simple: a $2,000 website for home service companies (plumbers, landscapers, roofers, the trades I know from running Andola), built on a stack that costs about $1 a month to run. That cost structure is the whole business model. A normal agency charges monthly fees forever because their costs demand it. Mine do not.</p>
+          <p>Status, honestly: the site is live, the offer is real, and there are no clients yet. Client one is the next milestone.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/carolina-trade-sites.jpg" alt="Carolina Trade Sites hub" width="1280" height="800" loading="lazy"><figcaption class="photo-caption">PLATE, CAROLINA TRADE SITES HUB, OCT 2026</figcaption></figure>
+          <div class="viz ledger" aria-label="Carolina Trade Sites offer">
+            <p class="viz-label">The offer</p>
+            <div class="row"><span class="k">Website build</span><span class="v">$2,000</span></div>
+            <div class="row"><span class="k">Stack running cost</span><span class="v">about $1/mo</span></div>
+            <div class="row"><span class="k">Rebuilds to get the hub right</span><span class="v">8</span></div>
+            <div class="row"><span class="k">Clients so far</span><span class="v">0, client one is next</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#building</span></p>
+        </article>
+        <article class="note" id="note-bought-out-partner" data-tags="business">
+          <span id="note-14" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 15, 2026</p>
+          <h3 class="note-title">Bought out my partner</h3>
+          <p>On October 15 I bought my partner John&#x27;s 51% of Andola.</p>
+          <p>Andola has one owner now. That simplifies the things that used to take two people agreeing: pricing, scheduling, which jobs to take, where the money goes. One signature, one set of books, one person accountable for the result.</p>
+                    <div class="viz stats" aria-label="Ownership">
+            <div class="stat"><span class="n" data-count="51" data-suffix="%">51%</span><span class="l">share bought</span></div>
+            <div class="stat"><span class="n" data-count="1">1</span><span class="l">owner now</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#business</span></p>
+        </article>
+        <article class="note" id="note-voxel-terrain-first" data-tags="building research">
+          <span id="note-15" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">The voxel game: terrain first</h3>
+          <p>The voxel game is the longest-term build I have going. The goal is a survival game more realistic than Minecraft: sub-meter voxels, and terrain where water, erosion, and climate genuinely shape the land instead of decorating it. Biomes should fall out of the climate simulation, not get painted on. Vegetation should grow by rules, not spawn finished.</p>
+          <p>The architecture is Unreal Engine 5 with a custom C++ voxel core that does not depend on the engine. That matters because the machine I build on has no GPU, so the current phase is terrain generation only, running headless: deterministic world generation, erosion behavior checked against real slope and area relationships, and a 16 by 16 km world generated in under 10 minutes as the bar.</p>
+          <p>No title yet, no gameplay yet. Terrain first, because in this design the terrain is the game.</p>
+                    <div class="viz ledger" aria-label="Voxel game spec">
+            <p class="viz-label">The spec</p>
+            <div class="row"><span class="k">Voxel size</span><span class="v">sub-meter</span></div>
+            <div class="row"><span class="k">World target</span><span class="v">16 x 16 km in under 10 min</span></div>
+            <div class="row"><span class="k">Terrain drivers</span><span class="v">water, erosion, climate</span></div>
+            <div class="row"><span class="k">Engine</span><span class="v">UE5 + custom C++ voxel core</span></div>
+            <div class="row"><span class="k">Current phase</span><span class="v">terrain generation only</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#building</span> <span class="tag">#research</span></p>
+        </article>
+        <article class="note" id="note-backseat-launch-week" data-tags="building automation">
+          <span id="note-16" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Week of Sep 28, 2026: Backseat launch week</h3>
+          <p>Top of the week of September 28: Backseat launch week.</p>
+          <p>The software part went fine. Version 0.9.10 shipped September 28, the repo went public as a template anyone can copy, and 0.9.12 with unified branding was out by September 30. I opened pull requests to the awesome lists where tools like this get discovered.</p>
+          <p>The distribution part ran into walls. Hacker News was blocking Show HN submissions site-wide at the time. Reddit and dev.to put CAPTCHAs in front of signup. X blocked email signup on the web entirely and throttled logins coming from my server&#x27;s IP address.</p>
+          <p>Lesson: I was launching from a datacenter IP, and half the internet treats that as suspicious by default. The product worked. The doors were the problem.</p>
+                    <div class="viz ledger" aria-label="Launch week walls">
+            <p class="viz-label">The walls, same week</p>
+            <div class="row"><span class="k">Hacker News</span><span class="v">Show HN blocked site-wide</span></div>
+            <div class="row"><span class="k">Reddit, dev.to</span><span class="v">CAPTCHA before signup</span></div>
+            <div class="row"><span class="k">X</span><span class="v">no web email signup, logins throttled</span></div>
+            <div class="row"><span class="k">Shipped anyway</span><span class="v">0.9.10, then 0.9.12</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#building</span> <span class="tag">#automation</span></p>
+        </article>
+        <article class="note" id="note-september-2026-roundup" data-tags="ai business building">
+          <span id="note-17" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">SEP 2026</p>
+          <h3 class="note-title">September 2026: I started building with AI</h3>
+          <p>In August 2026 I started coding with AI. I had used AI tools before that, mostly inside the business. August is when I started shipping software with it.</p>
+          <p>By the end of September I had four software projects moving. Backseat went public on September 28. It is an open source bridge that lets me direct a coding agent on my PC from my phone: tasks move as JSON files through a private GitHub repo, a VS Code extension on the PC runs them in Cline, and results come back the same way. Deal Snipers went live the same week: it pulls deal feeds, scores them, and posts the good ones to Bluesky and Telegram on a schedule. Two more were in active build: a bookkeeping tool for QuickBooks Online (called Acuity then, later Bookvera) and Dowser, an outbound prospecting engine I am building to find customers for it.</p>
+          <p>None of that pays for itself yet. Andola does. Andola is my lawn aeration and landscaping business in Matthews, North Carolina. It is the only operating business in the list. Everything else is in development or pre-launch, and Andola&#x27;s revenue is what funds the building time.</p>
+          <p>The pattern that emerged in month one: I describe the system, the AI writes most of the code, and my job is checking results, catching bad assumptions, and deciding what ships. September also set the working method I still use: git is the record, tests decide what is done, and nothing counts as shipped until it runs somewhere real. The bottleneck moved from typing code to judgment. That is the whole bet behind everything I am building.</p>
+                    <div class="viz timeline" aria-label="September timeline">
+            <p class="viz-label">Month one, dated</p>
+            <div class="t-row"><span class="t-date">Aug 2026</span> <span class="t-text">Started coding with AI. First software shipped.</span></div>
+            <div class="t-row"><span class="t-date">Sep 28</span> <span class="t-text">Backseat goes public, open source.</span></div>
+            <div class="t-row"><span class="t-date">Sep 29</span> <span class="t-text">Deal Snipers launch decision: Telegram, Bluesky, Threads. X dropped on per-post link pricing.</span></div>
+            <div class="t-row"><span class="t-date">Sep 30</span> <span class="t-text">Deal Snipers 24h soak: 2,620 deals fetched, 70 posted. Backseat at 0.9.12.</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#business</span> <span class="tag">#building</span></p>
+        </article>
+        <h2 class="subhead">WAR STORIES: WHAT BROKE, WHAT FIXED IT</h2>
+                <article class="note" id="note-timeout-lied" data-tags="systems building">
+          <span id="note-18" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">The timeout lied in both directions</h3>
+          <p>During the October voxel task series, Backseat returned the same terminal verdict for opposite realities. Five tasks timed out. Three of them (voxel-4, voxel-5, voxel-7) had actually finished and pushed their work to GitHub. Two (voxel-6, voxel-8) had genuinely died, and their work was lost. The timeout records carried boilerplate and no transcript, so from the record alone there was no way to tell a success from a loss.</p>
+          <p>That is a verdict problem, not a timing problem. A timeout means nobody answered in time. It says nothing about whether the work happened.</p>
+          <p>Version 0.9.14 fixed it structurally. A timeout is now a state, not a verdict: the extension keeps watching for two hours and revises the record when a late result lands (completed_late: true, the original timeout preserved for honesty). Any activity (transcript growth, a stage commit) resets the clock. Uncommitted work auto-checkpoints to a backseat branch every 15 minutes, so a bad night costs progress, not the whole task. And commits that land in the project repo during the task window get linked into the record as evidence.</p>
+          <p>The lesson I keep: a status you cannot audit is a status you do not have.</p>
+          <div class="viz" aria-label="Timeout verdicts versus reality">
+            <p class="viz-label">Bridge verdict vs reality, October voxel series</p>
+            <table class="versus">
+              <tr><th>Task</th><th>Bridge said</th><th>Reality</th></tr>
+              <tr><td>voxel-4</td><td class="bad">Timeout</td><td class="good">Completed, pushed to GitHub</td></tr>
+              <tr><td>voxel-5</td><td class="bad">Timeout</td><td class="good">Completed, pushed to GitHub</td></tr>
+              <tr><td>voxel-7</td><td class="bad">Timeout</td><td class="good">Completed, pushed to GitHub</td></tr>
+              <tr><td>voxel-6</td><td class="bad">Timeout</td><td class="good">Genuinely lost</td></tr>
+              <tr><td>voxel-8</td><td class="bad">Timeout</td><td class="good">Genuinely lost</td></tr>
+            </table>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#building</span></p>
+        </article>
+                <article class="note" id="note-benchmark-lied-twice" data-tags="ai bookkeeping research">
+          <span id="note-19" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">The benchmark lied twice</h3>
+          <p>Bookvera&#x27;s categorization benchmark caught two different lies, and both were mine to find.</p>
+          <p>First lie: the model ignored a hard rule. The system prompt says training platforms (LinkedIn Learning, Coursera, Udemy) are always Professional Development, never Software Subscriptions. On the 90-item benchmark the model suggested Software Subscriptions for all three anyway, at 0.95 confidence, three for three. The score sat at 77 of 90, 85.6%. My fix was to stop trusting the prompt for known vendors: deterministic vendor rules now run after the model and override it where a rule matches. Re-running the same benchmark: 80 of 90, 88.9%, and later runs reached 84 of 90, 93.3%.</p>
+          <p>Second lie: a re-run came back at 33 of 90, 36.7%, which looked like a collapse. It was not measuring the model at all. The run used a synthetic realm, no AI provider key resolved for it, and all 90 rows silently fell back to a word-matching heuristic. The benchmark had scored the fallback. I marked the run INVALID in the test log instead of logging a fake regression, re-ran against a real realm (83 of 90, then 84 of 90 after a chart fix), and changed the benchmark route so it returns an error when no provider resolves. A silent fallback can never be scored again.</p>
+          <p>High confidence is not evidence. A benchmark is only as honest as its plumbing.</p>
+          <div class="viz bars" aria-label="Benchmark runs, of 90">
+          <p class="viz-label">Benchmark runs, of 90</p>
+          <div class="bar-row"><span class="bar-k">First full run</span><span class="bar-track"><span class="bar-fill" style="--w:85.6%"></span></span><span class="bar-v">77, 85.6%</span></div>
+          <div class="bar-row"><span class="bar-k">After vendor rules</span><span class="bar-track"><span class="bar-fill" style="--w:88.9%"></span></span><span class="bar-v">80, 88.9%</span></div>
+          <div class="bar-row"><span class="bar-k">The invalid run</span><span class="bar-track"><span class="bar-fill ink" style="--w:36.7%"></span></span><span class="bar-v">33, INVALID</span></div>
+          <div class="bar-row"><span class="bar-k">Real realm re-run</span><span class="bar-track"><span class="bar-fill" style="--w:92.2%"></span></span><span class="bar-v">83, 92.2%</span></div>
+          <div class="bar-row"><span class="bar-k">After chart fix</span><span class="bar-track"><span class="bar-fill" style="--w:93.3%"></span></span><span class="bar-v">84, 93.3%</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#bookkeeping</span> <span class="tag">#research</span></p>
+        </article>
+                <article class="note" id="note-invented-company" data-tags="business bookkeeping ai">
+          <span id="note-20" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 20, 2026</p>
+          <h3 class="note-title">My own site invented a company</h3>
+          <p>For a stretch of October, Bookvera&#x27;s live marketing site published a legal identity that does not exist: a company name with &quot;Technologies, Inc.&quot; in it, a San Francisco street address, and a phone number, sitting in the footer and in the structured data search engines read. Plausible filler, shipped to production as fact. Nobody typed it as a lie. It was generated as packaging and never audited as a claim.</p>
+          <p>A claim-by-claim audit (every public statement on the site checked against what is actually true) caught it. The invented identity came off every surface the same day. Until the LLC and a real mailbox exist, the site publishes the product name and one real email address, nothing more. Seven new automated checks now pin that suppression, so the values cannot quietly come back in a later edit. The same pass killed a &quot;continuous auto-match&quot; claim for a feature that does not exist and replaced it with the reports tie-out that actually ships.</p>
+          <p>The rule that came out of it: generated copy is a claim, and claims get audited like code.</p>
+          <div class="viz pair" aria-label="Before and after the audit">
+            <div class="cell"><h4>BEFORE</h4><p>Footer and structured data published an invented company name, a San Francisco street address, and a phone number. None of it exists.</p></div>
+            <div class="cell"><h4>AFTER</h4><p>Product name and one real email only. Seven automated checks pin the suppression so it cannot regress in a later edit.</p></div>
+          </div>
+          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#bookkeeping</span> <span class="tag">#ai</span></p>
+        </article>
+                <article class="note" id="note-green-deploys" data-tags="systems bookkeeping">
+          <span id="note-21" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Green deploys, broken product</h3>
+          <p>Nothing in Bookvera&#x27;s deploy pipeline ran database migrations. For a while that did not matter. Then schema changes shipped as code alone, the production database fell behind (missing tables, missing columns), and the review queue, the part of the product customers would live in, returned errors for roughly 17 hours. The pages around it loaded fine. Every surface check said green.</p>
+          <p>The fix had two parts. Immediate: sync the database inside the deploy build, verify it, then take the training wheels back off. Structural: a standing rule that any schema change ships with its database sync in the same deploy, and that verification means production smoke tests plus signed-in API checks, never page loads alone. The same workstream took the rate of transactions getting no categorization proposal from 31% to 0%.</p>
+          <p>A 200 response proves a page exists. It proves nothing about the product behind it.</p>
+          <div class="viz timeline" aria-label="Schema drift incident timeline">
+            <p class="viz-label">The incident</p>
+            <div class="t-row"><span class="t-date">Schema ships</span> <span class="t-text">Code deploys green. No migration step exists in the pipeline.</span></div>
+            <div class="t-row"><span class="t-date">About 17 hours</span> <span class="t-text">The review queue errors against a database missing its tables. Pages still load. Checks still pass.</span></div>
+            <div class="t-row"><span class="t-date">Root cause</span> <span class="t-text">The deploy pipeline never synced the database. The code was right about a schema the database did not have.</span></div>
+            <div class="t-row"><span class="t-date">Standing rule</span> <span class="t-text">Schema changes ship with their database sync, verified by smoke tests and signed-in API checks.</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#bookkeeping</span></p>
+        </article>
+                <article class="note" id="note-every-business-did-not-exist" data-tags="systems research">
+          <span id="note-22" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 20, 2026</p>
+          <h3 class="note-title">Every business did not exist</h3>
+          <p>Two Dowser discovery chunks came back with the same impossible result: every business checked had no domain. Hundreds of real companies, zero websites. When every answer is the same, the instrument is broken, not the world.</p>
+          <p>The instrument was the existence check. It depended on a single DNS lookup service, which timed out under load on this machine, and every timeout silently read as &quot;domain does not exist.&quot; A second bug compounded it: the candidate generator never produced bare brand-token variants, so domains like transervice.com and cheerwine.com could not even be guessed.</p>
+          <p>Both got fixed. A DNS answer of &quot;definitively not registered&quot; still counts, but any other failure now falls back to fetching the candidate site itself before judging. Candidate generation added the missing variants (the cap went from 10 to 16 per business). The corrupted rows were scrubbed, the chunk relaunched, and the full test suite passed after: 209 of 209.</p>
+          <p>Zero is a suspicious result. Treat it as a bug report about your own pipeline first.</p>
+          <div class="viz ledger" aria-label="The fix">
+          <p class="viz-label">The fix</p>
+          <div class="row"><span class="k">Old existence check</span><span class="v">one DNS service, timeouts read as no</span></div>
+          <div class="row"><span class="k">New check</span><span class="v">DNS verdict, else fetch the site itself</span></div>
+          <div class="row"><span class="k">Candidate variants per business</span><span class="v">10, now 16</span></div>
+          <div class="row"><span class="k">Corrupted rows</span><span class="v">scrubbed and relaunched</span></div>
+          <div class="row"><span class="k">Tests after the fix</span><span class="v">209 of 209</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#research</span></p>
+        </article>
+                <article class="note" id="note-verifiers-disagree" data-tags="research business systems">
+          <span id="note-23" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">When the verifiers disagree</h3>
+          <p>Dowser verifies every email twice before it counts as sendable, because a warmed sending domain is expensive to burn. The two verifiers do not always agree, and one disagreement forced a policy.</p>
+          <p>A contact at a real accounting firm verified as valid in early October. Weeks later the second verifier called the whole domain catch-all, meaning the server accepts mail for any address and no individual mailbox can be confirmed. Both tools did their jobs. They just answer different questions.</p>
+          <p>The rule I set: when providers disagree, the catch-all verdict wins and the contact goes to quarantine, never onto a send list. Quarantine is reversible on my word; a burned domain is not. In the same run, pattern guessing got fixed by failure: two first-name addresses came back undeliverable or nonexistent, and a different pattern (first initial plus last name) found the real addresses, verified clean. A dedupe bug found in the same pass (76 imported rows carrying 6 duplicates) was fixed so re-imports merge instead of multiply.</p>
+          <p>Being careful is a feature when the cost of wrong is asymmetric.</p>
+          <div class="viz" aria-label="Verification disagreements and placements">
+            <p class="viz-label">Disagreement log</p>
+            <table class="versus">
+              <tr><th>Case</th><th>First check</th><th>Second check</th><th>Placement</th></tr>
+              <tr><td>Accounting firm contact</td><td>Valid</td><td class="bad">Catch-all domain</td><td class="good">Quarantine (reversible)</td></tr>
+              <tr><td>First-name address, firm A</td><td class="bad">Undeliverable</td><td>Initial + surname pattern</td><td class="good">Verified sendable</td></tr>
+              <tr><td>First-name address, firm B</td><td class="bad">Mailbox does not exist</td><td>Initial + surname pattern</td><td class="good">Verified sendable</td></tr>
+            </table>
+          </div>
+          <p class="note-tags"><span class="tag">#research</span> <span class="tag">#business</span> <span class="tag">#systems</span></p>
+        </article>
+                <article class="note" id="note-sediment-from-nothing" data-tags="building research">
+          <span id="note-24" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Sediment from nothing</h3>
+          <p>The voxel game&#x27;s erosion simulation was creating sediment from nothing, and the audit that found it was accounting, not graphics.</p>
+          <p>A full read of the erosion code found three separate mass leaks. The deposition step credited the full settle amount even when the soil cap threw part of it away. Thermal transfer debited the donor before checking the receiver&#x27;s cap, destroying mass at saturated cells. A bedrock clamp let suspended sediment gain more than the bedrock lost. And sediment exported to the ocean was never counted at all, so the books could not close even in principle.</p>
+          <p>The fix was to make the ledger honest: detachment clamped to what the terrain can actually lose, deposition capped by the room available (the excess stays suspended), transfers capped before any debit, and ocean export counted. Then the ledger became a permanent validation gate: what detaches plus what flows in must equal what deposits, what stays suspended, and what exports, closing to under 0.1%.</p>
+          <p>At 400 iterations the residual is 2.6e-4 cubic meters against 1.565 billion detached, effectively zero. Of everything the water tears loose: 45.1% reaches the ocean, 21.9% settles back on land, 33.0% is still in transit. The terrain now obeys conservation of mass, which is the entire point of building it from rules instead of painting it.</p>
+          <div class="viz bars" aria-label="Where detached sediment ends up">
+          <p class="viz-label">Where detached sediment ends up</p>
+          <div class="bar-row"><span class="bar-k">Exported to ocean</span><span class="bar-track"><span class="bar-fill" style="--w:45.1%"></span></span><span class="bar-v">45.1%</span></div>
+          <div class="bar-row"><span class="bar-k">Still suspended</span><span class="bar-track"><span class="bar-fill" style="--w:33.0%"></span></span><span class="bar-v">33.0%</span></div>
+          <div class="bar-row"><span class="bar-k">Deposited on land</span><span class="bar-track"><span class="bar-fill" style="--w:21.9%"></span></span><span class="bar-v">21.9%</span></div>
+          </div>
+          <div class="viz ledger" aria-label="The ledger, 400 iterations">
+          <p class="viz-label">The ledger, 400 iterations</p>
+          <div class="row"><span class="k">Sediment detached</span><span class="v">1.565 billion cubic meters</span></div>
+          <div class="row"><span class="k">Unaccounted residual</span><span class="v">2.6e-4 cubic meters</span></div>
+          <div class="row"><span class="k">Gate</span><span class="v">books close under 0.1%</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#building</span> <span class="tag">#research</span></p>
+        </article>
+                <article class="note" id="note-deals-in-posts-out" data-tags="automation business">
+          <span id="note-25" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">SEP 2026</p>
+          <h3 class="note-title">2,620 deals in, 70 posts out</h3>
+          <p>The 24-hour soak test told the truth about deal feeds: they are mostly noise. Fourteen sources fetched 2,620 deals in a day. Most produced almost nothing worth posting. Slickdeals Popular fetched 429 and yielded 23 above the live bar. One game-deal API fetched 125 and yielded zero. One source ran the other way: a single aggressive feed returned 85 deals, 70 of them above the bar.</p>
+          <p>The system&#x27;s answer is threshold discipline, not volume. A deal scoring 38 or better qualifies. The live posting bar sits at 70. Behind the score sits a price-history check against 28,873 recorded prices, because the claimed discount is the least trustworthy number on the internet. A price that dropped at least 15% against its own recent history earns a velocity bonus, and genuine all-time lows get badged as such.</p>
+          <p>Out of 2,620 candidates, 70 posts went out that day: 35 to Telegram, 35 to Bluesky, zero failed rows. A 2.7% publish rate is not a funnel problem. It is the product working.</p>
+          <div class="viz bars" aria-label="Deals at or above the live bar (70), by source, 24h">
+          <p class="viz-label">Deals at or above the live bar (70), by source, 24h</p>
+          <div class="bar-row"><span class="bar-k">One aggressive feed (85 in)</span><span class="bar-track"><span class="bar-fill" style="--w:100%"></span></span><span class="bar-v">70</span></div>
+          <div class="bar-row"><span class="bar-k">Hip2Save (265 in)</span><span class="bar-track"><span class="bar-fill" style="--w:42.9%"></span></span><span class="bar-v">30</span></div>
+          <div class="bar-row"><span class="bar-k">Slickdeals Popular (429 in)</span><span class="bar-track"><span class="bar-fill" style="--w:32.9%"></span></span><span class="bar-v">23</span></div>
+          <div class="bar-row"><span class="bar-k">DealNews (291 in)</span><span class="bar-track"><span class="bar-fill" style="--w:20%"></span></span><span class="bar-v">14</span></div>
+          <div class="bar-row"><span class="bar-k">TechBargains (738 in)</span><span class="bar-track"><span class="bar-fill" style="--w:1.4%"></span></span><span class="bar-v">1</span></div>
+          <div class="bar-row"><span class="bar-k">Game-deal API (125 in)</span><span class="bar-track"><span class="bar-fill ink" style="--w:0%"></span></span><span class="bar-v">0</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#automation</span> <span class="tag">#business</span></p>
+        </article>
         <article class="note" id="note-daemon-die" data-tags="automation systems">
           <span id="note-1" class="rss-anchor" aria-hidden="true"></span>
           <p class="note-date">OCT 2026</p>
@@ -156,5 +563,6 @@
 
 </div><!-- /.page -->
 <script src="assets/enhance.js" defer></script>
+<script src="assets/notes.js" defer></script>
 </body>
 </html>

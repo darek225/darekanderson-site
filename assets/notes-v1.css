@@ -1,0 +1,62 @@
+/* Field Notes visual components v1: ledgers, bars, versus tables, steps,
+   timelines, plates. Logbook palette: paper #F6F1E7, ink #1C1A16, red #C23B22. */
+
+.note .viz { margin: 1.1em 0 0.4em; }
+.viz-label { font-size: 0.72rem; letter-spacing: 0.14em; font-weight: 700; color: #C23B22; margin: 0 0 0.5em; text-transform: uppercase; }
+
+/* Ledger: label/value rows */
+.ledger { border-top: 2px solid #1C1A16; border-bottom: 1px solid #1C1A16; }
+.ledger .row { display: flex; justify-content: space-between; gap: 1em; padding: 0.42em 0.1em; border-bottom: 1px dotted rgba(28,26,22,0.35); }
+.ledger .row:last-child { border-bottom: none; }
+.ledger .k { color: rgba(28,26,22,0.78); }
+.ledger .v { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+/* Bars */
+.bars .bar-row { display: grid; grid-template-columns: 9.5em 1fr 4.2em; align-items: center; gap: 0.6em; padding: 0.28em 0; }
+.bars .bar-k { font-size: 0.9em; color: rgba(28,26,22,0.85); }
+.bars .bar-track { background: rgba(28,26,22,0.10); height: 0.85em; position: relative; }
+.bars .bar-fill { background: #C23B22; height: 100%; width: var(--w, 0%); }
+.bars .bar-fill.ink { background: #1C1A16; }
+.bars .bar-v { font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; font-size: 0.92em; }
+@media (max-width: 560px) {
+  .bars .bar-row { grid-template-columns: 7.2em 1fr 3.6em; gap: 0.45em; }
+}
+
+/* Versus table */
+.versus { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+.versus th, .versus td { border: 1px solid rgba(28,26,22,0.4); padding: 0.45em 0.6em; text-align: left; vertical-align: top; }
+.versus th { background: rgba(28,26,22,0.06); letter-spacing: 0.06em; font-size: 0.82em; text-transform: uppercase; }
+.versus td.bad { color: #C23B22; font-weight: 700; }
+.versus td.good { font-weight: 700; }
+
+/* Steps */
+.steps { display: flex; flex-wrap: wrap; gap: 0.45em; align-items: stretch; }
+.steps .step { border: 1.5px solid #1C1A16; padding: 0.5em 0.7em; background: rgba(255,255,255,0.35); flex: 1 1 7.5em; }
+.steps .step b { display: block; font-size: 0.95em; }
+.steps .step span { font-size: 0.83em; color: rgba(28,26,22,0.75); }
+.steps .arrow { align-self: center; font-weight: 700; color: #C23B22; }
+@media (max-width: 560px) { .steps .arrow { display: none; } .steps .step { flex: 1 1 40%; } }
+
+/* Timeline */
+.timeline { border-left: 2px solid rgba(28,26,22,0.5); margin-left: 0.3em; padding-left: 1.1em; }
+.timeline .t-row { position: relative; padding: 0.3em 0; }
+.timeline .t-row::before { content: ""; position: absolute; left: -1.32em; top: 0.72em; width: 0.55em; height: 0.55em; background: #C23B22; border-radius: 50%; }
+.timeline .t-date { font-weight: 700; font-variant-numeric: tabular-nums; }
+.timeline .t-text { color: rgba(28,26,22,0.88); }
+
+/* Challenge / fix pair */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7em; }
+.pair .cell { border: 1.5px solid #1C1A16; padding: 0.6em 0.75em; background: rgba(255,255,255,0.35); }
+.pair .cell h4 { margin: 0 0 0.35em; font-size: 0.78rem; letter-spacing: 0.12em; color: #C23B22; }
+.pair .cell p { margin: 0; font-size: 0.94em; }
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+
+/* Screenshot plate inside a note */
+.note .photo-frame { margin: 1em 0 0.4em; }
+.note .photo-frame img { width: 100%; height: auto; display: block; }
+
+/* Big stat strip */
+.stats { display: flex; flex-wrap: wrap; gap: 0.7em; }
+.stats .stat { flex: 1 1 8em; border-top: 3px solid #C23B22; padding-top: 0.4em; }
+.stats .stat .n { font-size: 1.55em; font-weight: 800; font-variant-numeric: tabular-nums; line-height: 1.05; }
+.stats .stat .l { font-size: 0.83em; color: rgba(28,26,22,0.78); }
