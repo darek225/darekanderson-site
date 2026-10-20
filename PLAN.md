@@ -159,3 +159,47 @@ No em dashes. No invented numbers/dates/statuses. Honest stamps; only Andola = o
 - 2026-10-20 03:36: COPY+CSS verified independently by coordinator (0 em dashes, 0 estate-sale, both URNs x2, 7 case-files / 28 labels, tag balance clean, TOC id set unchanged). Branch rebased clean onto origin/main.
 - 2026-10-20: MERGED --no-ff to main (781bf27, authored darek225) and pushed. Deploying via Vercel CLI (zenjong); verification pending.
 - 2026-10-20 03:45: DEPLOYED. `npx vercel --prod --scope zenjong` exit 0. Live verification: HTTP 200 on / and /resume.html; main-v7.css referenced; 28 case-labels on /; "Central Piedmont" present; 0 em dashes. DONE. v4 live at https://darekanderson-site.vercel.app.
+
+---
+
+# V5 — Multi-page rebuild + hero shader experiment (2026-10-20)
+
+**Why:** Darek rejected v3/v4 as "very boring, all you do is scroll down a wall of text, bad organization." Approved rebuild: multi-page, home = visual index, per-project pages, notes/story pages, nav Work/Notes/Story/Contact. Shader experiment approved but cut (below).
+
+**Branch:** v5/multi-page-shader (worktree ~/workspace/darekanderson-site-v5). Lock: ~/workspace/darekanderson-site-v5.lock.json.
+
+## V5 scope (structure only; all approved copy carries over)
+- index.html rebuilt: hero (unchanged copy) + Start Here shelf (3 proofs) + "On the machines" strip + specimen card grid (7 cards, Andola real photo + 6 name plates) + Three Doors + footer.
+- work/*.html x7: header (name, stamp, one-liner, external link) + large art + case file as tab panels (Built / What broke / How I judge it / Results), stacked DOM with JS off.
+- notes.html: Field Notes, highlights, tag filter (JS-gated), both LinkedIn embeds (URNs intact), notes.xml anchors updated.
+- story.html: Researcher as photo timeline + "From The Study" block (Universal Schematic, essays) restored.
+- resume.html: stylesheet link only changed.
+- Nav on every page; TOC drawer removed everywhere; dead JS banned (resume loads no JS).
+- CSS: main-v7.css -> main-v8.css (design system from DESIGN.md); one deferred JS file assets/enhance.js.
+- 6 name plates carry screenshot-slot comments (assets/screenshots/<slug>.jpg) for parent-side browser captures.
+
+## Sources and what each drove (Darek's named-sources requirement)
+- wiki/web-design-ingredients.md: workflow (DESIGN.md first, build, audit); 21st.dev/magic-mcp catalog noted, not needed.
+- wiki/palette-and-color-design.md: contrast floor 4.5:1 enforced; red text only on paper (4.73), red-deep on paper-deep (fixed a real v7 fail: .door-no).
+- dimensional-web-design-2026/report.md: occlusion overlap (plates over margin rule), 2-degree plate rotations, parallax <=15% decorative only, mobile-safe dimensionality; static composition complete everywhere.
+- taste-design skill: DESIGN.md seven-section structure; three conflicts resolved FOR the brief (Logbook Georgia serif kept; no inline-image typography hero; Motion 2, no perpetual loops).
+- impeccable: 21/24 critique (fix batch applied); vercel-labs web-design-guidelines: 17/20 audit.
+- ibelick-motion-primitives: InView, AnimatedGroup stagger (60ms), stamp-press (fine-pointer), Magnetic (dropped: no .magnetic markup in v5; press effect via CSS), ink-wash (dropped: no ledger rows; hover states restyled).
+- paper-design-shaders: evaluated, CUT for v5.
+- Galleries (supahero.io, bentogrids.com, cta.gallery): reference only for hero/grid/doors shapes.
+
+## Hero shader verdict: CUT
+Only paper-texture fit the Logbook at mandated low intensity; at that intensity the gain over the existing static SVG grain is near zero while adding WebGL2 failure modes + ~55KB payload. Vendoring path documented in DESIGN.md §9 if Darek wants to overrule. Not verifiable on this VM: mid-Android fps, shader visuals (no working headless WebGL path).
+
+## Workers
+1. design: DESIGN.md (448 lines), benchmarks (leerob.com, paco.me, brianlovin.com; rauno.me JS-blocked, excluded), shader memo.
+2. pages: 11 pages; Study chapter copy orphaned then flagged (audit restored it); new microcopy flagged for Darek's review pass.
+3. assets: main-v8.css (1096 lines), site.js (later deleted); fixed .door-no contrast fail; TOC CSS/JS removed.
+4. audit: class reconciliation (45 HTML orphans + 68 CSS orphans -> 0 HTML orphans, 18 documented-kept CSS orphans), JS merged to enhance.js, Study restored to story.html, resume main.js removed, impeccable 21/24, guidelines 17/20, gate table all green.
+
+## Log
+- 2026-10-20 04:0x: V5 coordinator started. Branch v5/multi-page-shader off origin/main (04abbf6), worktree created.
+- 2026-10-20: design complete (DESIGN.md + benchmarks + shader verdict CUT).
+- 2026-10-20: build complete (11 pages + assets).
+- 2026-10-20: audit complete (reconciliation, JS merge, Study restore, audits, gates).
+- Coordinator independent gates: em dashes 0, estate-sale 0, OPERATING BUSINESS 3x all-Andola, URNs 2x each in notes.xml targets, main-v8.css on 11/11, sitemap = 11 routes, notes.xml parses, 13 Andola photos, 6 screenshot slots, 0 broken internal links.

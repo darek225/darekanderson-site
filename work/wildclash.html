@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F1E7">
+<title>WildClash Arena: Darek Anderson</title>
+<meta name="description" content="WildClash Arena: an automated YouTube Shorts factory that publishes two videos a day, produced end to end without me. The case file: built, what broke, how it is judged, results.">
+<link rel="stylesheet" href="../assets/main-v8.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson.com/work/wildclash.html">
+<meta property="og:title" content="WildClash Arena: the case file">
+<meta property="og:description" content="An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it. Live pipeline, proof of concept.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WildClash Arena: the case file">
+<meta name="twitter:description" content="An automated YouTube Shorts factory. Two videos a day, produced without me.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "WildClash Arena: the case file",
+  "url": "https://darekanderson.com/work/wildclash.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson.com/"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="../index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="../index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="../notes.html">Notes</a>
+      <a class="nav-link" href="../story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <article class="project">
+    <header class="project-head">
+      <div class="opener">
+        <p class="entry-no">EXP-07</p>
+        <h1 class="chapter-title">WildClash Arena</h1>
+        <p class="chapter-gloss">An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>
+        <div class="double-rule" aria-hidden="true"></div>
+      </div>
+      <p class="project-stamp"><span class="stamp stamp-large">LIVE PIPELINE</span> <span class="stamp stamp-large">PROOF OF CONCEPT</span></p>
+      <p class="project-link"><a href="https://www.youtube.com/@WildClashArenaHQ">youtube.com/@WildClashArenaHQ</a></p>
+    </header>
+
+    <!-- real screenshot slot: assets/screenshots/wildclash.jpg, swap plate for <img> when available -->
+    <div class="name-plate name-plate--large">
+      <p class="plate-name">WildClash Arena</p>
+      <p class="plate-line">Two Shorts a day, untouched</p>
+      <p class="plate-stamp"><span class="stamp">LIVE PIPELINE</span> <span class="stamp">PROOF OF CONCEPT</span></p>
+    </div>
+    <p class="photo-caption">PLATE 01, NAME PLATE, SCREENSHOT PENDING</p>
+
+    <div class="case-tabs" data-tabs>
+      <section class="tab-panel" id="panel-built">
+        <h2 class="case-label">BUILT</h2>
+        <p>A pipeline that writes scripts, sources footage, cuts to the beat, adds captions and sound, and publishes two Shorts a day at 09:00 and 17:00. An episode bank and a factory service keep the queue ahead of the publish slots.</p>
+      </section>
+      <section class="tab-panel" id="panel-broke">
+        <h2 class="case-label">WHAT BROKE</h2>
+        <p>The VM underneath it kept getting replaced, which killed episodes mid-render and wiped the systemd timers. One night the episode bank hit 0 of 3 and a publish slot was lost. Recovery is now a canonical reinstall script for the timers, and the bank refills ahead of schedule instead of just in time.</p>
+      </section>
+      <section class="tab-panel" id="panel-judge">
+        <h2 class="case-label">HOW I JUDGE IT</h2>
+        <p>The factory heartbeat is the judge: every cycle writes a timestamped result, and a watchdog wakes me only when the heartbeat goes stale or the bank runs low. Comment checks run as a wake-only hook with a cheap model giving a logged second opinion; the deterministic gate stays in charge.</p>
+      </section>
+      <section class="tab-panel" id="panel-results">
+        <h2 class="case-label">RESULTS</h2>
+        <p>Two videos a day, produced and published without me.</p>
+        <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+          <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+          <p class="placeholder-text">Channel numbers: subscribers and views when there is something to report.</p>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="../notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <span class="placeholder-inline">handle TBD by Darek</span></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in system type on warm paper (#F6F1E7), ink (#1C1A16), and signal red (#C23B22). No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+<script src="../assets/enhance.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F1E7">
+<title>Field Notes: Darek Anderson</title>
+<meta name="description" content="Field Notes: short notes from Darek Anderson's work. What AI is actually good for, found empirically, written down as it happens.">
+<link rel="stylesheet" href="assets/main-v8.css">
+<link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson.com/notes.html">
+<meta property="og:title" content="Field Notes: Darek Anderson">
+<meta property="og:description" content="Short notes from the work: what AI is actually good for, found empirically. Newest first.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Field Notes: Darek Anderson">
+<meta name="twitter:description" content="Short notes from the work: what AI is actually good for, found empirically.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Field Notes: Darek Anderson",
+  "url": "https://darekanderson.com/notes.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson.com/"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link" href="index.html#work">Work</a>
+      <a class="nav-link active" href="notes.html" aria-current="page">Notes</a>
+      <a class="nav-link" href="story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <!-- FIELD NOTES -->
+  <section class="chapter ch-notes" aria-labelledby="notes-title">
+    <div class="opener">
+      <p class="entry-no">FIELD NOTES</p>
+      <h1 class="chapter-title" id="notes-title">Field Notes</h1>
+      <p class="chapter-gloss">Short notes from the work. Newest first.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+
+      <h2 class="subhead">HIGHLIGHTS</h2>
+      <div class="notes-highlights">
+        <article class="highlight-entry">
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title"><a href="#note-daemon-die">If the daemon can die silently, it will.</a></h3>
+          <p>My bridge watcher died four times in one day.</p>
+        </article>
+        <article class="highlight-entry">
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title"><a href="#note-vercel-commits">Vercel doesn&rsquo;t trust my AI&rsquo;s commits.</a></h3>
+          <p>Vercel refused to deploy because the commit author was &ldquo;Muse,&rdquo; an unrecognized identity.</p>
+        </article>
+        <article class="highlight-entry">
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title"><a href="#note-messy-books">Bookvera exists because my own books were a mess.</a></h3>
+          <p>The reason I&rsquo;m building an AI bookkeeper is that I lived inside messy books.</p>
+        </article>
+      </div>
+
+      <div class="note-filter" role="group" aria-label="Filter notes by tag">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All notes</button>
+        <button type="button" class="filter-btn" data-filter="automation" aria-pressed="false">#automation</button>
+        <button type="button" class="filter-btn" data-filter="systems" aria-pressed="false">#systems</button>
+        <button type="button" class="filter-btn" data-filter="ai" aria-pressed="false">#ai</button>
+        <button type="button" class="filter-btn" data-filter="authorship" aria-pressed="false">#authorship</button>
+        <button type="button" class="filter-btn" data-filter="business" aria-pressed="false">#business</button>
+        <button type="button" class="filter-btn" data-filter="bookkeeping" aria-pressed="false">#bookkeeping</button>
+      </div>
+
+      <p class="seed-line">SEED NOTES: these three are real events from October 2026, written as starters. Darek replaces or keeps at will.</p>
+      <div class="notes-list">
+        <article class="note" id="note-daemon-die" data-tags="automation systems">
+          <span id="note-1" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">If the daemon can die silently, it will.</h3>
+          <p>My bridge watcher died four times in one day. No error, no alert, just gone: the VM reaps background daemons whenever it feels like it. I found out by noticing the data was stale. The fix was a systemd service with Restart=always, kill -9 tested, back up in fifteen seconds. Lesson I&rsquo;m keeping: a background process you can&rsquo;t see dying is a background process you don&rsquo;t have. Supervise everything or assume it&rsquo;s dead.</p>
+          <p class="note-tags"><span class="tag">#automation</span> <span class="tag">#systems</span></p>
+        </article>
+        <article class="note" id="note-vercel-commits" data-tags="ai authorship">
+          <span id="note-2" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Vercel doesn&rsquo;t trust my AI&rsquo;s commits.</h3>
+          <p>Vercel refused to deploy because the commit author was &ldquo;Muse,&rdquo; an unrecognized identity. Same code, same repo, blocked on authorship. The fix: an empty commit authored under my own name, redeployed clean. It&rsquo;s a small thing, but it&rsquo;s a preview of a real problem: as agents write more of the world&rsquo;s code, every system built around human identity has to decide what counts as a legitimate author.</p>
+          <p class="note-tags"><span class="tag">#ai</span> <span class="tag">#authorship</span></p>
+        </article>
+        <article class="note" id="note-messy-books" data-tags="business bookkeeping">
+          <span id="note-3" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 2026</p>
+          <h3 class="note-title">Bookvera exists because my own books were a mess.</h3>
+          <p>The reason I&rsquo;m building an AI bookkeeper is that I lived inside messy books. Duplicate income entries, phantom transactions, categories that meant nothing. I kept finding problems months after they cost me clarity. Software that watches the books in the background isn&rsquo;t a nice-to-have for a small business. It&rsquo;s the difference between knowing your numbers and guessing.</p>
+          <p class="note-tags"><span class="tag">#business</span> <span class="tag">#bookkeeping</span></p>
+        </article>
+      </div>
+      <p class="rss-line">The notes feed: <a href="notes.xml">RSS</a>.</p>
+
+      <div class="linkedin-clippings">
+        <h2 class="subhead">From LinkedIn, clipped</h2>
+        <figure class="clipping">
+          <figcaption class="clipping-caption">LINKEDIN &middot; OCT 15, 2026</figcaption>
+          <iframe class="linkedin-embed" title="Darek Anderson on LinkedIn" loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7516703431378583552"></iframe>
+          <p class="clipping-fallback">Embed not loading? <a href="https://www.linkedin.com/feed/update/urn:li:activity:7516703431378583552">Open on LinkedIn</a>.</p>
+        </figure>
+        <figure class="clipping">
+          <figcaption class="clipping-caption">LINKEDIN &middot; JUN 4, 2026</figcaption>
+          <iframe class="linkedin-embed" title="Darek Anderson on LinkedIn" loading="lazy" src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7468377138090512384"></iframe>
+          <p class="clipping-fallback">Embed not loading? <a href="https://www.linkedin.com/feed/update/urn:li:activity:7468377138090512384">Open on LinkedIn</a>.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <span class="placeholder-inline">handle TBD by Darek</span></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in system type on warm paper (#F6F1E7), ink (#1C1A16), and signal red (#C23B22). No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+<script src="assets/enhance.js" defer></script>
+</body>
+</html>
