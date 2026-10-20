@@ -127,3 +127,35 @@ No em dashes. Copy doc verbatim except styled [ASK DAREK]/[PHOTO] placeholders. 
 - 2026-10-15: v3 AUDIT 17/20, critique 26/32. Fixes: red-deep AA token, ink-wash transform-only, rail aria-labels, drawer-close JS guard, skip-link hover, 40rem column, ::selection theming, resume.html cleanup.
 - 2026-10-15: MERGED v3/chapters-toc to main (28b73ba), pushed to origin. DEPLOYED via Vercel CLI (zenjong): https://darekanderson-site.vercel.app verified 200, 8 chapters live, correct LinkedIn URN, CONTENTS button + rail present.
 - DONE. v3 live.
+
+---
+
+# V4 — Case-file project write-ups + AI-industry positioning (2026-10-19)
+
+**Why:** Darek relayed from the "Switching from engineering to AI" side chat: portfolio projects must read hiring-standard (built / what broke / evaluation criteria / outcomes and defensible numbers), and positioning must pivot from MET-student to AI-industry entry (CPCC junior, AI program path, AWS AI Practitioner target). The old education line ("studying Mechanical Engineering Technology at UNC Charlotte and CPCC") is factually wrong and gets replaced.
+
+**Branch:** v4/case-files (worktree ~/workspace/darekanderson-site-v4). Lock: ~/workspace/darekanderson-site-v4.lock.json.
+
+## V4 scope (copy upgrade only — no structural/motion changes)
+- Lab: the 6 software projects become case entries. Each keeps the ledger row header (EXP index, name, honest stamp, one-line plain summary, external link) and gains a case-file block: BUILT / WHAT BROKE / HOW I JUDGE IT / RESULTS, with [ASK DAREK] placeholders where numbers are missing (Dowser first campaign, CTS client count, Deal Snipers followers/revenue, WildClash channel numbers).
+- Workshop: Andola row trimmed to a plain one-line summary; a case-file block below the ledger with BUILT / WHAT BROKE / HOW I JUDGE IT / THE NUMBERS (all verified). Job cards stay as evidence.
+- Researcher: new copy: 20-year-old, building with AI since Aug 2026 (about two months), UNC Charlotte did not stick, CPCC junior aiming at the AI industry (CPCC AI program path, working toward AWS Certified AI Practitioner). Thesis paragraph stays verbatim. CPCC placeholder-frame replaced with the known facts.
+- resume.html: education section updated to CPCC (remove stale "UNC Charlotte" framing; verify exact lines).
+- CSS: additions only (case-file block styling in logbook vernacular: mono red-deep labels, hairline rules). Cache-bust rename main-v6.css -> main-v7.css, update both link tags (index.html, resume.html).
+- No: hero, doors, field notes, notes, study, motion system, TOC.
+
+## Absolute rules (unchanged)
+No em dashes. No invented numbers/dates/statuses. Honest stamps; only Andola = operating business. No estate-sale mentions. Works with JS off. No "academically suspended" phrasing (open question for Darek).
+
+## Phases
+1. [x] WORKTREE + LOCK: branch v4/case-files off origin/main
+2. [ ] COPY+CSS: one worker does all edits on the branch
+3. [ ] VERIFY: coordinator re-checks gates independently (0 em dashes, 0 estate-sale, 7 projects + honest stamps, both LinkedIn URNs, TOC anchors, static responsive review)
+4. [ ] DEPLOY: merge --no-ff to main, push, npx vercel --prod --scope zenjong, verify 200
+5. [ ] REPORT: live URL, per-project changes, verified-vs-placeholder numbers, open questions
+
+## Log
+- 2026-10-19 23:35: v4 coordinator started. Branch v4/case-files created off origin/main (51068f0).
+- 2026-10-20 03:36: COPY+CSS verified independently by coordinator (0 em dashes, 0 estate-sale, both URNs x2, 7 case-files / 28 labels, tag balance clean, TOC id set unchanged). Branch rebased clean onto origin/main.
+- 2026-10-20: MERGED --no-ff to main (781bf27, authored darek225) and pushed. Deploying via Vercel CLI (zenjong); verification pending.
+- 2026-10-20 03:45: DEPLOYED. `npx vercel --prod --scope zenjong` exit 0. Live verification: HTTP 200 on / and /resume.html; main-v7.css referenced; 28 case-labels on /; "Central Piedmont" present; 0 em dashes. DONE. v4 live at https://darekanderson-site.vercel.app.
