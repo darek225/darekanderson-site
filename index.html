@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#F6F1E7">
 <title>Darek Anderson: the logbook. AI leverage, tested by building.</title>
 <meta name="description" content="Darek Anderson, 20, runs a real landscaping business and ships real software with AI as the builder. This site is the logbook: every experiment, labeled honestly.">
-<link rel="stylesheet" href="assets/main-v6.css">
+<link rel="stylesheet" href="assets/main-v7.css">
 <link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darek Anderson">
@@ -91,9 +91,19 @@
             <span class="row-name">Andola Landscape Services</span>
             <span class="stamp">OPERATING BUSINESS</span>
           </span>
-          <span class="row-proof">A commercial and residential landscaping company in the Charlotte area, doing $6K/month in commercial work during the first year. The numbers so far: $43.6K revenue in my first eight months on the books, $20.6K of it net, 47% net margin, best month $10.4K. I do the hard physical work myself: patios, drainage systems, grading, full installs. I also designed and built the company website: custom botanical brand identity with hand-drawn illustration throughout (logo, section dividers, watercolor foliage), plus a custom quote builder. Pick services and it composes a complete quote-request email with an intake checklist, no backend required. Built iteratively with Replit. I also set up the entire back office myself: QuickBooks for the books, the Google Business profile, Google Voice for the business line, and a custom domain with real company email. I build my own invoice and quote forms, and I use AI tools to automate and run the business better.</span>
+          <span class="row-proof">A commercial and residential landscaping company in the Charlotte area. I do the hard physical work myself, and I built the entire back office behind it. The full case is below.</span>
           <span class="row-url">andolalandscaping.com</span>
         </a>
+      </div>
+      <div class="case-file">
+        <p class="case-label">BUILT</p>
+        <p>Two halves. In the field: patios, drainage systems, grading, full installs, and commercial grounds maintenance, all done by me. Behind it, a back office I built myself: the company website (custom botanical brand, hand-drawn illustration throughout, and a quote builder that composes a complete quote-request email with an intake checklist, no backend), QuickBooks for the books, the Google Business profile, Google Voice for the business line, a custom domain with real company email, and my own invoice and quote forms. AI tools help automate and run the business better.</p>
+        <p class="case-label">WHAT BROKE</p>
+        <p>My own books, at first: duplicate income entries, phantom transactions, categories that meant nothing. I kept finding problems months after they cost me clarity. That mess is the reason Bookvera exists. In the field, the hard jobs teach the same lesson: a steep-grade patio meant relocating a sprinkler and a termite box and rebuilding the grade before a single paver went down. The full job is written up in the photos below.</p>
+        <p class="case-label">HOW I JUDGE IT</p>
+        <p>On the books. QuickBooks is the scoreboard: revenue, net, margin, best month, and whether the commercial accounts keep recurring. If a number is not in QuickBooks, I do not put it on this page.</p>
+        <p class="case-label">THE NUMBERS</p>
+        <p>First eight months on the books, Feb to Oct 2026: $43.6K revenue, $20.6K of it net, a 47% net margin, best month $10.4K (May 2026). Commercial work runs about $6K a month in the first year. I have maintained the Novant Health property in Wesley Chapel since the summer of 2025, subcontracted under North American Lawn and Landscape. The business started in Nov 2025; the business bank account opened Jan 2026.</p>
       </div>
       <div class="job-card">
         <p class="job-head"><span class="row-name">Recent work: patio extension</span> <span class="stamp">OCT 2026</span></p>
@@ -173,61 +183,137 @@
     <div class="chapter-body">
       <p class="ledger-intro">Everything below is real work. Statuses are honest: one operating business, the rest in various stages of built and building.</p>
       <div class="ledger" data-stagger>
-        <a class="ledger-row magnetic" href="https://github.com/darek225/backseat">
+        <div class="ledger-row">
           <span class="exp-index">EXP-02</span>
           <span class="row-main">
             <span class="row-name">Backseat</span>
             <span class="stamp">LIVE, OPEN SOURCE</span>
           </span>
-          <span class="row-proof">Expands the capabilities of Muse or any agentic AI by connecting it into a Windows environment, letting it act as the architect while more capable AIs build. Run VS Code and Cline in a total iterative loop, with autonomy and memory, so you get projects done with more convenience and less input. Open protocol, on GitHub and the VS Code Marketplace.</span>
-          <span class="row-url">github.com/darek225/backseat</span>
-        </a>
-        <a class="ledger-row magnetic" href="https://acuity-lovat.vercel.app">
+          <span class="row-proof">A bridge that lets an AI architect on my phone drive Cline in VS Code on my PC, through GitHub.</span>
+          <a class="row-url" href="https://github.com/darek225/backseat">github.com/darek225/backseat</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>An open protocol (git plus JSON task files) and a VS Code extension. I queue tasks from my phone; the extension polls a private GitHub repo, runs the task in Cline, and pushes the results back. It is agent-agnostic: any agentic AI that can use shell and git can sit in the architect seat, not just Muse. Shipped through v0.9.14.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>Three real failures shaped it. An overnight task produced zero output because VS Code stopped polling while I slept. Before v0.9.14, a timeout was treated as a verdict and work was genuinely lost. And the watcher daemon that reports bridge status died silently four times in one day because the VM reaps background processes.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>A completion is only real when the bridge records prove it: the done record, the status record, and a bounded transcript tail on every completion. If the extension knows it, the bridge records it. Timeouts are now a state, not a verdict: late results revise the record for up to two hours, and the worktree auto-checkpoints on timeout and every 15 minutes.</p>
+            <p class="case-label">RESULTS</p>
+            <p>v0.9.14 shipped with the timeout fix and checkpointing. The watcher now runs as a supervised systemd service that restarts itself. Distribution is honest so far: pull requests open on three awesome-lists, the repo had zero stars when they went in, and the VS Code Marketplace listing is shelved at my direction.</p>
+          </div>
+        </div>
+        <div class="ledger-row">
           <span class="exp-index">EXP-03</span>
           <span class="row-main">
             <span class="row-name">Bookvera</span>
             <span class="stamp">IN DEVELOPMENT</span>
           </span>
-          <span class="row-proof">An AI bookkeeping plugin for QuickBooks Online. It does the books in the background: categorizing transactions, catching duplicates and anomalies, and flagging problems before they cost real money. Built for small businesses that can&rsquo;t justify a full-time bookkeeper. In development, tested against real messy books. Product name is trademark-screened, not cleared.</span>
-          <span class="row-url">acuity-lovat.vercel.app</span>
-        </a>
-        <a class="ledger-row magnetic" href="https://dowser-peach.vercel.app">
+          <span class="row-proof">An AI bookkeeping plugin for QuickBooks Online that keeps small-business books clean in the background.</span>
+          <a class="row-url" href="https://acuity-lovat.vercel.app">acuity-lovat.vercel.app</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>A plugin for QuickBooks Online (not Desktop) that categorizes transactions, catches duplicates and anomalies, and flags problems before they cost real money. Built with Cline and DeepSeek. The marketing site is live, and the product runs a continuous improvement loop: it is always being worked on until I say stop.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>The launch blockers are named, not hidden. The Intuit app review is not passed yet. Stripe is still in test mode. Receipt-image attachments to QuickBooks are blocked by a fault on Intuit&rsquo;s side. And the name itself: Bookvera is trademark-screened, not cleared.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>Tested against real messy books, starting with my own: duplicate income entries, phantom transactions, categories that meant nothing. The bar is whether it catches what a human bookkeeper would catch, before month-end, without being asked.</p>
+            <p class="case-label">RESULTS</p>
+            <p>Pre-launch by the checklist above, and I will not call it launched until the Intuit review passes. The marketing site is live and optimized to be cited by AI search, so the product is findable the day it clears review.</p>
+          </div>
+        </div>
+        <div class="ledger-row">
           <span class="exp-index">EXP-04</span>
           <span class="row-main">
             <span class="row-name">Dowser</span>
             <span class="stamp">IN DEVELOPMENT</span>
           </span>
-          <span class="row-proof">I&rsquo;m making this to get beta testers for Bookvera. It&rsquo;s effortless promotion for any business: AI finds your prospects and turns cold outreach into booked meetings. Built with the capability to become a data brokering company.</span>
-          <span class="row-url">dowser-peach.vercel.app</span>
-        </a>
-        <a class="ledger-row magnetic" href="https://carolina-trade-sites.vercel.app">
+          <span class="row-proof">An AI outbound engine that finds prospects and turns cold outreach into booked meetings. I built it to get beta testers for Bookvera.</span>
+          <a class="row-url" href="https://dowser-peach.vercel.app">dowser-peach.vercel.app</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>A reusable prospecting engine: it finds prospects, scores them, and runs outreach. The decision layer is a batched model call that returns a verdict, a fit score, and reply intent for each prospect.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>I did not trust the model with the send button. The decision layer runs in shadow mode: its scores are calibration-only, and a deterministic 0-to-10 scoring gate stays authoritative. Any model failure falls through to the existing path unchanged, so a bad model day cannot break outreach.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>The test suite is the judge: 158 of 158 tests green, typecheck clean. Routing is by confidence: high confidence acts, mid confidence falls through to the existing path, low confidence goes to a human.</p>
+            <p class="case-label">RESULTS</p>
+            <p>Engine built and green; built to recruit Bookvera beta testers first, reusable for any business after that.</p>
+            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+              <p class="placeholder-text">First campaign results: outreach volume, reply rate, meetings booked.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ledger-row">
           <span class="exp-index">EXP-05</span>
           <span class="row-main">
             <span class="row-name">Carolina Trade Sites</span>
             <span class="stamp">IN DEVELOPMENT</span>
           </span>
-          <span class="row-proof">A pipeline that builds very high quality custom websites, combining my design experience with AI. Each site is created from a massive pool of data and research. It understands everything human designers do, plus more. Humans audit the work and iterate along the process.</span>
-          <span class="row-url">carolina-trade-sites.vercel.app</span>
-        </a>
-        <a class="ledger-row magnetic" href="https://dealsnipers.github.io/deal-snipers-links/">
+          <span class="row-proof">Productized website design for Charlotte home-service companies, built by AI and audited by humans.</span>
+          <a class="row-url" href="https://carolina-trade-sites.vercel.app">carolina-trade-sites.vercel.app</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>A $2,000 website build with a $79-to-$99/mo care plan, or $299-to-$500 down plus $179-to-$199/mo for 12 months. The hub is live with a 10-block component library, working demo sites, and a real quote-request form. The stack costs about $1 a month to run. Before building, I researched and ranked 9 competing Charlotte web companies.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>Two infrastructure lessons. Vercel refuses to deploy commits authored by an AI identity, so every deploy needs commits authored under my name. And phones cache old CSS under the same URL, so a redesigned page can render broken on a customer&rsquo;s phone until the stylesheet file is renamed. Both are fixed and written down as rules.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>Every site is benchmarked against the best comparable work before building, never designed in a vacuum. A site passes when a customer can do the one thing the business needs (call, book, request a quote) from a phone with no friction, and when the price math on the page matches the price math in the contract.</p>
+            <p class="case-label">RESULTS</p>
+            <p>Hub live with live demos and a working request form.</p>
+            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+              <p class="placeholder-text">Client count: first paying client goes here.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ledger-row">
           <span class="exp-index">EXP-06</span>
           <span class="row-main">
             <span class="row-name">Deal Snipers</span>
             <span class="stamp">LIVE PIPELINE</span>
           </span>
-          <span class="row-proof">An automated deal detection pipeline. It scans retailers for deep discounts, verifies each one against price history so only real deals get through, then posts them automatically with copy, images, and affiliate links. Runs on a schedule with zero ongoing effort.</span>
-          <span class="row-url">dealsnipers.github.io/deal-snipers-links</span>
-        </a>
-        <a class="ledger-row magnetic" href="https://www.youtube.com/@WildClashArenaHQ">
+          <span class="row-proof">A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically.</span>
+          <a class="row-url" href="https://dealsnipers.github.io/deal-snipers-links/">dealsnipers.github.io/deal-snipers-links</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>Agents scan retailers for deep discounts, verify each candidate against price history so only real deals pass, then post with hype copy, product images, and my affiliate tag to an X bot through the official API. The system also watches rival deal accounts as a signal source. Revenue is the Amazon 24-hour affiliate cookie on posted deals.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>The expensive lesson was scheduling. The pipeline first ran on agent crons, which burn model budget on every fire whether anything changed or not. Recurring deterministic work now runs on systemd timers at zero model cost, and that rule now applies to every pipeline I run.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>A deal posts only if the price-history check passes. A fake discount is worse than a missed deal, because the account&rsquo;s only asset is that followers trust the posts.</p>
+            <p class="case-label">RESULTS</p>
+            <p>Live and posting on schedule with no ongoing effort from me.</p>
+            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+              <p class="placeholder-text">Audience and revenue: follower count and affiliate revenue when there is something to report.</p>
+            </div>
+          </div>
+        </div>
+        <div class="ledger-row">
           <span class="exp-index">EXP-07</span>
           <span class="row-main">
             <span class="row-name">WildClash Arena</span>
             <span class="stamp">LIVE PIPELINE</span>
             <span class="stamp">PROOF OF CONCEPT</span>
           </span>
-          <span class="row-proof">An automated short-form video production pipeline, built as a proof of concept. It writes scripts, sources footage, cuts to the beat, adds captions and sound, then posts 2 videos a day. I never touch it. A working demo of what one person can run with AI as the production crew.</span>
-          <span class="row-url">youtube.com/@WildClashArenaHQ</span>
-        </a>
+          <span class="row-proof">An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</span>
+          <a class="row-url" href="https://www.youtube.com/@WildClashArenaHQ">youtube.com/@WildClashArenaHQ</a>
+          <div class="case-file">
+            <p class="case-label">BUILT</p>
+            <p>A pipeline that writes scripts, sources footage, cuts to the beat, adds captions and sound, and publishes two Shorts a day at 09:00 and 17:00. An episode bank and a factory service keep the queue ahead of the publish slots.</p>
+            <p class="case-label">WHAT BROKE</p>
+            <p>The VM underneath it kept getting replaced, which killed episodes mid-render and wiped the systemd timers. One night the episode bank hit 0 of 3 and a publish slot was lost. Recovery is now a canonical reinstall script for the timers, and the bank refills ahead of schedule instead of just in time.</p>
+            <p class="case-label">HOW I JUDGE IT</p>
+            <p>The factory heartbeat is the judge: every cycle writes a timestamped result, and a watchdog wakes me only when the heartbeat goes stale or the bank runs low. Comment checks run as a wake-only hook with a cheap model giving a logged second opinion; the deterministic gate stays in charge.</p>
+            <p class="case-label">RESULTS</p>
+            <p>Two videos a day, produced and published without me.</p>
+            <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
+              <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
+              <p class="placeholder-text">Channel numbers: subscribers and views when there is something to report.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="chapter-end">
@@ -328,13 +414,10 @@
       <figure class="photo-frame photo-frame-researcher">
         <img src="assets/photos/researcher-darek.jpg" alt="Darek with friends on a red pickup truck at a mountain overlook" loading="lazy">
       </figure>
-      <p>I&rsquo;m a 20-year-old builder and entrepreneur, studying Mechanical Engineering Technology at UNC Charlotte and CPCC. I run Andola Landscape Services, a commercial and residential landscaping company in the Charlotte area, doing $6K/month in commercial work during the first year, with more businesses and software projects in progress.</p>
-      <p>I switched from Mechanical Engineering to Mechanical Engineering Technology because I wanted a hands-on, tangible education. I learn by building the thing, not by modeling it.</p>
+      <p>I&rsquo;m a 20-year-old builder and entrepreneur in Matthews, NC. I started building with AI in August 2026. About two months in, this logbook is the result: one operating business and six software systems, most of them running without me. AI is the builder. I am the one who decides what gets built and whether it is any good.</p>
+      <p>School: I started in Mechanical Engineering, switched to Mechanical Engineering Technology at UNC Charlotte because I wanted a hands-on, tangible education, and learned by building the thing, not modeling it. UNC Charlotte did not stick. I am at Central Piedmont Community College now, a junior, and I am aiming at the AI industry: the CPCC AI program path, and the AWS Certified AI Practitioner credential, which I am working toward.</p>
       <p>The thread through all of it: AI lets me be the dreamer instead of getting stuck being the builder. Having the capability to design and build any system or solution with simply a thought is the largest advancement in human productivity. That&rsquo;s the real utility I&rsquo;m testing: how much one person can do when building stops being the bottleneck. I believe advancement never truly regresses once an idea is brought into the world, so I move fast on the ones worth building.</p>
-      <div class="placeholder-frame" role="note" aria-label="Open question for Darek">
-        <p class="placeholder-tag">FOR DAREK TO ANSWER</p>
-        <p class="placeholder-text">CPCC: program, dates, credential for the education section.</p>
-      </div>
+      <p>CPCC: junior, AI program path. AWS Certified AI Practitioner in progress.</p>
       <p class="resume-line"><a class="cta-btn cta-btn-inline" href="resume.html">Read the resume</a></p>
     </div>
   </section>
