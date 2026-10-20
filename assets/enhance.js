@@ -216,6 +216,16 @@
           var tags = (note.getAttribute("data-tags") || "").split(/\s+/);
           note.classList.toggle("is-filtered-out", tag !== "all" && tags.indexOf(tag) === -1);
         });
+        /* announce the new visible count for screen readers (web-interface-guidelines: async updates) */
+        var status = document.getElementById("notes-filter-status");
+        if (status) {
+          var visible = 0;
+          notes.forEach(function (note) {
+            if (!note.classList.contains("is-filtered-out")) visible++;
+          });
+          var label = btn.textContent.replace(/^\s+|\s+$/g, "");
+          status.textContent = "Showing " + visible + (visible === 1 ? " note" : " notes") + " tagged " + label + ".";
+        }
       });
       /* mark the shipped default (aria-pressed="true") as styled-active */
       if (btn.getAttribute("aria-pressed") === "true") btn.classList.add("is-active");

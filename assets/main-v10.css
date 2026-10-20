@@ -1022,3 +1022,16 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
   .site-nav { display: none; }
   .cta-row { display: none; }
 }
+
+/* ---------- visually-hidden: screen-reader-only live region utility ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
