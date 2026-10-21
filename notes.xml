@@ -5,7 +5,14 @@
     <link>https://darekanderson.com/notes.html</link>
     <description>Short notes from the work: what AI is actually good for, found empirically.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2026 21:15:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 20:30:00 GMT</lastBuildDate>
+    <item>
+      <title>NeverReteach: teach your agent once</title>
+      <link>https://darekanderson.com/notes.html#note-26</link>
+      <guid isPermaLink="true">https://darekanderson.com/notes.html#note-26</guid>
+      <pubDate>Wed, 21 Oct 2026 12:00:00 GMT</pubDate>
+      <description>My dad uses Claude Code. Every time he starts a new app, he re-teaches it the same lessons: his stack choices, his conventions, the bug that already cost him an afternoon three projects ago. The tool is not the problem. The tool starts every project blank, and nothing carries over. So I built him the fix, and it turned into a product. NeverReteach is a self-building memory wiki for AI coding agents, and it rests on two ingredients every platform already has. Agents auto-load an instruction file in every session. Plain text files persist. Put a small kernel of protocols in the always-loaded file, keep the knowledge in a wiki of plain markdown files in its own git repo, and the agent can read what it knows before it works and file what it learns before it finishes. The wiki starts blank, on purpose. A bootstrap fills it: the agent interviews you about your stack and your gotchas, then mines your existing projects, configs, READMEs, and project instruction files, and drafts your first category pages from real evidence. Every draft is shown to you for approval before it is filed. One topic per page, one line per category in the index, loaded on demand and never all at once. The kernel and the wiki format exist once, platform-neutral. A render script turns that core into the files each tool actually reads: eight adapters. Claude Code, Gemini CLI, and OpenCode get the full tier, with hooks or a plugin enforcing the guards. Codex, Cursor, and GitHub Copilot get instructions-only adapters, where the kernel tells the agent to perform the same guards itself. Muse and plain chat agents get hosted packs. Switch tools and the wiki comes with you unchanged. Cost discipline is the design constraint, not a feature. Index-first loading, zero LLM hooks, nothing running between sessions, one batched distill at the end of a session instead of a background process burning tokens. A memory system that eats your usage budget is worse than no memory. Built on October 20 and 21, 2026. Public on GitHub as of today, MIT licensed, free: github.com/darek225/neverreteach. Teach each lesson once.</description>
+    </item>
     <item>
       <title>October 2026: everything at once</title>
       <link>https://darekanderson.com/notes.html#note-4</link>

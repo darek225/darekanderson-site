@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F6F1E7">
+<title>NeverReteach: Darek Anderson</title>
+<meta name="description" content="NeverReteach: a self-building memory wiki for AI coding agents. Teach each lesson once; the agent files it and loads it on every future project. The case file: built, what broke, how it is judged, results.">
+<link rel="stylesheet" href="../assets/main-v12.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson.com/work/neverreteach.html">
+<meta property="og:title" content="NeverReteach: the case file">
+<meta property="og:description" content="A self-building memory wiki for AI coding agents. One core, eight platforms. Public, MIT licensed, free.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NeverReteach: the case file">
+<meta name="twitter:description" content="A self-building memory wiki for AI coding agents. Teach each lesson once.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "NeverReteach: the case file",
+  "url": "https://darekanderson.com/work/neverreteach.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson.com/"
+  }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="../index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="../index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="../notes.html">Notes</a>
+      <a class="nav-link" href="../story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <article class="project">
+    <header class="project-head">
+      <div class="opener">
+        <p class="entry-no">EXP-08</p>
+        <h1 class="chapter-title">NeverReteach</h1>
+        <p class="chapter-gloss">A self-building memory wiki for AI coding agents. Teach each lesson once; the agent files it, dates it, and loads it on every future project.</p>
+        <div class="double-rule" aria-hidden="true"></div>
+      </div>
+      <p class="project-stamp"><span class="stamp stamp-large">LIVE, OPEN SOURCE</span></p>
+      <p class="project-link"><a href="https://github.com/darek225/neverreteach">github.com/darek225/neverreteach</a></p>
+    </header>
+
+    <figure class="photo-frame specimen-art">
+      <img src="../assets/neverreteach-how-it-works.png" alt="Diagram of the NeverReteach loop: session starts and the kernel loads the wiki index, the agent reads only the pages the task needs, work surfaces lessons, and distill files them back into the wiki" width="1200" height="630" loading="eager">
+      <figcaption class="photo-caption">DIAGRAM: THE NEVERRETEACH LOOP, OCT 2026</figcaption>
+    </figure>
+
+    <div class="case-tabs" data-tabs>
+      <section class="tab-panel" id="panel-built">
+        <h2 class="case-label">BUILT</h2>
+        <p>A memory kit for AI coding agents. A small kernel of protocols lives in the platform's always-loaded instruction file. The knowledge lives in a wiki of plain markdown files, one topic per page, in its own git repo that starts completely blank. The agent reads the index at session start, loads only the pages a task needs, and files new lessons at session end through six commands: remember, recall, distill, intake, seed-from-projects, and weekly-review. A librarian audits the wiki for duplicates and stale claims. The kernel and wiki format exist once, platform-neutral; a render script turns that core into adapters for eight platforms. Built on October 20 and 21, 2026, for my dad, a Claude Code user who re-taught the same lessons on every new app.</p>
+      </section>
+      <section class="tab-panel" id="panel-broke">
+        <h2 class="case-label">WHAT BROKE</h2>
+        <p>The hard parts were the platforms, not the idea. Cursor's hooks are still beta, so its adapter runs instructions-only. Copilot's prompt files were a public preview when I built against them. The Windows installer was rewritten but never executed: there is no PowerShell on my machine to test it, and the platform docs say exactly that. And the closest existing kit had tried background auto-capture and retired it; a hook that blocks at the wrong moment can wedge a session, so every guard here is non-blocking by design.</p>
+      </section>
+      <section class="tab-panel" id="panel-judge">
+        <h2 class="case-label">HOW I JUDGE IT</h2>
+        <p>Each adapter was installed into a sandbox and detection-tested: the installer finds a platform by its config directory or its binary, installs the right files, and backs up anything it replaces first. The wiki has to start empty and stay the user's own repo. The bootstrap's drafts are shown for approval before anything is filed. Anything I could not verify is flagged unverified in the docs rather than smoothed over.</p>
+      </section>
+      <section class="tab-panel" id="panel-results">
+        <h2 class="case-label">RESULTS</h2>
+        <p>Public on GitHub on October 21, 2026, MIT licensed and free. Eight platforms from one core: full tier with hooks or a plugin (Claude Code, Gemini CLI, OpenCode), instructions-only (Codex, Cursor, GitHub Copilot), and hosted packs (Muse, chat agents). Cost discipline is the design constraint: index-first loading, zero LLM hooks, nothing runs between sessions, one batched distill per session. A memory system that eats your usage budget is worse than no memory.</p>
+      </section>
+    </div>
+  </article>
+
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="../notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <a href="https://x.com/Darek_225">@Darek_225</a></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in system type on warm paper (#F6F1E7), ink (#1C1A16), and signal red (#C23B22). No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /.page -->
+<script src="../assets/enhance.js" defer></script>
+</body>
+</html>

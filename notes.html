@@ -102,6 +102,26 @@
       <p class="seed-line">THE ARCHIVE: monthly roundups, weekly tops, and deep dives from August to October 2026, newest first. The three seed notes from the site launch sit at the bottom.</p>
       <p class="visually-hidden" role="status" id="notes-filter-status"></p>
       <div class="notes-list">
+                <article class="note" id="note-neverreteach-teach-once" data-tags="systems ai building">
+          <span id="note-26" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">OCT 21, 2026</p>
+          <h3 class="note-title">NeverReteach: teach your agent once</h3>
+          <p>My dad uses Claude Code. Every time he starts a new app, he re-teaches it the same lessons: his stack choices, his conventions, the bug that already cost him an afternoon three projects ago. The tool is not the problem. The tool starts every project blank, and nothing carries over.</p>
+          <p>So I built him the fix, and it turned into a product. NeverReteach is a self-building memory wiki for AI coding agents, and it rests on two ingredients every platform already has. Agents auto-load an instruction file in every session. Plain text files persist. Put a small kernel of protocols in the always-loaded file, keep the knowledge in a wiki of plain markdown files in its own git repo, and the agent can read what it knows before it works and file what it learns before it finishes.</p>
+          <p>The wiki starts blank, on purpose. A bootstrap fills it: the agent interviews you about your stack and your gotchas, then mines your existing projects, configs, READMEs, and project instruction files, and drafts your first category pages from real evidence. Every draft is shown to you for approval before it is filed. One topic per page, one line per category in the index, loaded on demand and never all at once.</p>
+          <p>The kernel and the wiki format exist once, platform-neutral. A render script turns that core into the files each tool actually reads: eight adapters. Claude Code, Gemini CLI, and OpenCode get the full tier, with hooks or a plugin enforcing the guards. Codex, Cursor, and GitHub Copilot get instructions-only adapters, where the kernel tells the agent to perform the same guards itself. Muse and plain chat agents get hosted packs. Switch tools and the wiki comes with you unchanged.</p>
+          <p>Cost discipline is the design constraint, not a feature. Index-first loading, zero LLM hooks, nothing running between sessions, one batched distill at the end of a session instead of a background process burning tokens. A memory system that eats your usage budget is worse than no memory.</p>
+          <p>Built on October 20 and 21, 2026. Public on GitHub as of today, MIT licensed, free: github.com/darek225/neverreteach. Teach each lesson once.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/neverreteach-how-it-works.png" alt="Diagram of the NeverReteach loop" width="1200" height="630" loading="lazy"><figcaption class="photo-caption">DIAGRAM: THE NEVERRETEACH LOOP, OCT 2026</figcaption></figure>
+                    <div class="viz ledger" aria-label="NeverReteach, the ledger">
+          <p class="viz-label">The build, in numbers</p>
+          <div class="row"><span class="k">Platforms covered</span><span class="v">8 adapters from one core</span></div>
+          <div class="row"><span class="k">LLM hooks</span><span class="v">0</span></div>
+          <div class="row"><span class="k">Wiki on day one</span><span class="v">Blank, on purpose</span></div>
+          <div class="row"><span class="k">Price</span><span class="v">Free, MIT licensed</span></div>
+          </div>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#ai</span> <span class="tag">#building</span></p>
+        </article>
                 <article class="note" id="note-october-2026-roundup" data-tags="business bookkeeping ai building">
           <span id="note-4" class="rss-anchor" aria-hidden="true"></span>
           <p class="note-date">OCT 2026</p>
