@@ -102,6 +102,36 @@
       <p class="seed-line">THE ARCHIVE: monthly roundups, weekly tops, and deep dives from August to October 2026, newest first. The three seed notes from the site launch sit at the bottom.</p>
       <p class="visually-hidden" role="status" id="notes-filter-status"></p>
       <div class="notes-list">
+                <article class="note" id="note-offsides-plus" data-tags="systems building">
+          <span id="note-27" class="rss-anchor" aria-hidden="true"></span>
+          <p class="note-date">NOV 2, 2026</p>
+          <h3 class="note-title">YikYak doesn&#x27;t exist on Android. So I fixed the app that does.</h3>
+          <p>YikYak relaunched in 2021 as iOS-only, and its Android app was pulled from Google Play in March 2023 when Sidechat bought it. Five years of &quot;coming soon&quot; later, Android users have exactly one real option: Offsides, an open-source client whose author deprecated it. It showed. DMs silently stopped after the first message in a thread. Posts and replies failed with no error. Anonymous mode could show your username anyway.</p>
+                    <figure class="photo-frame specimen-art"><img src="assets/screenshots/offsides-plus-feed.png" alt="Offsides+ redesigned feed, matched to the current iOS YikYak" width="1440" height="589" loading="lazy"><figcaption class="photo-caption">SCREENSHOT: OFFSIDES+ FEED PREVIEW, CI EMULATOR, NOV 2026</figcaption></figure>
+          <p>I forked it as Offsides+ and rebuilt it in three releases in one day. The fixes came first. Every DM send carried the same client_id, and the server dedupes on it, so only the first message in a thread ever landed; the fork generates a fresh one per send. Failed posts and comments returned nothing the app could show, so the app now surfaces the server&#x27;s actual error and keeps the draft. Anonymous mode could default to named; it now defaults to anonymous, and an anonymous post never renders a username. Three API URLs in the pinned sidechat.js package were malformed, an &amp; where a ? belonged, breaking group explore, poll results, and user pages. They are patched.</p>
+          <div class="viz pair" aria-label="Before and after the redesign">
+            <div class="cell"><h4>BEFORE</h4><p>Stock Offsides: Material You styling with a different theme per group. Functional, and visibly not the app iPhone users were looking at.</p></div>
+            <div class="cell"><h4>AFTER</h4><p>Offsides+ v1.2.0: a fixed dark theme matched screen by screen to iOS YikYak v5.8.15. Black background, dark cards, teal accent, the same vote buttons and poll layout.</p></div>
+          </div>
+          <div class="viz ledger" aria-label="Offsides+, broken then fixed">
+          <p class="viz-label">Broken, then fixed</p>
+          <div class="row"><span class="k">DMs stop after the first message</span><span class="v">Fresh client_id per send</span></div>
+          <div class="row"><span class="k">Posts and replies fail silently</span><span class="v">Error shown, draft kept</span></div>
+          <div class="row"><span class="k">Anonymous mode can leak a username</span><span class="v">Anonymous by default</span></div>
+          <div class="row"><span class="k">Three malformed API URLs</span><span class="v">Patched in sidechat.js</span></div>
+          </div>
+          <p>v1.3.0 wired up what the API already supported and the app never used: group chats, poll results with percentages and view-without-voting, server-side group search, hide posts from a user with an unhide-all in Settings, and an asset library picker in the composer. Every build is verified in CI on an emulator: install, boot, render, zero crashes.</p>
+          <div class="viz timeline" aria-label="Offsides+ release timeline">
+            <p class="viz-label">Three releases, then public</p>
+            <div class="t-row"><span class="t-date">Nov 1, v1.1.0</span> <span class="t-text">The fixes: DMs, error surfacing, anonymous mode, the library URL patch.</span></div>
+            <div class="t-row"><span class="t-date">Nov 1, v1.2.0</span> <span class="t-text">The redesign: UI matched to iOS YikYak v5.8.15.</span></div>
+            <div class="t-row"><span class="t-date">Nov 1, v1.3.0</span> <span class="t-text">The features: group chats, poll results, group search, hide and unhide, asset picker.</span></div>
+            <div class="t-row"><span class="t-date">Nov 2</span> <span class="t-text">Public on GitHub under GPLv3. The original author merges the sidechat.js fix upstream the same day.</span></div>
+          </div>
+          <p>The upstream repo had no license, so I asked the author before publishing. He added GPLv3, welcomed the fork by name, and merged my sidechat.js fix (error bodies returned instead of lost) into his package within the hour. He has offered to redirect users from the Offsides landing page if the fork proves stable and maintained. That is now the roadmap: keep it updated, answer every bug report.</p>
+          <p><a class="cta-btn" href="https://github.com/darek225/offsides-improved">Offsides+ on GitHub</a> <a class="cta-btn" href="https://github.com/darek225/offsides-improved/releases/tag/v1.3.0">Get the v1.3.0 APK</a></p>
+          <p class="note-tags"><span class="tag">#systems</span> <span class="tag">#building</span></p>
+        </article>
                 <article class="note" id="note-neverreteach-teach-once" data-tags="systems ai building">
           <span id="note-26" class="rss-anchor" aria-hidden="true"></span>
           <p class="note-date">OCT 21, 2026</p>

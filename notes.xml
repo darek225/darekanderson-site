@@ -5,7 +5,14 @@
     <link>https://darekanderson.com/notes.html</link>
     <description>Short notes from the work: what AI is actually good for, found empirically.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Oct 2026 20:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <item>
+      <title>YikYak doesn't exist on Android. So I fixed the app that does.</title>
+      <link>https://darekanderson.com/notes.html#note-27</link>
+      <guid isPermaLink="true">https://darekanderson.com/notes.html#note-27</guid>
+      <pubDate>Mon, 02 Nov 2026 12:00:00 GMT</pubDate>
+      <description>YikYak relaunched in 2021 as iOS-only, and its Android app was pulled from Google Play in March 2023 when Sidechat bought it. Five years of "coming soon" later, Android users have exactly one real option: Offsides, an open-source client whose author deprecated it. It showed. DMs silently stopped after the first message in a thread. Posts and replies failed with no error. Anonymous mode could show your username anyway. I forked it as Offsides+ and rebuilt it in three releases in one day. The fixes came first. Every DM send carried the same client_id, and the server dedupes on it, so only the first message in a thread ever landed; the fork generates a fresh one per send. Failed posts and comments returned nothing the app could show, so the app now surfaces the server's actual error and keeps the draft. Anonymous mode could default to named; it now defaults to anonymous, and an anonymous post never renders a username. Three API URLs in the pinned sidechat.js package were malformed, an &amp; where a ? belonged, breaking group explore, poll results, and user pages. They are patched. v1.3.0 wired up what the API already supported and the app never used: group chats, poll results with percentages and view-without-voting, server-side group search, hide posts from a user with an unhide-all in Settings, and an asset library picker in the composer. Every build is verified in CI on an emulator: install, boot, render, zero crashes. The upstream repo had no license, so I asked the author before publishing. He added GPLv3, welcomed the fork by name, and merged my sidechat.js fix (error bodies returned instead of lost) into his package within the hour. He has offered to redirect users from the Offsides landing page if the fork proves stable and maintained. That is now the roadmap: keep it updated, answer every bug report.</description>
+    </item>
     <item>
       <title>NeverReteach: teach your agent once</title>
       <link>https://darekanderson.com/notes.html#note-26</link>
