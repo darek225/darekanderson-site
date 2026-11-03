@@ -267,3 +267,132 @@
   });
   update();
 })();
+
+/* ---------- share component ----------
+   One pattern everywhere: a stamp-styled button that tries the native
+   share sheet first (AbortError = user closed it, stay silent), and
+   otherwise opens a fallback row: copy link with feedback, X intent,
+   LinkedIn intent, email. Per-note shares carry the note's anchor URL.
+   No third-party code. Data is read from the DOM at click time. */
+(function () {
+  "use strict";
+  function ogContent(prop) {
+    var m = document.querySelector('meta[property="' + prop + '"]');
+    return m ? m.getAttribute("content") : "";
+  }
+  function copyText(text, done) {
+    function fallback() {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+      ta.remove();
+      done(ok);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+    } else { fallback(); }
+  }
+  function buildBar(label, getData, small) {
+    var wrap = document.createElement("div");
+    wrap.className = small ? "note-share" : "share-bar";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "share-btn";
+    btn.textContent = label;
+    btn.setAttribute("aria-expanded", "false");
+    var row = document.createElement("div");
+    row.className = "share-row";
+    row.hidden = true;
+    row.setAttribute("role", "group");
+    row.setAttribute("aria-label", "Share options");
+    var copy = document.createElement("button");
+    copy.type = "button";
+    copy.className = "share-copy";
+    copy.textContent = "COPY LINK";
+    var ax = document.createElement("a");
+    ax.textContent = "POST TO X";
+    ax.target = "_blank"; ax.rel = "noopener";
+    var ali = document.createElement("a");
+    ali.textContent = "LINKEDIN";
+    ali.target = "_blank"; ali.rel = "noopener";
+    var am = document.createElement("a");
+    am.textContent = "EMAIL";
+    row.appendChild(copy); row.appendChild(ax); row.appendChild(ali); row.appendChild(am);
+    function arm() {
+      var d = getData();
+      ax.href = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(d.title) + "&url=" + encodeURIComponent(d.url);
+      ali.href = "https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(d.url);
+      am.href = "mailto:?subject=" + encodeURIComponent(d.title) + "&body=" + encodeURIComponent(d.title + "\n" + d.url);
+      return d;
+    }
+    btn.addEventListener("click", function () {
+      var d = arm();
+      if (navigator.share) {
+        navigator.share({ title: d.title, text: d.title, url: d.url }).then(function () {}, function (err) {
+          if (err && err.name !== "AbortError") { row.hidden = false; btn.setAttribute("aria-expanded", "true"); }
+        });
+      } else {
+        row.hidden = !row.hidden;
+        btn.setAttribute("aria-expanded", row.hidden ? "false" : "true");
+      }
+    });
+    copy.addEventListener("click", function () {
+      var d = getData();
+      copyText(d.url, function (ok) {
+        copy.textContent = ok ? "COPIED" : "COPY FAILED";
+        window.setTimeout(function () { copy.textContent = "COPY LINK"; }, 2000);
+      });
+    });
+    wrap.appendChild(btn);
+    wrap.appendChild(row);
+    return wrap;
+  }
+  function pageData() {
+    return { title: ogContent("og:title") || document.title, url: ogContent("og:url") || window.location.href };
+  }
+  /* case files: head + foot of the article */
+  var head = document.querySelector(".project-head");
+  if (head) {
+    head.parentNode.insertBefore(buildBar("SHARE THIS FILE", pageData, false), head.nextSibling);
+    var tabs = document.querySelector(".case-tabs");
+    if (tabs) tabs.parentNode.insertBefore(buildBar("SHARE THIS FILE", pageData, false), tabs.nextSibling);
+  }
+  /* notes: one share per note, deep-linked to its anchor */
+  var notes = document.querySelectorAll("article.note[id]");
+  if (notes.length) {
+    var base = ogContent("og:url") || window.location.href.split("#")[0];
+    notes.forEach(function (note) {
+      var titleEl = note.querySelector(".note-title");
+      if (!titleEl) return;
+      var bar = buildBar("SHARE", function () {
+        return { title: titleEl.textContent.replace(/\s+/g, " ").replace(/^\s+|\s+$/g, ""), url: base + "#" + note.id };
+      }, true);
+      titleEl.parentNode.insertBefore(bar, titleEl.nextSibling);
+    });
+  }
+  /* footer: compact share for the page itself */
+  var footNav = document.querySelector(".foot-nav");
+  if (footNav) {
+    var fb = document.createElement("button");
+    fb.type = "button";
+    fb.className = "foot-share";
+    fb.textContent = "SHARE";
+    fb.addEventListener("click", function () {
+      var d = pageData();
+      if (navigator.share) {
+        navigator.share({ title: d.title, text: d.title, url: d.url }).then(function () {}, function (err) {
+          if (err && err.name !== "AbortError") copyText(d.url, function (ok) { fb.textContent = ok ? "LINK COPIED" : "SHARE"; window.setTimeout(function () { fb.textContent = "SHARE"; }, 2000); });
+        });
+      } else {
+        copyText(d.url, function (ok) { fb.textContent = ok ? "LINK COPIED" : "SHARE"; window.setTimeout(function () { fb.textContent = "SHARE"; }, 2000); });
+      }
+    });
+    footNav.appendChild(fb);
+  }
+})();
