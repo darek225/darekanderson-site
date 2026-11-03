@@ -1397,3 +1397,7 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
 }
 .resume-contents a:hover { color: var(--accent); border-color: var(--accent); }
 @media print { .contents-spread, .resume-contents { display: none !important; } .prologue { border: none; outline: none; } }
+
+/* ---------- story current-first blocks ---------- */
+.story-block { margin: 0 0 28px; }
+.story-block p { max-width: 46rem; }
