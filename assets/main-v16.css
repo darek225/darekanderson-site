@@ -1254,14 +1254,14 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
 }
 .folder-tab {
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
   color: var(--text-muted);
   background: var(--surface);
   border: 1px solid var(--ink);
   border-bottom: none;
   border-radius: 7px 7px 0 0;
-  padding: 8px 12px;
+  padding: 8px 10px;
   margin-right: -6px;
   text-decoration: none;
   position: relative;
