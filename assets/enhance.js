@@ -232,3 +232,38 @@
     });
   }
 })();
+
+/* ---------- scroll progress + back-to-top ----------
+   Injected here so every page that loads enhance.js gets both controls
+   with no per-page markup. No-JS pages keep the footer "Back to top" link. */
+(function () {
+  "use strict";
+  if (!document.body) return;
+  var bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  bar.setAttribute("aria-hidden", "true");
+  var btn = document.createElement("button");
+  btn.className = "to-top";
+  btn.type = "button";
+  btn.textContent = "\u2191 TOP";
+  btn.setAttribute("aria-label", "Back to top");
+  document.body.appendChild(bar);
+  document.body.appendChild(btn);
+  var ticking = false;
+  function update() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var y = window.pageYOffset || h.scrollTop;
+    bar.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+    if (y > 600) btn.classList.add("visible"); else btn.classList.remove("visible");
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }, { passive: true });
+  btn.addEventListener("click", function () {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+  });
+  update();
+})();
