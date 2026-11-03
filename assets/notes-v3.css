@@ -84,3 +84,40 @@
 @media (min-width: 1080px) {
   .note > p, .note > ul, .note > ol { max-width: 46rem; }
 }
+
+/* v3 (2026-11-03): filing drawer. Filter buttons carry counts via
+   data-count (rendered by ::after so the filter's own label logic in
+   enhance.js, which reads textContent, is untouched). Month drawer tabs
+   jump to the first note filed under that month. */
+.filter-btn::after { content: " (" attr(data-count) ")"; color: var(--accent); }
+.month-drawer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0;
+  padding-left: 8px;
+  margin: 0 0 18px;
+}
+.month-drawer .drawer-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin: 0 12px 6px 0;
+}
+.drawer-tab {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: var(--surface);
+  border: 1px solid var(--ink);
+  border-bottom: none;
+  border-radius: 7px 7px 0 0;
+  padding: 7px 12px;
+  margin-right: -6px;
+  text-decoration: none;
+  position: relative;
+}
+.drawer-tab:hover { color: var(--text); background: var(--paper); z-index: 2; }
+.month-drawer { border-bottom: 2px solid var(--ink); }
