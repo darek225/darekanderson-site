@@ -5,7 +5,14 @@
     <link>https://darekanderson.com/notes.html</link>
     <description>Short notes from the work: what AI is actually good for, found empirically.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 23:30:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 02 Nov 2026 23:35:00 GMT</lastBuildDate>
+    <item>
+      <title>Matrix maxxing: the 11th grade engineering tool that runs my AI work</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-28</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-28</guid>
+      <pubDate>Mon, 02 Nov 2026 23:35:00 GMT</pubDate>
+      <description>Everyone is using AI now, and almost none of them can prove the work is good. Just using AI is not a method: it is prompt, hope, drift. The design matrix, learned in 11th grade engineering, is the method. Rows are criteria, every row gets a written anchor for what a top score means before anything is scored, and every score needs evidence. Paired with AI it becomes a contract: the AI builds the gap rows, a separate audit re-scores with evidence, and per-row scores are the record because totals drift. On Bookvera the app matrix closed at 65 of 65 audited and marketing sits at 54 of 70, including a social proof row honestly at 0 and a risk reversal row capped at 3 by decision. Matrix first. AI second.</description>
+    </item>
     <item>
       <title>YikYak doesn't exist on Android. So I fixed the app that does.</title>
       <link>https://darekanderson.com/notes.html#note-27</link>
