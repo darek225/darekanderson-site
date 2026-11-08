@@ -72,14 +72,30 @@
    notes prose keeps a reading measure on wide screens, filter bar sticks. */
 .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5em, 1fr)); }
 .steps .arrow { display: none; }
-@media (min-width: 720px) {
-  .note-filter {
-    position: sticky;
-    top: 64px;
-    z-index: 40;
-    background: rgba(246, 241, 231, 0.96);
-    padding: 8px 0;
-  }
+/* v4 (2026-11-08): the filter bar sticks at EVERY width, not just
+   >=720px, and the bar is a single-row scrollable strip (main-v20),
+   so its stuck height is one pill row (~64px), not the ~120px
+   two-row wrap it replaced. top matches the site nav height: the
+   nav wraps to two rows below ~470px (115px tall) and is one row
+   above it (65px). Each value sits 1px under the nav height so the
+   bar tucks under the nav's bottom border instead of leaving a
+   sliver where scrolling text shows through. */
+.note-filter {
+  position: sticky;
+  top: 114px;
+  z-index: 40;
+  background: rgba(246, 241, 231, 0.96);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 470px) {
+  .note-filter { top: 64px; }
+}
+/* Deep links (#note-*) and month-drawer jumps must land below BOTH
+   sticky bars (nav + filter), not under them. */
+.note[id], .rss-anchor { scroll-margin-top: 188px; }
+@media (min-width: 470px) {
+  .note[id], .rss-anchor { scroll-margin-top: 140px; }
 }
 @media (min-width: 1080px) {
   .note > p, .note > ul, .note > ol { max-width: 46rem; }

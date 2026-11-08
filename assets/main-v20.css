@@ -197,6 +197,25 @@ a:hover { color: var(--accent); }
   transform: rotate(-1deg);
 }
 
+/* ---------- home section nav (index.html only) ----------
+   The home bar carries a jump for every home chapter (Start here,
+   Machines, Work, Doors, Contact) alongside the site pages. Seven
+   links fit one row at >=720px. Below that the bar stays one row:
+   the brand holds its width and the links scroll sideways, so the
+   sticky bar never grows into a tall wrapped block (v20, 2026-11-08). */
+@media (max-width: 719px) {
+  .site-nav--home { flex-wrap: nowrap; }
+  .site-nav--home .nav-brand { flex: none; }
+  .site-nav--home .nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    min-width: 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .site-nav--home .nav-links::-webkit-scrollbar { display: none; }
+}
+
 /* ---------- prologue (compact hero, 85vh cap on tablet/desktop only) ----------
    On narrow screens the portrait hero photo + stacked CTAs cannot fit 85vh;
    flex items refuse to shrink below content, so the overflow painted over the
@@ -628,11 +647,17 @@ a.specimen-art { display: block; color: var(--text); text-decoration: none; }
 .note-filter { display: none; }
 .js .note-filter {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* one row at every width: the 9 pills + counts are
+    ~1250px wide, wrapping made the stuck bar ~120px tall. The row
+    scrolls sideways instead (v20, 2026-11-08). */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
   gap: 8px;
   margin: 0 0 24px;
 }
 .filter-btn {
+  flex: 0 0 auto;
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.08em;
