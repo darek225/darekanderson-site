@@ -377,6 +377,9 @@ body.m-form{--acc:#ffd400}
   a{color:#000}
 }
 
+.slop-line{font-family:var(--pix);font-size:25px;line-height:1.15;color:var(--red);letter-spacing:1px;max-width:58ch;margin:0 0 6px}
+.stat:not(button){cursor:default}
+
 /* ============ QA FIXES + STUDY MACHINE ============ */
 body{padding-bottom:104px}
 .bar-fill{display:block;width:var(--w,0%)}

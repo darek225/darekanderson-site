@@ -135,8 +135,6 @@
       "<p>Andola Landscape Services: a commercial and residential landscaping company in the Charlotte area. The case file has the details.</p>"],
     systems: ["SOURCE // THE WORK", "Seven software systems.",
       "<p>Backseat, Bookvera, Dowser, Carolina Trade Sites, Deal Snipers, WildClash Arena, and NeverReteach. Each one has its own case file below.</p>"],
-    shorts: ["SOURCE // THE FACTORY", "Two Shorts a day.",
-      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>"]
   };
   document.querySelectorAll("[data-pop]").forEach(function (el) {
     el.addEventListener("click", function () {
@@ -147,9 +145,9 @@
 
   /* ---------- the field notice (once per session) ---------- */
   var NOTICES = {
-    "index.html": ["FIELD NOTICE // 001", "Two new Shorts are live.",
-      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>",
-      [{ label: "WATCH THE CHANNEL", href: "https://www.youtube.com/@WildClashArenaHQ", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
+    "index.html": ["FIELD NOTICE // 001", "Backseat v0.9.14 is the current build.",
+      "<p>v0.9.14 shipped with the timeout fix and checkpointing. It is agent-agnostic: any agentic AI that can use shell and git can sit in the architect seat, not just Muse.</p>",
+      [{ label: "OPEN THE REPO", href: "https://github.com/darek225/backseat", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/andola.html": ["FIELD NOTICE // EXP-01", "$43.6K revenue. $20.6K net.",
       "<p>$43.6K revenue and $20.6K net in the first eight months on the books. If a number is not in QuickBooks, it is not on this page.</p>",
       [{ label: "ANDOLALANDSCAPING.COM", href: "https://andolalandscaping.com", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
@@ -168,9 +166,6 @@
     "work/deal-snipers.html": ["FIELD NOTICE // EXP-06", "Only verified deals get posted.",
       "<p>A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically. Posts only deals verified against price history.</p>",
       [{ label: "OPEN THE HUB", href: "https://dealsnipers.github.io/deal-snipers-links/", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
-    "work/wildclash.html": ["FIELD NOTICE // EXP-07", "Two new Shorts are live.",
-      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>",
-      [{ label: "WATCH THE CHANNEL", href: "https://www.youtube.com/@WildClashArenaHQ", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/neverreteach.html": ["FIELD NOTICE // EXP-08", "Teach each lesson once.",
       "<p>A self-building memory wiki for AI coding agents. Teach each lesson once; it files itself and loads on every future project.</p>",
       [{ label: "OPEN THE REPO", href: "https://github.com/darek225/neverreteach", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
