@@ -131,10 +131,10 @@
   var SOURCES = {
     files: ["SOURCE // CASE FILES", "Eight case files.",
       "<p>Every project on this page has its own case file: Built, What broke, How I judge it, Results.</p>"],
-    revenue: ["SOURCE // QUICKBOOKS", "$43.6K revenue. $20.6K net.",
-      "<p>$43.6K revenue and $20.6K net in the first eight months on the books. If a number is not in QuickBooks, it is not on this page.</p>"],
-    margin: ["SOURCE // QUICKBOOKS", "47% net margin.",
-      "<p>$20.6K net on $43.6K revenue. Same QuickBooks record as the revenue figure.</p>"],
+    business: ["SOURCE // THE WORK", "One operating business.",
+      "<p>Andola Landscape Services: a commercial and residential landscaping company in the Charlotte area. The case file has the details.</p>"],
+    systems: ["SOURCE // THE WORK", "Seven software systems.",
+      "<p>Backseat, Bookvera, Dowser, Carolina Trade Sites, Deal Snipers, WildClash Arena, and NeverReteach. Each one has its own case file below.</p>"],
     shorts: ["SOURCE // THE FACTORY", "Two Shorts a day.",
       "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>"]
   };
