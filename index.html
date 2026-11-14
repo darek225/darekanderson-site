@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- PROTOTYPE — branch v6/mde-prototype. MDE-style home page study build.
+<!-- PROTOTYPE — branch v6/mde-prototype. Field-kit build, whole site.
      Not for main. All numbers and copy are the live site's real ones. -->
 <html lang="en">
 <head>
@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/mde-v1.css">
+<link rel="stylesheet" href="assets/kit-v1.css">
 <link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darek Anderson">
@@ -23,17 +23,6 @@
 <meta name="twitter:description" content="A 20-year-old builder running a real business and shipping real software, with AI as the leverage.">
 </head>
 <body>
-
-<header class="topbar">
-  <a class="logo-block" href="index.html">DA</a>
-  <span class="wordmark">DAREK ANDERSON</span>
-  <nav aria-label="Site">
-    <a href="notes.html">NOTES</a>
-    <a href="story.html">STORY</a>
-    <a href="resume.html">RESUME</a>
-    <a class="hot" href="#doors">CONTACT</a>
-  </nav>
-</header>
 
 <!-- HERO: headline re-rolls on every load, like the source. Numbers never change. -->
 <div class="hero">
@@ -48,10 +37,10 @@
         <button class="reroll" id="reroll" type="button">RE-ROLL THE PAGE</button>
       </div>
       <div class="stats" aria-label="Verified numbers">
-        <div class="stat"><b>8</b><span>CASE FILES</span></div>
-        <div class="stat"><b>$43.6K</b><span>ANDOLA REVENUE, ON THE BOOKS</span></div>
-        <div class="stat"><b>47%</b><span>ANDOLA NET MARGIN</span></div>
-        <div class="stat"><b>2 / DAY</b><span>WILDCLASH SHORTS PUBLISHED</span></div>
+        <button class="stat" type="button" data-pop="files"><b>8</b><span>CASE FILES</span><span class="src">TAP FOR SOURCE</span></button>
+        <button class="stat" type="button" data-pop="revenue"><b>$43.6K</b><span>ANDOLA REVENUE, ON THE BOOKS</span><span class="src">TAP FOR SOURCE</span></button>
+        <button class="stat" type="button" data-pop="margin"><b>47%</b><span>ANDOLA NET MARGIN</span><span class="src">TAP FOR SOURCE</span></button>
+        <button class="stat" type="button" data-pop="shorts"><b>2 / DAY</b><span>WILDCLASH SHORTS PUBLISHED</span><span class="src">TAP FOR SOURCE</span></button>
       </div>
     </div>
     <figure class="hero-photo">
@@ -89,6 +78,7 @@
   </div>
   <div class="grid" id="grid">
     <article class="card card--wide skin-andola" data-cat="business">
+      <span class="rubber">LIVE</span>
       <a class="art" href="work/andola.html"><img src="assets/photos/jobs/novant-wesley-chapel-9.jpg" alt="Long turf strip with planted beds along the building" width="700" height="1543" loading="lazy"></a>
       <div class="body">
         <p class="idx">EXP-01 // DISPATCH BOARD</p>
@@ -99,6 +89,7 @@
       </div>
     </article>
     <article class="card skin-backseat" data-cat="software">
+      <span class="rubber">LIVE</span>
       <a class="art" href="work/backseat.html"><img src="assets/screenshots/backseat.jpg" alt="Backseat repository page on GitHub" width="1280" height="800" loading="lazy"></a>
       <div class="body">
         <p class="idx">EXP-02 // TERMINAL</p>
@@ -139,6 +130,7 @@
       </div>
     </article>
     <article class="card skin-snipers" data-cat="live">
+      <span class="rubber">LIVE</span>
       <div class="art" aria-hidden="true"></div>
       <div class="body">
         <p class="idx">EXP-06 // SCOPE HUD</p>
@@ -149,6 +141,7 @@
       </div>
     </article>
     <article class="card card--wide skin-wildclash" data-cat="live">
+      <span class="rubber">LIVE</span>
       <a class="art" href="work/wildclash.html"><img src="assets/screenshots/wildclash.jpg" alt="WildClash Arena YouTube channel page" width="1280" height="800" loading="lazy"></a>
       <div class="body">
         <p class="idx">EXP-07 // ARCADE VS SCREEN</p>
@@ -159,6 +152,7 @@
       </div>
     </article>
     <article class="card card--wide skin-neverreteach" data-cat="software">
+      <span class="rubber">LIVE</span>
       <div class="art" aria-hidden="true"></div>
       <div class="body">
         <p class="idx">EXP-08 // INDEX CARD</p>
@@ -226,21 +220,9 @@
       <li><b>X</b><a href="https://x.com/Darek_225">@Darek_225</a></li>
       <li><b>RSS</b><a href="notes.xml">notes.xml</a></li>
     </ul>
-    <p class="colophon">COLOPHON: Prototype skin in the MDE format language: thin black shell, a different machine per section, identity in the artwork, real numbers only. Set in VT323, Press Start 2P, and Space Mono on black and dark teal. No tracking.</p>
+    <p class="colophon">COLOPHON: The field kit: a thin black shell, a different machine per section, identity in the artwork, real numbers only. Set in VT323, Press Start 2P, and Space Mono. No tracking.</p>
   </div>
 </footer>
-
-<!-- fixed bottom gadget bar: ticker + tabs -->
-<div class="bottombar">
-  <div class="ticker" id="ticker">WILDCLASH ARENA // PUBLISHES TWO SHORTS DAILY, 09:00 + 17:00 ET</div>
-  <nav class="tabsbar" aria-label="Site">
-    <a href="#work">WORK</a>
-    <a href="#machines">MACHINES</a>
-    <a href="notes.html">NOTES</a>
-    <a href="story.html">STORY</a>
-    <a class="hot" href="#doors">DOORS</a>
-  </nav>
-</div>
 
 <script>
 (function(){
@@ -279,17 +261,8 @@
       });
     });
   });
-
-  // Ticker rotates the real status lines.
-  var lines = [
-    'WILDCLASH ARENA // PUBLISHES TWO SHORTS DAILY, 09:00 + 17:00 ET',
-    'DEAL SNIPERS // POSTS ONLY DEALS VERIFIED AGAINST PRICE HISTORY',
-    'ANDOLA // LATEST JOB: PATIO EXTENSION, OCT 2026',
-    'FIELD NOTES // NEWEST NOTE: OCT 2026'
-  ];
-  var ti = 0, ticker = document.getElementById('ticker');
-  setInterval(function(){ ti = (ti + 1) % lines.length; ticker.textContent = lines[ti]; }, 4000);
 })();
 </script>
+<script src="assets/kit.js" defer></script>
 </body>
 </html>
