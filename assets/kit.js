@@ -127,14 +127,14 @@
 
   /* ---------- source popups (tap a number, get its source) ---------- */
   var SOURCES = {
-    files: ["SOURCE // CASE FILES", "8 files, 8 receipts.",
-      "<p>Every project on this page has its own case file: what was built, what broke, how it is judged, and the results. No project is listed here without one.</p>"],
+    files: ["SOURCE // CASE FILES", "Eight case files.",
+      "<p>Every project on this page has its own case file: Built, What broke, How I judge it, Results.</p>"],
     revenue: ["SOURCE // QUICKBOOKS", "$43.6K revenue. $20.6K net.",
-      "<p>Andola's first eight months on the books. If a number is not in QuickBooks, I do not put it on this page.</p>"],
+      "<p>$43.6K revenue and $20.6K net in the first eight months on the books. If a number is not in QuickBooks, it is not on this page.</p>"],
     margin: ["SOURCE // QUICKBOOKS", "47% net margin.",
-      "<p>$20.6K net on $43.6K revenue, same QuickBooks record as the revenue figure. The math is the math.</p>"],
+      "<p>$20.6K net on $43.6K revenue. Same QuickBooks record as the revenue figure.</p>"],
     shorts: ["SOURCE // THE FACTORY", "Two Shorts a day.",
-      "<p>WildClash Arena publishes at 09:00 and 17:00 ET, every day. Scripts, footage, edit, captions, sound, publish: the factory runs itself.</p>"]
+      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>"]
   };
   document.querySelectorAll("[data-pop]").forEach(function (el) {
     el.addEventListener("click", function () {
@@ -146,37 +146,37 @@
   /* ---------- the field notice (once per session) ---------- */
   var NOTICES = {
     "index.html": ["FIELD NOTICE // 001", "Two new Shorts are live.",
-      "<p>WildClash Arena posted at 09:00 and 17:00 ET today, like every day. The factory runs itself; I never touch it.</p>",
+      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>",
       [{ label: "WATCH THE CHANNEL", href: "https://www.youtube.com/@WildClashArenaHQ", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
-    "work/andola.html": ["FIELD NOTICE // EXP-01", "The books are the receipt.",
-      "<p>$43.6K revenue and $20.6K net in the first eight months, straight out of QuickBooks. If a number is not in QuickBooks, it is not on this page.</p>",
+    "work/andola.html": ["FIELD NOTICE // EXP-01", "$43.6K revenue. $20.6K net.",
+      "<p>$43.6K revenue and $20.6K net in the first eight months on the books. If a number is not in QuickBooks, it is not on this page.</p>",
       [{ label: "ANDOLALANDSCAPING.COM", href: "https://andolalandscaping.com", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/backseat.html": ["FIELD NOTICE // EXP-02", "V0.9.14 is the current build.",
-      "<p>Timeouts are a state now, not a verdict, and the worktree checkpoints itself. The repo is public and the protocol is open.</p>",
+      "<p>v0.9.14 shipped with the timeout fix and checkpointing. It is agent-agnostic: any agentic AI that can use shell and git can sit in the architect seat, not just Muse.</p>",
       [{ label: "OPEN THE REPO", href: "https://github.com/darek225/backseat", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/bookvera.html": ["FIELD NOTICE // EXP-03", "Bookvera is in development.",
-      "<p>An AI bookkeeping plugin for QuickBooks Online. The app is live for testing; the Intuit review is the gate.</p>",
+      "<p>An AI bookkeeping plugin for QuickBooks Online that keeps small-business books clean in the background.</p>",
       [{ label: "OPEN THE APP", href: "https://acuity-lovat.vercel.app", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/dowser.html": ["FIELD NOTICE // EXP-04", "Dowser is in development.",
-      "<p>An AI outbound engine: find the prospect, write the outreach, book the meeting. The live demo is up.</p>",
+      "<p>An AI outbound engine that finds prospects and turns cold outreach into booked meetings.</p>",
       [{ label: "OPEN THE DEMO", href: "https://dowser-peach.vercel.app", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/carolina-trade-sites.html": ["FIELD NOTICE // EXP-05", "The demo hub is live.",
-      "<p>Productized website design for Charlotte home-service companies. The hub shows the offer and the work.</p>",
+      "<p>Productized website design for Charlotte home-service companies, built by AI and audited by humans.</p>",
       [{ label: "OPEN THE HUB", href: "https://carolina-trade-sites.vercel.app", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/deal-snipers.html": ["FIELD NOTICE // EXP-06", "Only verified deals get posted.",
-      "<p>Every deal is checked against price history before it posts. No verified drop, no post. The hub collects every channel.</p>",
+      "<p>A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically. Posts only deals verified against price history.</p>",
       [{ label: "OPEN THE HUB", href: "https://dealsnipers.github.io/deal-snipers-links/", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/wildclash.html": ["FIELD NOTICE // EXP-07", "Two new Shorts are live.",
-      "<p>Posted at 09:00 and 17:00 ET today, like every day. Scripts, footage, edit, captions, sound, publish: automated end to end.</p>",
+      "<p>Publishes two Shorts daily, at 09:00 and 17:00 ET. An automated YouTube Shorts factory: scripts, footage, edit, captions, sound, publish. I never touch it.</p>",
       [{ label: "WATCH THE CHANNEL", href: "https://www.youtube.com/@WildClashArenaHQ", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "work/neverreteach.html": ["FIELD NOTICE // EXP-08", "Teach each lesson once.",
-      "<p>NeverReteach files every lesson into a wiki your next agent session loads automatically. Public and open source.</p>",
+      "<p>A self-building memory wiki for AI coding agents. Teach each lesson once; it files itself and loads on every future project.</p>",
       [{ label: "OPEN THE REPO", href: "https://github.com/darek225/neverreteach", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
-    "notes.html": ["FIELD NOTICE // NOTES", "The notes land here first.",
-      "<p>Build logs, three times a week: what is actually working with AI, found empirically. Every note also generates a ready-to-post thread for X.</p>",
+    "notes.html": ["FIELD NOTICE // NOTES", "Build logs, three times a week.",
+      "<p>Build logs, three times a week. What is actually working with AI, found empirically, no hype.</p>",
       [{ label: "RSS FEED", href: base + "notes.xml", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
-    "resume.html": ["FIELD NOTICE // RESUME", "This page prints clean.",
-      "<p>The kit comes off on paper: one click gets you a plain, professional PDF with none of the machinery on it.</p>",
+    "resume.html": ["FIELD NOTICE // RESUME", "Print / save as PDF.",
+      "<p>Use the button below to print this page or save it as a PDF. The site machinery does not print.</p>",
       [{ label: "PRINT / SAVE PDF", cls: "btn-red", fn: function () { window.print(); } }, { label: "FILE IT", cls: "btn-ghost" }]]
   };
   try {
