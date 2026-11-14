@@ -91,7 +91,8 @@ body::after{
 .stat span{font-family:var(--tiny);font-size:8px;color:#9fc4b4;letter-spacing:.5px}
 
 /* ---------- section frame ---------- */
-section{padding:22px 14px 6px;max-width:1180px;margin:0 auto}
+section{padding:22px 14px 6px;max-width:1180px;margin:0 auto;scroll-margin-top:64px}
+footer{scroll-margin-top:64px}
 .sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .sec-title{
   font-family:var(--pix);font-weight:400;font-size:clamp(30px,6vw,44px);letter-spacing:4px;margin:0;color:#fff;
