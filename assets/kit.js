@@ -25,11 +25,13 @@
     ["index.html", "HOME"],
     ["index.html#work", "WORK"],
     ["notes.html", "NOTES"],
+    ["study.html", "STUDY"],
     ["story.html", "STORY"],
     ["resume.html", "RESUME"]
   ];
   var current = page === "index.html" ? "index.html"
     : page === "notes.html" ? "notes.html"
+    : page === "study.html" ? "study.html"
     : page === "story.html" ? "story.html"
     : page === "resume.html" ? "resume.html"
     : page.indexOf("work/") === 0 ? "index.html#work" : "";
@@ -49,7 +51,6 @@
     a.href = base + t[0];
     a.textContent = t[1];
     if (t[0] === current) a.setAttribute("aria-current", "page");
-    if (t[1] === "RESUME") a.className = "hot";
     nav.appendChild(a);
   });
   bar.appendChild(nav);
@@ -68,6 +69,7 @@
       '<span class="kit-word">DAREK ANDERSON <small>// FIELD KIT</small></span>' +
       "<nav>" +
       '<a href="' + base + 'notes.html">NOTES</a>' +
+      '<a href="' + base + 'study.html">STUDY</a>' +
       '<a href="' + base + 'story.html">STORY</a>' +
       '<a href="' + base + 'resume.html">RESUME</a>' +
       '<a class="hot" href="' + base + 'index.html#doors">CONTACT</a>' +
@@ -172,6 +174,9 @@
     "work/neverreteach.html": ["FIELD NOTICE // EXP-08", "Teach each lesson once.",
       "<p>A self-building memory wiki for AI coding agents. Teach each lesson once; it files itself and loads on every future project.</p>",
       [{ label: "OPEN THE REPO", href: "https://github.com/darek225/neverreteach", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
+    "study.html": ["FIELD NOTICE // THE STUDY", "What I'm thinking.",
+      "<p>Longer writing on the ideas in The Hypothesis: what AI is actually good for, found empirically. Published here as field notes grow into essays.</p>",
+      [{ label: "READ THE STORY", href: base + "story.html", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
     "notes.html": ["FIELD NOTICE // NOTES", "Build logs, three times a week.",
       "<p>Build logs, three times a week. What is actually working with AI, found empirically, no hype.</p>",
       [{ label: "RSS FEED", href: base + "notes.xml", cls: "btn-red" }, { label: "FILE IT", cls: "btn-ghost" }]],
