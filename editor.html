@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Site Editor · Darek Anderson</title>
+<style>
+  :root{ --paper:#F6F1E7; --ink:#1C1A16; --red:#C23B22; --line:#D8CFBC; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+  .bar{ position:sticky; top:0; z-index:30; background:var(--paper); border-bottom:2px solid var(--ink); padding:10px 12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .brand{ font-weight:800; letter-spacing:.08em; }
+  select{ font:inherit; padding:8px; background:#fff; border:1.5px solid var(--ink); border-radius:6px; max-width:60vw; }
+  .seg{ display:flex; gap:0; margin-left:auto; }
+  .seg button{ border:1.5px solid var(--ink); background:#fff; padding:7px 10px; font:inherit; font-size:14px; cursor:pointer; }
+  .seg button:first-child{ border-radius:6px 0 0 6px; } .seg button:last-child{ border-radius:0 6px 6px 0; border-left:0; }
+  .seg button.on{ background:var(--ink); color:var(--paper); }
+  button{ font:inherit; cursor:pointer; }
+  .primary{ background:var(--red); color:#fff; border:1.5px solid var(--red); border-radius:6px; padding:10px 14px; font-weight:700; }
+  .plain{ background:#fff; border:1.5px solid var(--ink); border-radius:6px; padding:10px 14px; }
+  .queue{ padding:12px; border-bottom:1px solid var(--line); }
+  .queue p{ margin:0 0 8px; font-size:14px; }
+  .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+  .chips button{ background:#fff; border:1.5px solid var(--ink); border-radius:999px; padding:6px 10px; font-size:13px; text-align:left; }
+  .frame-wrap{ display:flex; justify-content:center; background:#E9E1CF; padding:10px 6px; }
+  iframe#preview{ width:100%; height:74vh; border:2px solid var(--ink); background:#fff; transition:width .2s; }
+  iframe#preview.phone{ width:390px; max-width:96vw; }
+  .status{ padding:10px 12px; margin:0; font-size:14px; }
+  #changesPanel{ padding:0 12px 8px; }
+  #changesPanel h3{ margin:8px 0; font-size:15px; }
+  #chList{ list-style:none; margin:0; padding:0; display:grid; gap:6px; }
+  #chList button{ width:100%; text-align:left; background:#fff; border:1.5px solid var(--ink); border-radius:6px; padding:8px 10px; font-size:14px; }
+  #chList .tag{ font-weight:700; color:var(--red); margin-right:6px; }
+  .actions{ position:sticky; bottom:0; z-index:30; background:var(--paper); border-top:2px solid var(--ink); padding:10px 12px; display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+  .actions a{ color:var(--ink); font-size:14px; }
+  #sheet, #pubPanel{ position:fixed; left:0; right:0; bottom:0; z-index:50; background:var(--paper); border-top:3px solid var(--red); padding:12px; box-shadow:0 -8px 30px rgba(0,0,0,.25); max-height:82vh; overflow:auto; }
+  .sheet-head{ display:flex; justify-content:space-between; align-items:center; font-weight:700; }
+  .sheet-head button, .ghost{ background:none; border:1.5px solid var(--ink); border-radius:6px; padding:6px 10px; }
+  .hint{ font-size:13px; margin:6px 0; opacity:.85; }
+  textarea{ width:100%; font:inherit; padding:10px; border:1.5px solid var(--ink); border-radius:6px; background:#fff; }
+  .sheet-actions{ display:flex; gap:8px; justify-content:flex-end; margin-top:10px; flex-wrap:wrap; }
+  #pubPanel input{ width:100%; font:inherit; padding:10px; border:1.5px solid var(--ink); border-radius:6px; background:#fff; }
+  #pubPanel ol{ font-size:14px; padding-left:20px; }
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <span class="brand">SITE EDITOR</span>
+  <select id="pageSel" aria-label="Page"></select>
+  <span class="seg">
+    <button id="wPhone" type="button">Phone</button>
+    <button id="wDesk" type="button" class="on">Desktop</button>
+  </span>
+</header>
+
+<section class="queue">
+  <p><strong>Your writing queue</strong> (from the Nov 15 audit of AI-written sections). Open one, then tap the text on the page and rewrite it in your words.</p>
+  <div class="chips">
+    <button type="button" data-qpage="study.html">1 · Universal Schematic one-liner (The Study)</button>
+    <button type="button" data-qpage="story.html">2 · Story closing paragraph</button>
+    <button type="button" data-qpage="index.html">3 · Three Doors: funder / employer / reader</button>
+    <button type="button" data-qpage="index.html">4 · Hero line</button>
+    <button type="button" data-qpage="index.html">5 · How I judge it, per project</button>
+    <button type="button" data-qpage="notes.html">6 · Notes: AI closings</button>
+  </div>
+</section>
+
+<div class="frame-wrap"><iframe id="preview" title="Page preview"></iframe></div>
+<p id="status" class="status">Pick a page. Tap any text in the preview to edit it.</p>
+
+<section id="changesPanel" hidden>
+  <h3>Changes on this page (<span id="chCount">0</span>)</h3>
+  <ul id="chList"></ul>
+</section>
+
+<footer class="actions">
+  <button id="btnDownload" class="plain" type="button">Download edited HTML</button>
+  <button id="btnPublish" class="primary" type="button">Publish to live site</button>
+  <button id="btnReset" class="plain" type="button">Reset page</button>
+  <a id="liveLink" href="https://darekanderson-site.vercel.app/" target="_blank" rel="noopener">Open live page</a>
+</footer>
+
+<div id="sheet" hidden>
+  <div class="sheet-head"><span id="sheetLabel">Edit text</span><button id="sheetClose" type="button">Close</button></div>
+  <p id="sheetHint" class="hint"></p>
+  <textarea id="sheetText" rows="7"></textarea>
+  <div class="sheet-actions">
+    <button id="sheetRevert" class="ghost" type="button">Revert this block</button>
+    <button id="sheetSave" class="primary" type="button">Apply edit</button>
+  </div>
+</div>
+
+<div id="pubPanel" hidden>
+  <div class="sheet-head"><span>Publish to the live site</span><button id="pubCancel" type="button">Cancel</button></div>
+  <p class="hint">Publishing commits this edited page to GitHub and the live site updates about a minute later. It needs a GitHub token that can write to this one repo. The token is stored only in this browser, on this device.</p>
+  <ol>
+    <li>Open the <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub token page</a>, signed in as darek225.</li>
+    <li>Token name: <em>site editor</em>. Repository access: <em>Only select repositories</em>, pick <em>darekanderson-site</em>.</li>
+    <li>Under Repository permissions set <em>Contents</em> to <em>Read and write</em>. Generate the token, copy it, paste it here.</li>
+  </ol>
+  <input id="tokenInput" type="password" placeholder="github_pat_..." autocomplete="off">
+  <div class="sheet-actions">
+    <button id="pubGo" class="primary" type="button">Publish now</button>
+  </div>
+  <p id="pubStatus" class="status"></p>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var PAGES = [
+    {path:"index.html", label:"Home"},
+    {path:"notes.html", label:"Notes (28)"},
+    {path:"story.html", label:"Story"},
+    {path:"study.html", label:"From The Study"},
+    {path:"resume.html", label:"Resume"},
+    {path:"work/andola.html", label:"Work · Andola"},
+    {path:"work/backseat.html", label:"Work · Backseat"},
+    {path:"work/bookvera.html", label:"Work · Bookvera"},
+    {path:"work/carolina-trade-sites.html", label:"Work · Carolina Trade Sites"},
+    {path:"work/deal-snipers.html", label:"Work · Deal Snipers"},
+    {path:"work/dowser.html", label:"Work · Dowser"},
+    {path:"work/neverreteach.html", label:"Work · NeverReteach"},
+    {path:"work/wildclash.html", label:"Work · WildClash"}
+  ];
+  var REPO_API = "https://api.github.com/repos/darek225/darekanderson-site/contents/";
+  var BLOCKY = "P,H1,H2,H3,H4,H5,H6,UL,OL,TABLE,SECTION,ARTICLE,HEADER,FOOTER,NAV,FORM";
+  var CANDIDATE = "h1,h2,h3,h4,h5,h6,p,li,figcaption,blockquote,td,th,a,button,span,div,dt,dd";
+
+  var sel = document.getElementById("pageSel");
+  var iframe = document.getElementById("preview");
+  var statusEl = document.getElementById("status");
+  var sheet = document.getElementById("sheet");
+  var sheetLabel = document.getElementById("sheetLabel");
+  var sheetHint = document.getElementById("sheetHint");
+  var sheetText = document.getElementById("sheetText");
+  var changesPanel = document.getElementById("changesPanel");
+  var chCount = document.getElementById("chCount");
+  var chList = document.getElementById("chList");
+  var pubPanel = document.getElementById("pubPanel");
+  var pubStatus = document.getElementById("pubStatus");
+  var tokenInput = document.getElementById("tokenInput");
+  var liveLink = document.getElementById("liveLink");
+
+  var currentPath = null, sourceDoc = null, originals = new Map(), changed = new Set();
+  var selectedId = null, selectedHasKids = false;
+
+  PAGES.forEach(function(p){
+    var o = document.createElement("option");
+    o.value = p.path; o.textContent = p.label; sel.appendChild(o);
+  });
+
+  function setStatus(t){ statusEl.textContent = t; }
+  function pageURL(path){ return new URL(path, window.location.origin + "/").href; }
+  function snippet(text, n){ var s = (text||"").replace(/\s+/g," ").trim(); return s.length > n ? s.slice(0,n) + "..." : s; }
+
+  function isEditable(el){
+    if (el.closest("script,style,svg,textarea,select,iframe")) return false;
+    var hasText = false;
+    for (var i = 0; i < el.childNodes.length; i++){
+      var n = el.childNodes[i];
+      if (n.nodeType === 3 && n.textContent.trim()){ hasText = true; break; }
+    }
+    if (!hasText) return false;
+    if (el.querySelector(BLOCKY)) return false;
+    return true;
+  }
+
+  function previewRuntime(){
+    function clearSel(){ document.querySelectorAll(".ed-sel").forEach(function(e){ e.classList.remove("ed-sel"); }); }
+    document.addEventListener("click", function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      var ed = ev.target.closest("[data-ed]");
+      if (ed){
+        clearSel(); ed.classList.add("ed-sel");
+        parent.postMessage({ed:"click", id: ed.getAttribute("data-ed")}, "*");
+      }
+    }, true);
+    window.addEventListener("message", function(ev){
+      var m = ev.data || {};
+      var n = m.id != null ? document.querySelector('[data-ed="' + m.id + '"]') : null;
+      if (!n) return;
+      if (m.ed === "apply"){ n.innerHTML = m.html; n.classList.add("ed-changed"); clearSel(); n.classList.add("ed-sel"); }
+      if (m.ed === "revert"){ n.innerHTML = m.html; n.classList.remove("ed-changed"); }
+      if (m.ed === "select"){ clearSel(); n.classList.add("ed-sel"); n.scrollIntoView({block:"center"}); }
+    });
+  }
+
+  function buildPreview(){
+    var pv = sourceDoc.cloneNode(true);
+    pv.querySelectorAll("script").forEach(function(s){ s.remove(); });
+    var base = pv.createElement("base");
+    base.href = pageURL(currentPath);
+    pv.head.insertBefore(base, pv.head.firstChild);
+    var st = pv.createElement("style");
+    st.textContent = "[data-ed]{cursor:pointer} [data-ed]:hover{outline:2px dashed #C23B22; outline-offset:2px} .ed-sel{outline:3px solid #C23B22 !important; outline-offset:2px} .ed-changed{box-shadow:inset 0 0 0 2px #1C1A16}";
+    pv.head.appendChild(st);
+    var sc = pv.createElement("script");
+    sc.textContent = "(" + previewRuntime.toString() + ")();";
+    pv.body.appendChild(sc);
+    iframe.srcdoc = "<!DOCTYPE html>\n" + pv.documentElement.outerHTML;
+  }
+
+  function loadPage(path){
+    if (changed.size > 0 && currentPath && !window.confirm("This page has unpublished changes. Switch pages and lose them?")) {
+      sel.value = currentPath; return;
+    }
+    currentPath = path; sel.value = path;
+    liveLink.href = pageURL(path);
+    setStatus("Loading " + path + "...");
+    fetch(path, {cache:"no-store"}).then(function(r){ return r.text(); }).then(function(html){
+      sourceDoc = new DOMParser().parseFromString(html, "text/html");
+      originals = new Map(); changed = new Set(); selectedId = null;
+      var i = 0;
+      sourceDoc.querySelectorAll(CANDIDATE).forEach(function(el){
+        if (isEditable(el)){ el.setAttribute("data-ed", String(i)); originals.set(String(i), el.innerHTML); i++; }
+      });
+      buildPreview(); renderChanges();
+      setStatus(i + " editable text blocks on this page. Tap any text in the preview to rewrite it.");
+    }).catch(function(e){ setStatus("Could not load " + path + ": " + e.message); });
+  }
+
+  function nodeById(id){ return sourceDoc.querySelector('[data-ed="' + id + '"]'); }
+  function postToPreview(msg){ if (iframe.contentWindow) iframe.contentWindow.postMessage(msg, "*"); }
+
+  function openSheet(id){
+    selectedId = id;
+    var node = nodeById(id); if (!node) return;
+    selectedHasKids = node.children.length > 0;
+    sheetLabel.textContent = "Edit · " + node.tagName.toLowerCase() + " · " + snippet(node.textContent, 40);
+    sheetHint.textContent = selectedHasKids
+      ? "This block contains formatting (a link or styled span). Keep the <...> tags as they are and change the words between them."
+      : "Plain text. Type it the way you would say it.";
+    sheetText.value = selectedHasKids ? node.innerHTML.trim() : node.textContent;
+    sheet.hidden = false;
+    sheetText.focus();
+  }
+
+  function renderChanges(){
+    chCount.textContent = String(changed.size);
+    changesPanel.hidden = changed.size === 0;
+    chList.innerHTML = "";
+    changed.forEach(function(id){
+      var node = nodeById(id); if (!node) return;
+      var li = document.createElement("li");
+      var b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = "<span class='tag'>" + node.tagName.toLowerCase() + "</span>";
+      b.appendChild(document.createTextNode(snippet(node.textContent, 90)));
+      b.addEventListener("click", function(){ postToPreview({ed:"select", id:id}); openSheet(id); });
+      li.appendChild(b); chList.appendChild(li);
+    });
+  }
+
+  window.addEventListener("message", function(ev){
+    var m = ev.data || {};
+    if (m.ed === "click") openSheet(m.id);
+  });
+
+  document.getElementById("sheetClose").addEventListener("click", function(){ sheet.hidden = true; });
+  document.getElementById("sheetSave").addEventListener("click", function(){
+    if (selectedId == null) return;
+    var node = nodeById(selectedId); if (!node) return;
+    if (selectedHasKids) node.innerHTML = sheetText.value; else node.textContent = sheetText.value;
+    if (node.innerHTML !== originals.get(selectedId)) changed.add(selectedId); else changed.delete(selectedId);
+    postToPreview({ed:"apply", id:selectedId, html: node.innerHTML});
+    renderChanges(); sheet.hidden = true;
+    setStatus("Edit applied. " + changed.size + " change(s) on this page. Download or Publish when ready.");
+  });
+  document.getElementById("sheetRevert").addEventListener("click", function(){
+    if (selectedId == null) return;
+    var node = nodeById(selectedId); if (!node) return;
+    node.innerHTML = originals.get(selectedId);
+    changed.delete(selectedId);
+    postToPreview({ed:"revert", id:selectedId, html: node.innerHTML});
+    renderChanges(); sheet.hidden = true;
+    setStatus("Block reverted.");
+  });
+
+  sel.addEventListener("change", function(){ loadPage(sel.value); });
+  document.querySelectorAll("[data-qpage]").forEach(function(b){
+    b.addEventListener("click", function(){ loadPage(b.getAttribute("data-qpage")); });
+  });
+  document.getElementById("wPhone").addEventListener("click", function(){
+    iframe.classList.add("phone");
+    this.classList.add("on"); document.getElementById("wDesk").classList.remove("on");
+  });
+  document.getElementById("wDesk").addEventListener("click", function(){
+    iframe.classList.remove("phone");
+    this.classList.add("on"); document.getElementById("wPhone").classList.remove("on");
+  });
+  document.getElementById("btnReset").addEventListener("click", function(){
+    if (changed.size > 0 && !window.confirm("Throw away all changes on this page?")) return;
+    changed.clear(); loadPage(currentPath);
+  });
+
+  function serialize(){
+    var cl = sourceDoc.cloneNode(true);
+    cl.querySelectorAll("[data-ed]").forEach(function(e){ e.removeAttribute("data-ed"); });
+    return "<!DOCTYPE html>\n" + cl.documentElement.outerHTML;
+  }
+
+  document.getElementById("btnDownload").addEventListener("click", function(){
+    if (!sourceDoc) return;
+    var blob = new Blob([serialize()], {type:"text/html"});
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = currentPath.split("/").pop();
+    document.body.appendChild(a); a.click(); a.remove();
+    setStatus("Downloaded the edited " + currentPath + ". Send it to me and I will put it live, or use Publish to do it yourself.");
+  });
+
+  function b64encode(str){
+    var bytes = new TextEncoder().encode(str), bin = "";
+    for (var i = 0; i < bytes.length; i += 8192){
+      bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 8192));
+    }
+    return btoa(bin);
+  }
+  function escapeHtml(s){ return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+
+  document.getElementById("btnPublish").addEventListener("click", function(){
+    if (changed.size === 0){ setStatus("No changes on this page yet. Tap some text and edit it first."); return; }
+    var saved = "";
+    try { saved = localStorage.getItem("da_editor_token") || ""; } catch(e){}
+    if (saved) tokenInput.value = saved;
+    pubStatus.textContent = "";
+    pubPanel.hidden = false;
+    pubPanel.scrollIntoView({block:"end"});
+  });
+  document.getElementById("pubCancel").addEventListener("click", function(){ pubPanel.hidden = true; });
+
+  document.getElementById("pubGo").addEventListener("click", function(){
+    var token = tokenInput.value.trim();
+    if (!token){ pubStatus.textContent = "Paste a GitHub token first."; return; }
+    try { localStorage.setItem("da_editor_token", token); } catch(e){}
+    var headers = { "Authorization": "Bearer " + token, "Accept": "application/vnd.github+json" };
+    pubStatus.textContent = "Publishing " + currentPath + "...";
+    fetch(REPO_API + currentPath, {headers: headers}).then(function(r){
+      if (!r.ok) throw new Error("GitHub returned " + r.status + " reading the file. The token may lack Contents access to this repo.");
+      return r.json();
+    }).then(function(meta){
+      return fetch(REPO_API + currentPath, {
+        method: "PUT", headers: headers,
+        body: JSON.stringify({ message: "Site edit via editor: " + currentPath, content: b64encode(serialize()), sha: meta.sha, branch: "main" })
+      });
+    }).then(function(r){
+      if (!r.ok) throw new Error("GitHub returned " + r.status + " on commit. The token needs Contents: Read and write.");
+      return r.json();
+    }).then(function(){
+      pubStatus.textContent = "Committed. Waiting for the live site to update...";
+      var firstId = changed.values().next().value;
+      var node = nodeById(firstId);
+      var probe = node ? node.textContent.replace(/\s+/g," ").trim().slice(0,30) : "";
+      var tries = 0;
+      var timer = setInterval(function(){
+        tries++;
+        fetch(pageURL(currentPath) + "?edcheck=" + Date.now(), {cache:"no-store"}).then(function(r){ return r.text(); }).then(function(live){
+          var flat = live.replace(/\s+/g," ");
+          if (flat.indexOf(probe) >= 0 || flat.indexOf(escapeHtml(probe)) >= 0 || tries >= 10){
+            clearInterval(timer);
+            if (tries < 10 || flat.indexOf(probe) >= 0 || flat.indexOf(escapeHtml(probe)) >= 0){
+              pubStatus.textContent = "Live. Your words are on the site.";
+              setStatus("Published and verified live: " + currentPath);
+              changed.forEach(function(id){ var n = nodeById(id); if (n) originals.set(id, n.innerHTML); });
+              changed.clear(); renderChanges();
+              setTimeout(function(){ pubPanel.hidden = true; }, 2500);
+            } else {
+              pubStatus.textContent = "Committed to GitHub. The deploy is taking longer than usual; check the live page in a minute.";
+            }
+          }
+        }).catch(function(){});
+      }, 15000);
+    }).catch(function(e){ pubStatus.textContent = "Publish failed: " + e.message; });
+  });
+
+  loadPage("index.html");
+})();
+</script>
+</body>
+</html>
