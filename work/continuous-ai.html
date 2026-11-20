@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07090a">
+<title>Continuous AI: Darek Anderson</title>
+<meta name="description" content="A new kind of AI that runs continuously instead of in turns: persistent state, streaming perception, and compute that scales with what changed, not with the length of the history. First job: drive a PC screen and finish tasks on it. The case file: built, what broke, how it is judged, results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Space+Mono:wght@400;700&family=Archivo+Black&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kit-v2.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson-site.vercel.app/work/continuous-ai.html">
+<meta property="og:title" content="Continuous AI: the case file">
+<meta property="og:description" content="A new kind of AI that runs continuously instead of in turns: persistent state, streaming perception, and compute that scales with what changed, not with the length of the history. First job: drive a PC screen and finish tasks on it.">
+<meta property="og:image" content="https://darekanderson-site.vercel.app/assets/og/og-continuous-ai.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Continuous AI: the case file">
+<meta name="twitter:image" content="https://darekanderson-site.vercel.app/assets/og/og-continuous-ai.jpg">
+<meta name="twitter:site" content="@Darek_225">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Continuous AI: the case file">
+<meta name="twitter:description" content="A new kind of AI that runs continuously instead of in turns: persistent state, streaming perception, and compute that scales with what changed, not with the length of the history. First job: drive a PC screen and finish tasks on it.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Continuous AI: the case file",
+  "url": "https://darekanderson-site.vercel.app/work/continuous-ai.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson-site.vercel.app/"
+  }
+}
+</script>
+</head>
+<body class="m-terminal">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="../index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="../index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="../notes.html">Notes</a>
+      <a class="nav-link" href="../study.html">Study</a>
+      <a class="nav-link" href="../story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <article class="project">
+    <header class="project-head">
+      <div class="opener">
+        <p class="entry-no">EXP-09</p>
+        <h1 class="chapter-title">Continuous AI</h1>
+        <p class="chapter-gloss">A new kind of AI that runs continuously instead of in turns: persistent state, streaming perception, and compute that scales with what changed, not with the length of the history. First job: drive a PC screen and finish tasks on it.</p>
+        <div class="double-rule" aria-hidden="true"></div>
+      </div>
+      <p class="project-stamp"><span class="stamp stamp-large">IN DEVELOPMENT</span></p>
+    </header>
+
+    <figure class="photo-frame specimen-art">
+      <img src="../assets/og/og-continuous-ai.jpg" alt="Continuous AI: title card" width="1200" height="630" loading="eager">
+      <figcaption class="photo-caption">PLATE 01, TITLE CARD, EXP-09, NOV 2026</figcaption>
+    </figure>
+
+    <aside class="index-card" aria-label="Case file index card">
+      <p class="index-card-head">INDEX CARD · EXP-09</p>
+      <dl class="index-card-rows">
+        <div><dt>STATUS</dt><dd>IN DEVELOPMENT</dd></div>
+        <div><dt>CONTENTS</dt><dd>Built · What broke · How I judge it · Results</dd></div>
+        <div><dt>FILED</dt><dd>NOV 2026</dd></div>
+      </dl>
+    </aside>
+
+    <div class="case-tabs" data-tabs>
+      <section class="tab-panel" id="panel-built">
+        <h2 class="case-label">BUILT</h2>
+        <p>The design is layered and native, not a wrapper over a turn-based model. Three layers run at different timescales over one persistent state: a fast layer (GLA), and tactical and deliberative layers (Gated DeltaNet) with an exact 1024-token window, a size locked by measurement in the first workstream, not picked by feel. The layers update each other continuously in both directions; there are no text prompts and no request-response turns between them.</p><p>Perception starts from a frozen SigLIP2 embedding space, with DINOv2 patches for verification. Training runs on free compute pools (Kaggle GPU, TPU, and CPU sessions) under a standing rule: when a layer stops improving, the work moves to the next layer instead of waiting.</p>
+      </section>
+      <section class="tab-panel" id="panel-broke">
+        <h2 class="case-label">WHAT BROKE</h2>
+        <p>The second workstream (the screen-control layer) has two criteria still failing, both about clicking. The best click run reached 0.718 target success, but early halts regressed from 0.020 to 0.075, so it did not replace the earlier run (0.671 target success, quiet false actions 0.0056). The failure breakdown across 200 episodes: about a third of pauses the model never clicks at all, 430 wrong-element clicks, and 99 clicks while the target was moving. Two pre-agreed fixes were spent without moving the click ceiling.</p>
+      </section>
+      <section class="tab-panel" id="panel-judge">
+        <h2 class="case-label">HOW I JUDGE IT</h2>
+        <p>Every workstream carries criteria written before the build, graded per run, and the bars do not move. Workstream 0: 5 of 5 criteria pass. Workstream 1: complete, with the 1024 window locked by measurement (loads of 32 and up were unrankable, and the window reopens if real-task recall fails at the boundaries). Workstream 2: criteria 1 to 3, 6, and 7 pass; 4 and 5 fail and are reported as failing.</p><p class="chapter-gloss">Darek&rsquo;s own line for this section is not written yet. The graded record above is what exists until it is.</p>
+      </section>
+      <section class="tab-panel" id="panel-results">
+        <h2 class="case-label">RESULTS</h2>
+        <p>In development. The first real task for the screen-control layer is modeling an object in Blender. One longer training run at the larger model size is the last lever for workstream 2; after it, the build moves to the next layer either way, and the earlier layers get improved later.</p>
+      </section>
+    </div>
+  </article>
+    <nav class="case-nav" aria-label="More case files"><a href="neverreteach.html">&larr; NeverReteach</a><a class="case-nav-all" href="../index.html#work">All case files</a><a href="muse-pc.html">Muse PC &rarr;</a></nav>
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="../notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <a href="https://x.com/Darek_225">@Darek_225</a></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in VT323, Press Start 2P, and Space Mono on a black field, machine teal, and the logbook's signal red. No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  
+    <nav class="foot-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../index.html#work">Work</a><a href="../notes.html">Notes</a><a href="../study.html">Study</a><a href="../story.html">Story</a><a href="../resume.html">Resume</a><a href="#">Back to top</a></nav>
+  </footer>
+
+
+</div><!-- /.page -->
+<script src="../assets/enhance.js" defer></script>
+<script src="../assets/kit.js" defer></script>
+</body>
+</html>

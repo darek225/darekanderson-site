@@ -572,3 +572,14 @@ body.m-study .chapter-title{font-family:'Special Elite',var(--mono);font-size:cl
 body.m-study .scrap:nth-child(1) h3{font-family:Georgia,serif}
 body.m-study .scrap:nth-child(2) h3{font-family:var(--pix);font-size:30px;letter-spacing:1px}
 body.m-study .scrap:nth-child(3) h3{font-family:'Special Elite',var(--mono);font-size:24px}
+
+/* skins added 2026-11-20 for EXP-09/10/11 */
+.skin-continuous{background:#0d0a1f;color:#e6e0ff}
+.skin-continuous .art{background:repeating-linear-gradient(180deg,transparent 0 10px,rgba(150,130,255,.25) 10px 11px),radial-gradient(circle at 70% 50%,rgba(150,130,255,.45),transparent 45%),#0d0a1f}
+.skin-continuous h3 a{font-family:var(--pix);font-size:30px;color:#b7a6ff}
+.skin-musepc{background:#0c1a12;color:#dfffe9}
+.skin-musepc .art{background:linear-gradient(rgba(125,255,176,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(125,255,176,.14) 1px,transparent 1px),radial-gradient(circle at 30% 40%,rgba(125,255,176,.5) 0 4px,transparent 6px),radial-gradient(circle at 68% 62%,rgba(125,255,176,.5) 0 4px,transparent 6px),#0c1a12;background-size:24px 24px,24px 24px,100% 100%,100% 100%}
+.skin-musepc h3 a{font-family:var(--mono);font-weight:700;font-size:19px;color:#7dffb0;letter-spacing:2px;text-transform:uppercase}
+.skin-frontier{background:#141c10;color:#f0f3dd}
+.skin-frontier .art{background:repeating-radial-gradient(circle at 24% 30%,transparent 0 18px,rgba(207,224,138,.35) 18px 19px),repeating-radial-gradient(circle at 78% 72%,transparent 0 14px,rgba(207,224,138,.25) 14px 15px),#141c10}
+.skin-frontier h3 a{font-family:var(--pix);font-size:30px;color:#cfe08a}

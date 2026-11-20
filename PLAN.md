@@ -234,3 +234,11 @@ Directive (Darek): build everything from Matrix 2, but run matrices and tests on
 - Publish paths: (1) Publish button commits the page via the GitHub API with a fine-grained PAT (darekanderson-site only, Contents RW) stored only in his browser, then polls the live URL until the new text serves; (2) Download edited HTML and hand it to Muse.
 - Writing queue from COPY_AUTHORING_AUDIT_2026-11-15 is built into the editor top as one-tap page loaders.
 - Verified live by browser QA (2026-11-20): home loads with 119 editable blocks; hero edit applies, change registers, draft survives a full reload, two-tap reset clears it. Nothing published in QA. Commits 4e220db (editor), 0d1bf5f (fixes).
+
+## 2026-11-20: November entries build (Darek: do all of the proposed list)
+- 3 new case files: EXP-09 Continuous AI, EXP-10 Muse PC, EXP-11 Frontier (templates from EXP-04; HOW I JUDGE IT carries the graded record plus an honest placeholder for Darek's own line). New OG title cards generated for each; figure plates use the title cards.
+- Home: stats 8 -> 11 case files, 7 -> 10 software systems (kit.js SOURCES popups updated to match); 3 new work cards with new skins (kit-v1.css -> kit-v2.css cache-bust, 3 skins added, refs updated in 16 pages, v1 deleted); Machines rows added for Continuous AI + Muse PC, Field Notes row now Nov 2026; Deal Snipers card badge corrected to PIPELINE PAUSED.
+- 9 new notes (Nº 29-37): agentic standards, Deal Snipers scout, Offsides+ v1.3.2, WildClash Blender pilot, Dowser 10M census, Andola Ops layers, Bookvera model flip, November roundup, site editor. Highlights rotated to the 3 newest; seed line now August to November; notes.xml RSS +9 items (37 total).
+- 5 case file updates: Bookvera (model flip + red gate), Dowser (census numbers), Deal Snipers (stamp + results corrected to paused), WildClash (pilot + 51 subs / 37,569 views), Andola (Ops layers + Nov 18 website work, inside THE NUMBERS per the home-page money rule).
+- Sitemap: +3 URLs, and the domain corrected from darekanderson.com (not his) to the live vercel.app domain throughout.
+- All new copy is factual-record style per the Nov 15 authoring rule; first-person sections await Darek's words (questions sent in chat 2026-11-20).

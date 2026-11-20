@@ -129,12 +129,12 @@
 
   /* ---------- source popups (tap a number, get its source) ---------- */
   var SOURCES = {
-    files: ["SOURCE // CASE FILES", "Eight case files.",
+    files: ["SOURCE // CASE FILES", "Eleven case files.",
       "<p>Every project on this page has its own case file: Built, What broke, How I judge it, Results.</p>"],
     business: ["SOURCE // THE WORK", "One operating business.",
       "<p>Andola Landscape Services: a commercial and residential landscaping company in the Charlotte area. The case file has the details.</p>"],
-    systems: ["SOURCE // THE WORK", "Seven software systems.",
-      "<p>Backseat, Bookvera, Dowser, Carolina Trade Sites, Deal Snipers, WildClash Arena, and NeverReteach. Each one has its own case file below.</p>"],
+    systems: ["SOURCE // THE WORK", "Ten software systems.",
+      "<p>Backseat, Bookvera, Dowser, Carolina Trade Sites, Deal Snipers, WildClash Arena, NeverReteach, Continuous AI, Muse PC, and Frontier. Each one has its own case file below.</p>"],
   };
   document.querySelectorAll("[data-pop]").forEach(function (el) {
     el.addEventListener("click", function () {

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07090a">
+<title>Muse PC: Darek Anderson</title>
+<meta name="description" content="A desktop app that gives Muse hands on Darek&rsquo;s own PC: command line, scripting, and GUI control over a relay that works from any network, with approval prompts and an audit log. The case file: built, what broke, how it is judged, results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Space+Mono:wght@400;700&family=Archivo+Black&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/kit-v2.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Darek Anderson">
+<meta property="og:url" content="https://darekanderson-site.vercel.app/work/muse-pc.html">
+<meta property="og:title" content="Muse PC: the case file">
+<meta property="og:description" content="A desktop app that gives Muse hands on Darek&rsquo;s own PC: command line, scripting, and GUI control over a relay that works from any network, with approval prompts and an audit log.">
+<meta property="og:image" content="https://darekanderson-site.vercel.app/assets/og/og-muse-pc.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Muse PC: the case file">
+<meta name="twitter:image" content="https://darekanderson-site.vercel.app/assets/og/og-muse-pc.jpg">
+<meta name="twitter:site" content="@Darek_225">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Muse PC: the case file">
+<meta name="twitter:description" content="A desktop app that gives Muse hands on Darek&rsquo;s own PC: command line, scripting, and GUI control over a relay that works from any network, with approval prompts and an audit log.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Muse PC: the case file",
+  "url": "https://darekanderson-site.vercel.app/work/muse-pc.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Darek Anderson",
+    "url": "https://darekanderson-site.vercel.app/"
+  }
+}
+</script>
+</head>
+<body class="m-scope">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="page">
+
+  <header class="site-nav">
+    <a class="nav-brand" href="../index.html">Darek Anderson</a>
+    <nav class="nav-links" aria-label="Site">
+      <a class="nav-link active" href="../index.html#work" aria-current="page">Work</a>
+      <a class="nav-link" href="../notes.html">Notes</a>
+      <a class="nav-link" href="../study.html">Study</a>
+      <a class="nav-link" href="../story.html">Story</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+  <article class="project">
+    <header class="project-head">
+      <div class="opener">
+        <p class="entry-no">EXP-10</p>
+        <h1 class="chapter-title">Muse PC</h1>
+        <p class="chapter-gloss">A desktop app that gives Muse hands on Darek&rsquo;s own PC: command line, scripting, and GUI control over a relay that works from any network, with approval prompts and an audit log.</p>
+        <div class="double-rule" aria-hidden="true"></div>
+      </div>
+      <p class="project-stamp"><span class="stamp stamp-large">LIVE ON HIS PC</span></p>
+    </header>
+
+    <figure class="photo-frame specimen-art">
+      <img src="../assets/og/og-muse-pc.jpg" alt="Muse PC: title card" width="1200" height="630" loading="eager">
+      <figcaption class="photo-caption">PLATE 01, TITLE CARD, EXP-10, NOV 2026</figcaption>
+    </figure>
+
+    <aside class="index-card" aria-label="Case file index card">
+      <p class="index-card-head">INDEX CARD · EXP-10</p>
+      <dl class="index-card-rows">
+        <div><dt>STATUS</dt><dd>LIVE ON HIS PC</dd></div>
+        <div><dt>CONTENTS</dt><dd>Built · What broke · How I judge it · Results</dd></div>
+        <div><dt>FILED</dt><dd>NOV 2026</dd></div>
+      </dl>
+    </aside>
+
+    <div class="case-tabs" data-tabs>
+      <section class="tab-panel" id="panel-built">
+        <h2 class="case-label">BUILT</h2>
+        <p>A Tauri desktop app on the PC, paired to Muse over a Cloudflare relay (a Worker with a Durable Object room), live since November 19, 2026. The relay replaced a Tailscale-only path, so the link works from any network, not just the home one. A first attempt the same week, a polling runner, was retired the day it shipped in favor of this event-driven design.</p><p>Capability order is deliberate: command line and APIs first, then scripting, then MCP in both directions, then structured GUI control through UI Automation, and raw input last. Input can batch up to 50 steps under one approval. Long jobs run under supervision with output buffers, so a job can be tailed, written to, and killed mid-run.</p>
+      </section>
+      <section class="tab-panel" id="panel-broke">
+        <h2 class="case-label">WHAT BROKE</h2>
+        <p>Four defects were found by testing and fixed with live proofs, not reports. The relay&rsquo;s crypto library had no default provider, so connections failed until one was set. Pairing codes lived only in memory and died when the relay hibernated. Raising a minimized window failed silently until the raise verified the window was actually in the foreground. And a process kill once acknowledged success while the job ran 38 more seconds and finished; kills are now backed by Windows Job Objects and the acknowledgement waits for the process to exit.</p>
+      </section>
+      <section class="tab-panel" id="panel-judge">
+        <h2 class="case-label">HOW I JUDGE IT</h2>
+        <p>Proof over report: every capability lands with a live test across the public relay. A 308-node UI Automation snapshot and a screenshot came through the link. A background Chrome window was snapshotted while another window held focus, then raised and verified in the foreground. A mid-render Blender kill froze the render at frame 1 with no second frame written. The Phase 3 parent suite stands at 30 of 30.</p><p class="chapter-gloss">Darek&rsquo;s own line for this section is not written yet. The graded record above is what exists until it is.</p>
+      </section>
+      <section class="tab-panel" id="panel-results">
+        <h2 class="case-label">RESULTS</h2>
+        <p>In daily use as the working link between Muse and the PC: builds, renders, and desktop tasks run through it. A signed installer is parked by decision, not by blocker.</p>
+      </section>
+    </div>
+  </article>
+    <nav class="case-nav" aria-label="More case files"><a href="continuous-ai.html">&larr; Continuous AI</a><a class="case-nav-all" href="../index.html#work">All case files</a><a href="frontier.html">Frontier &rarr;</a></nav>
+  </main>
+
+  <footer class="chapter ch-contact" id="contact" aria-labelledby="contact-title">
+    <div class="opener">
+      <p class="entry-no">CONTACT</p>
+      <h2 class="chapter-title" id="contact-title">Contact + Colophon</h2>
+      <p class="chapter-gloss">Get in touch. How this was made.</p>
+      <div class="double-rule" aria-hidden="true"></div>
+    </div>
+    <div class="chapter-body">
+      <p>Darek Anderson, Matthews, North Carolina.</p>
+      <ul class="contact-list">
+        <li><span class="link-label">Email:</span> <a href="mailto:darek.m.anderson@gmail.com">darek.m.anderson@gmail.com</a></li>
+        <li><span class="link-label">LinkedIn:</span> <a href="https://www.linkedin.com/in/darek-anderson-012110329">linkedin.com/in/darek-anderson-012110329</a></li>
+        <li><span class="link-label">GitHub:</span> <a href="https://github.com/darek225">github.com/darek225</a></li>
+        <li><span class="link-label">Notes feed:</span> <a href="../notes.xml">RSS</a></li>
+        <li><span class="link-label">X:</span> <a href="https://x.com/Darek_225">@Darek_225</a></li>
+      </ul>
+      <div class="colophon">
+        <p class="colophon-stamp"><span class="stamp">COLOPHON</span></p>
+        <p>This site was built by hand. Set in VT323, Press Start 2P, and Space Mono on a black field, machine teal, and the logbook's signal red. No frameworks doing the thinking, no stock photography, no tracking.</p>
+      </div>
+    </div>
+  
+    <nav class="foot-nav" aria-label="Site"><a href="../index.html">Home</a><a href="../index.html#work">Work</a><a href="../notes.html">Notes</a><a href="../study.html">Study</a><a href="../story.html">Story</a><a href="../resume.html">Resume</a><a href="#">Back to top</a></nav>
+  </footer>
+
+
+</div><!-- /.page -->
+<script src="../assets/enhance.js" defer></script>
+<script src="../assets/kit.js" defer></script>
+</body>
+</html>

@@ -1,75 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://darekanderson.com/</loc>
+    <loc>https://darekanderson-site.vercel.app/</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/andola.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/andola.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/backseat.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/backseat.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/bookvera.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/bookvera.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/dowser.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/dowser.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/carolina-trade-sites.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/carolina-trade-sites.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/deal-snipers.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/deal-snipers.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/wildclash.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/wildclash.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/work/neverreteach.html</loc>
+    <loc>https://darekanderson-site.vercel.app/work/neverreteach.html</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/notes.html</loc>
+    <loc>https://darekanderson-site.vercel.app/notes.html</loc>
     <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/story.html</loc>
+    <loc>https://darekanderson-site.vercel.app/story.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://darekanderson.com/resume.html</loc>
+    <loc>https://darekanderson-site.vercel.app/resume.html</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://darekanderson-site.vercel.app/work/continuous-ai.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darekanderson-site.vercel.app/work/muse-pc.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://darekanderson-site.vercel.app/work/frontier.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

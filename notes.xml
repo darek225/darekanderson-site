@@ -5,7 +5,70 @@
     <link>https://darekanderson.com/notes.html</link>
     <description>Short notes from the work: what AI is actually good for, found empirically.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Nov 2026 23:35:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 22:30:00 GMT</lastBuildDate>
+    <item>
+      <title>This site got an editor</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-37</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-37</guid>
+      <pubDate>Fri, 20 Nov 2026 22:30:00 GMT</pubDate>
+      <description>On November 14, this site was rebuilt in the FIELD KIT design and merged live. On November 15, an authoring audit read every page and sorted the copy into two kinds: factual records, and first-person prose. The rule that came out of the audit: factual records are written in plain, neutral language, and anything first-person that states a belief, a motive, a judgment, or a pitch is Darek&#x27;s own words, or it does not ship. Sections waiting on him stay honest placeholders instead of filled prose. On November 20 the site got a built-in editor. Any of the thirteen pages loads in a preview; tap any text block and it opens for rewriting; drafts persist in the browser across reloads; publishing commits the page to GitHub, which deploys it, and the editor polls the live page until the new words are serving. The first edits through it were Darek&#x27;s own: the home page kicker, the hero line, and three section notes, committed the same day and verified live. The writing queue from the November 15 audit is built into the top of the editor.</description>
+    </item>
+    <item>
+      <title>November 2026: hands, a flip, and ten million rows</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-36</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-36</guid>
+      <pubDate>Fri, 20 Nov 2026 22:00:00 GMT</pubDate>
+      <description>November, in one pass, as of the 20th. Two new systems started: Continuous AI, a native continuous AI (November 18), and Muse PC, the app that gives Muse hands on a real PC (November 16 to 19). Both have case files now. Bookvera flipped its production extraction model on November 18 after a 2,291-case run, and reported its verification gate red the same night (No. 35). Dowser&#x27;s global import was census-certified at 10,231,786 prospects on November 17, then paused at about 14.3 million rows so verification could take the focus. WildClash published a Blender pilot and changed direction to custom episodes (No. 32). Andola Ops passed five of six layers and took its first organic web lead. Offsides+ shipped v1.3.2. This site was rebuilt, audited for authorship, and given an editor (No. 37). The month is not over. This roundup is dated November 20; later November work will supersede parts of it, the way these notes always work.</description>
+    </item>
+    <item>
+      <title>Bookvera: the model flip, and a red gate</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-35</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-35</guid>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
+      <description>On November 18, Bookvera&#x27;s production text extraction flipped from gpt-4o-mini to deepseek-v4.1-flash, with gpt-4o-mini kept on as adjudicator and calibration map v2026-11-18.1 applied. The flip was earned by a file-based run over 2,291 cases; a blind label audit of that run agreed with its labels 88.7 percent of the time. One flag was accepted on the record: the new model&#x27;s calibration floor, 0.703, sits just above the 0.70 ask line, so ambiguous rows land in human review instead of being asked about. That is the safer side to be wrong on, and it is priced into the workflow. The same night, the full verification gate on main ran red: 87 of 96 suites passing, 5,575 checks passed and 9 failed, the same failure set on the flip merge and on the commit after it. Typecheck, the production build, the deploy, and the smoke test all passed, and production was not down. The failures are consistent with suites still expecting the pre-flip model configuration, but that is a hypothesis. The suite-by-suite diagnosis has not run yet, and until it does, the gate stands reported as red.</description>
+    </item>
+    <item>
+      <title>Andola Ops: five layers down, and the website feeds it</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-34</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-34</guid>
+      <pubDate>Wed, 18 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Andola Ops, the system that runs the landscaping business&#x27;s operations, has passed five of its six layers. Sign-in is Google-only, with an exact allowlist. The remaining layer is the sixth. On November 13, the first organic web lead arrived: a two-round leaf cleanup on about a quarter acre in South Charlotte. It went straight onto the Ops board, priced from photos. On November 18, the public website was wired into the system: a real scroll-triggered sticky header replaced the floating button, a three-field hero form now files directly into Ops intake, and the four Pass tier cards shipped on the home page, verified on the live rendered site at desktop and tablet widths.</description>
+    </item>
+    <item>
+      <title>Dowser: ten million, census-certified</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-33</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-33</guid>
+      <pubDate>Tue, 17 Nov 2026 12:00:00 GMT</pubDate>
+      <description>On November 17, Dowser&#x27;s global import was certified by census at 10,231,786 prospects, 10,226,900 of them with an email address, drawn from a pool of 24,469,755 rows extracted from open map data in 49 chunks. The unit of the database is the decision-making person, name, title, and company, not a business inbox. Imports continued to about 14.3 million rows and then paused: the instruction for the current phase is verification, because a database of unverified emails is inventory that cannot be sent. Three verification lanes exist. A local hygiene sweep checks DNS and mail exchangers. An SMTP prober runs from a laptop and checks mailboxes directly. A commercial verifier&#x27;s remaining credits are held for send slices. The target has not moved: 100 million.</description>
+    </item>
+    <item>
+      <title>WildClash: the Blender pilot</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-32</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-32</guid>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 GMT</pubDate>
+      <description>A one-off pilot replaced the usual factory episode: 1,000 rats against 1 lion, scripted, choreographed, and rendered in Blender, then published publicly as a test. The render time was very high and the script was weak. The episode itself was judged good enough to change the plan. The new direction keeps the factory on the outside, where it belongs: queue, bank, quality control, uploads, comments, analytics. Every episode is custom on the inside: its own script, storyboard, choreography, scene, and render, reusing rigs and arenas. Cadence is set by GPU throughput instead of the old two-a-day schedule, and the stock bank keeps the channel alive during the transition, then stays as backup. The November 16 weekly review, for the record: 51 subscribers, 37,569 views, factory 14 of 14, bank 3 of 3, zero escapes.</description>
+    </item>
+    <item>
+      <title>Offsides+ v1.3.2, and the FOSS build</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-31</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-31</guid>
+      <pubDate>Mon, 16 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Offsides+ v1.3.2 shipped on November 16, 2026: SMS fallback for sign-in, CI green, and the release signer verified by certificate digest. Note No. 27 covers the fork itself and the three October releases. After the ship, a FOSS flavor was merged to main with Firebase verifiably out of the APK itself, checked in the package, not just the source. The build dropped from 49.9 MB to 34.8 MB. That is still over the 30 MB guideline for the IzzyOnDroid repository, so filing there needs a size exception. The filing is parked until it is worth doing.</description>
+    </item>
+    <item>
+      <title>Deal Snipers: silent, and why</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-30</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-30</guid>
+      <pubDate>Wed, 11 Nov 2026 12:00:00 GMT</pubDate>
+      <description>Deal Snipers has not posted in weeks, and the reason is not a code bug. Amazon&#x27;s pages wall off this server&#x27;s network, so the main scout cannot read prices there, and no like-for-like replacement source exists while the wall stands. A supplement was built on CamelCamelCamel price history instead. The scout pulled 51 candidate rows; the best item scored 75 against a bar of 80, so nothing posted. The bar did not move to manufacture a post. The pipeline is unchanged: when a readable source produces a verified deal, it posts to the X bot, Telegram, and Bluesky. Until then, the honest status is silent, and the case file now says so.</description>
+    </item>
+    <item>
+      <title>The standards: spec first, judge second</title>
+      <link>https://darekanderson-site.vercel.app/notes.html#note-29</link>
+      <guid isPermaLink="true">https://darekanderson-site.vercel.app/notes.html#note-29</guid>
+      <pubDate>Sun, 01 Nov 2026 12:00:00 GMT</pubDate>
+      <description>On October 26, a working standard for agent-built work was adopted, and everything since has run under it. No non-trivial delegation starts without a spec: objective, inputs, named outputs, and numbered success criteria written before the build, not after it. Building and judging are separated. The agent that builds never certifies its own work; a different agent evaluates against the pre-written criteria, and a completion report without evidence is not a completion. GitHub is the system of record. Approvals happen in chat, and the chat verdict is the approval of record. On November 1, the GH-600 study path activated alongside the standard (Copilot Student, GitHub Pro). A monthly scorecard grades the system itself: delivery, first-pass criteria rate, rework, incidents, and cost.</description>
+    </item>
     <item>
       <title>Matrix maxxing: the 11th grade engineering tool that runs my AI work</title>
       <link>https://darekanderson-site.vercel.app/notes.html#note-28</link>

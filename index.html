@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=VT323&amp;family=Press+Start+2P&amp;family=Space+Mono:wght@400;700&amp;family=Archivo+Black&amp;family=Special+Elite&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/kit-v1.css">
+<link rel="stylesheet" href="assets/kit-v2.css">
 <link rel="alternate" type="application/rss+xml" title="Darek Anderson: Field Notes" href="notes.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Darek Anderson">
@@ -34,9 +34,9 @@
         <button class="reroll" id="reroll" type="button">RE-ROLL THE PAGE</button>
       </div>
       <div class="stats" aria-label="Verified numbers">
-        <button class="stat" type="button" data-pop="files"><b>8</b><span>CASE FILES</span><span class="src">TAP FOR SOURCE</span></button>
+        <button class="stat" type="button" data-pop="files"><b>11</b><span>CASE FILES</span><span class="src">TAP FOR SOURCE</span></button>
         <button class="stat" type="button" data-pop="business"><b>1</b><span>OPERATING BUSINESS</span><span class="src">TAP FOR SOURCE</span></button>
-        <button class="stat" type="button" data-pop="systems"><b>7</b><span>SOFTWARE SYSTEMS</span><span class="src">TAP FOR SOURCE</span></button>
+        <button class="stat" type="button" data-pop="systems"><b>10</b><span>SOFTWARE SYSTEMS</span><span class="src">TAP FOR SOURCE</span></button>
         <div class="stat"><b>2 / DAY</b><span>WILDCLASH SHORTS PUBLISHED</span></div>
       </div>
     </div>
@@ -55,9 +55,11 @@
   </div>
   <div class="readout">
     <p class="row"><span class="name">WILDCLASH ARENA</span><span class="val">Publishes two Shorts daily, at 09:00 and 17:00 ET</span></p>
-    <p class="row"><span class="name">DEAL SNIPERS</span><span class="val">Posts only deals verified against price history</span></p>
+    <p class="row"><span class="name">DEAL SNIPERS</span><span class="val">Watches price history daily; posts only verified deals</span></p>
     <p class="row"><span class="name">ANDOLA</span><span class="val">Latest job: patio extension, Oct 2026</span></p>
-    <p class="row"><span class="name">FIELD NOTES</span><span class="val">Newest note: Oct 2026 <span class="blink">▌</span></span></p>
+    <p class="row"><span class="name">CONTINUOUS AI</span><span class="val">Training runs rotate across Kaggle GPU, TPU, and CPU pools</span></p>
+    <p class="row"><span class="name">MUSE PC</span><span class="val">Relay live: Muse works on Darek&rsquo;s PC from any network</span></p>
+    <p class="row"><span class="name">FIELD NOTES</span><span class="val">Newest note: Nov 2026 <span class="blink">▌</span></span></p>
   </div>
 </section>
 
@@ -127,13 +129,12 @@
       </div>
     </article>
     <article class="card skin-snipers" data-cat="live">
-      <span class="rubber">LIVE</span>
       <div class="art" aria-hidden="true"></div>
       <div class="body">
         <p class="idx">EXP-06 // SCOPE HUD</p>
         <h3><a href="work/deal-snipers.html">DEAL SNIPERS</a></h3>
-        <span class="badge live">LIVE PIPELINE</span>
-        <p class="line">A multi-agent system that hunts deep discounts, verifies them, and posts the real ones automatically.</p>
+        <span class="badge building">PIPELINE PAUSED</span>
+        <p class="line">A multi-agent system that hunts deep discounts, verifies them against price history, and posts the real ones. Posting is paused at the Amazon wall; the scout still watches.</p>
         <a class="open" href="work/deal-snipers.html">OPEN THE FILE &gt;&gt;</a>
       </div>
     </article>
@@ -157,6 +158,37 @@
         <span class="badge live">LIVE, OPEN SOURCE</span>
         <p class="line">A self-building memory wiki for AI coding agents. Teach each lesson once; it files itself and loads on every future project.</p>
         <a class="open" href="work/neverreteach.html">OPEN THE FILE &gt;&gt;</a>
+      </div>
+    </article>
+    <article class="card skin-continuous" data-cat="software">
+      <div class="art" aria-hidden="true"></div>
+      <div class="body">
+        <p class="idx">EXP-09 // THE TICK</p>
+        <h3><a href="work/continuous-ai.html">CONTINUOUS AI</a></h3>
+        <span class="badge building">IN DEVELOPMENT</span>
+        <p class="line">A new kind of AI that runs continuously instead of in turns, with persistent state. First job: drive a PC screen.</p>
+        <a class="open" href="work/continuous-ai.html">OPEN THE FILE &gt;&gt;</a>
+      </div>
+    </article>
+    <article class="card skin-musepc" data-cat="software">
+      <span class="rubber">LIVE</span>
+      <div class="art" aria-hidden="true"></div>
+      <div class="body">
+        <p class="idx">EXP-10 // THE LINK</p>
+        <h3><a href="work/muse-pc.html">Muse PC</a></h3>
+        <span class="badge live">LIVE, ON HIS PC</span>
+        <p class="line">A desktop app that gives Muse hands on Darek&rsquo;s PC: command line, scripting, and GUI control over a relay that works from any network.</p>
+        <a class="open" href="work/muse-pc.html">OPEN THE FILE &gt;&gt;</a>
+      </div>
+    </article>
+    <article class="card skin-frontier" data-cat="software">
+      <div class="art" aria-hidden="true"></div>
+      <div class="body">
+        <p class="idx">EXP-11 // THE MAP</p>
+        <h3><a href="work/frontier.html">FRONTIER</a></h3>
+        <span class="badge building">IN DEVELOPMENT</span>
+        <p class="line">A browser strategy game rebuilt from an OpenFront fork into a different game, one gated phase at a time.</p>
+        <a class="open" href="work/frontier.html">OPEN THE FILE &gt;&gt;</a>
       </div>
     </article>
   </div>
