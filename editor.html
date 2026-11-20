@@ -147,6 +147,29 @@
 
   var currentPath = null, sourceDoc = null, originals = new Map(), changed = new Set();
   var selectedId = null, selectedHasKids = false;
+  var switchArmedFor = null, resetArmed = false, resetTimer = null;
+
+  function readDrafts(){
+    try { return JSON.parse(localStorage.getItem("da_editor_drafts") || "{}"); } catch(e){ return {}; }
+  }
+  function saveDrafts(){
+    if (!currentPath) return;
+    var all = readDrafts();
+    if (changed.size === 0){ delete all[currentPath]; }
+    else {
+      var entry = {};
+      changed.forEach(function(id){
+        var n = nodeById(id);
+        if (n) entry[id] = { orig: originals.get(id), html: n.innerHTML };
+      });
+      all[currentPath] = entry;
+    }
+    try { localStorage.setItem("da_editor_drafts", JSON.stringify(all)); } catch(e){}
+  }
+  function clearDraft(){
+    var all = readDrafts(); delete all[currentPath];
+    try { localStorage.setItem("da_editor_drafts", JSON.stringify(all)); } catch(e){}
+  }
 
   PAGES.forEach(function(p){
     var o = document.createElement("option");
@@ -205,9 +228,13 @@
   }
 
   function loadPage(path){
-    if (changed.size > 0 && currentPath && !window.confirm("This page has unpublished changes. Switch pages and lose them?")) {
-      sel.value = currentPath; return;
+    if (changed.size > 0 && currentPath && path !== currentPath && switchArmedFor !== path) {
+      switchArmedFor = path;
+      sel.value = currentPath;
+      setStatus("This page has " + changed.size + " unpublished change(s), saved as a draft on this device. Pick \"" + path + "\" again to switch anyway.");
+      return;
     }
+    switchArmedFor = null;
     currentPath = path; sel.value = path;
     liveLink.href = pageURL(path);
     setStatus("Loading " + path + "...");
@@ -218,8 +245,13 @@
       sourceDoc.querySelectorAll(CANDIDATE).forEach(function(el){
         if (isEditable(el)){ el.setAttribute("data-ed", String(i)); originals.set(String(i), el.innerHTML); i++; }
       });
+      var drafts = readDrafts()[path] || {};
+      Object.keys(drafts).forEach(function(id){
+        var n = nodeById(id);
+        if (n && originals.get(id) === drafts[id].orig){ n.innerHTML = drafts[id].html; changed.add(id); }
+      });
       buildPreview(); renderChanges();
-      setStatus(i + " editable text blocks on this page. Tap any text in the preview to rewrite it.");
+      setStatus(i + " editable text blocks on this page. Tap any text in the preview to rewrite it." + (changed.size > 0 ? " Restored " + changed.size + " draft edit(s) from this device." : ""));
     }).catch(function(e){ setStatus("Could not load " + path + ": " + e.message); });
   }
 
@@ -234,7 +266,7 @@
     sheetHint.textContent = selectedHasKids
       ? "This block contains formatting (a link or styled span). Keep the <...> tags as they are and change the words between them."
       : "Plain text. Type it the way you would say it.";
-    sheetText.value = selectedHasKids ? node.innerHTML.trim() : node.textContent;
+    sheetText.value = selectedHasKids ? node.innerHTML.replace(/ data-ed="\d+"/g, "").trim() : node.textContent;
     sheet.hidden = false;
     sheetText.focus();
   }
@@ -267,7 +299,7 @@
     if (selectedHasKids) node.innerHTML = sheetText.value; else node.textContent = sheetText.value;
     if (node.innerHTML !== originals.get(selectedId)) changed.add(selectedId); else changed.delete(selectedId);
     postToPreview({ed:"apply", id:selectedId, html: node.innerHTML});
-    renderChanges(); sheet.hidden = true;
+    renderChanges(); saveDrafts(); sheet.hidden = true;
     setStatus("Edit applied. " + changed.size + " change(s) on this page. Download or Publish when ready.");
   });
   document.getElementById("sheetRevert").addEventListener("click", function(){
@@ -276,7 +308,7 @@
     node.innerHTML = originals.get(selectedId);
     changed.delete(selectedId);
     postToPreview({ed:"revert", id:selectedId, html: node.innerHTML});
-    renderChanges(); sheet.hidden = true;
+    renderChanges(); saveDrafts(); sheet.hidden = true;
     setStatus("Block reverted.");
   });
 
@@ -293,8 +325,16 @@
     this.classList.add("on"); document.getElementById("wPhone").classList.remove("on");
   });
   document.getElementById("btnReset").addEventListener("click", function(){
-    if (changed.size > 0 && !window.confirm("Throw away all changes on this page?")) return;
-    changed.clear(); loadPage(currentPath);
+    var btn = this;
+    if (changed.size > 0 && !resetArmed){
+      resetArmed = true;
+      btn.textContent = "Tap again to discard " + changed.size + " change(s)";
+      clearTimeout(resetTimer);
+      resetTimer = setTimeout(function(){ resetArmed = false; btn.textContent = "Reset page"; }, 4000);
+      return;
+    }
+    resetArmed = false; btn.textContent = "Reset page";
+    changed.clear(); clearDraft(); loadPage(currentPath);
   });
 
   function serialize(){
@@ -366,7 +406,7 @@
               pubStatus.textContent = "Live. Your words are on the site.";
               setStatus("Published and verified live: " + currentPath);
               changed.forEach(function(id){ var n = nodeById(id); if (n) originals.set(id, n.innerHTML); });
-              changed.clear(); renderChanges();
+              changed.clear(); clearDraft(); renderChanges();
               setTimeout(function(){ pubPanel.hidden = true; }, 2500);
             } else {
               pubStatus.textContent = "Committed to GitHub. The deploy is taking longer than usual; check the live page in a minute.";
